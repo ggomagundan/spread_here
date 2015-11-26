@@ -1,0 +1,66 @@
+development:
+  clients:
+    options:
+      hosts:
+        - 108.61.251.231:27017
+      username: 'flea_root'
+      password: 'fleamarket1!'
+      # Define the default database name.
+      database: fleamarket
+    options:
+      include_root_in_json: true
+      include_type_for_serialization: true
+      # Note this can also be true if you want to preload everything, but this is
+      # almost never necessary. Most of the time set this to false.
+      scope_overwrite_exception: true
+      raise_not_found_error: false
+      use_activesupport_time_zone: false
+      use_utc: true
+
+test:
+  clients:
+    default:
+    hosts:
+      - 108.61.251.231:27017
+    username: 'flea_root'
+    password: 'fleamarket1!'
+    # Define the default database name.
+    database: fleamarket
+    # Since this database points at a session connected to MongoHQ, we must
+    # provide the authentication details.
+    # This defines a secondary session at a replica set.
+  options:
+    include_root_in_json: true
+    include_type_for_serialization: true
+    # Note this can also be true if you want to preload everything, but this is
+    # almost never necessary. Most of the time set this to false.
+    scope_overwrite_exception: true
+    raise_not_found_error: false
+    use_activesupport_time_zone: false
+    use_utc: true
+
+production:
+  clients:
+    # Define the default session.
+    default:
+      # A session can have any number of hosts. Usually 1 for a single
+      # server setup, and at least 3 for a replica set. Hosts must be
+      # an array of host:port pairs. This session is single server.
+      hosts:
+        - 108.61.251.231:27017
+      username: 'flea_root'
+      password: 'fleamarket1!'
+      # Define the default database name.
+      database: fleamarket
+      # Since this database points at a session connected to MongoHQ, we must
+      # provide the authentication details.
+    # This defines a secondary session at a replica set.
+  options:
+    include_root_in_json: true
+    include_type_for_serialization: true
+    # Note this can also be true if you want to preload everything, but this is
+    # almost never necessary. Most of the time set this to false.
+    scope_overwrite_exception: true
+    raise_not_found_error: false
+    use_activesupport_time_zone: false
+    use_utc: true

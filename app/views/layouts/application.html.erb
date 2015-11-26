@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fleamarket</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= stylesheet_link_tag "application", controller_name %>
+    <%= javascript_include_tag "application", controller_name, 'data-turbolinks-track' => true %>
+    <% if Rails.env == "development" %>
+      <!--
+      <script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=<%= DEV_DAUM_KEY %>" async defer></script>
+      -->
+    <% else %>
+      <script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=<%= PRODUC_DAUM_KEY %>" async defer></script>
+    <% end %>
+
+    <!--
+    <script src="https://maps.googleapis.com/maps/api/js?key=<%= GOOGLE_MAP_KEY %>"  async defer></script>
+    -->
+
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+
+    <%= render "layouts/header" %>
+
+    <div class="container content-wrap">
+      <%= yield %>
+    </div>
+
+    <%= render "layouts/footer" %>
+
+  </body>
+</html>

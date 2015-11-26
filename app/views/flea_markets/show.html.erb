@@ -1,0 +1,75 @@
+
+  <div class="main-img">
+    <%= image_tag "http://talkimg.imbc.com/TVianUpload//tvian/image/2015/10/10/IhjX4gdqTjQq635800827987838901.jpg", alt: "Test" if @flea_market.top_image.blank? %> 
+    <%= image_tag @flea_market.top_image.image_url, alt: "Test" if @flea_market.top_image.present? %>
+  </div>
+
+  <div class="market_name"> <%= @flea_market.market_name %> </div>
+  <div class="market_desc">
+    <div class="market_location"> <%= @flea_market.location %> </div>
+    /
+    <div class="market_memo"><%= @flea_market.memo %></div>
+  </div>
+
+
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#flea-info" aria-controls="flea-info" role="tab" data-toggle="tab">MainInfo</a></li>
+    <li class="map-tab" role="presentation"><a href="#location" aria-controls="location" role="tab" data-toggle="tab">LocationInfo</a></li>
+    <li role="presentation" class="sns-comment none"><a href="#comments" aria-controls="comments" role="tab" data-toggle="tab">Comments</a></li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="flea-info">
+      <div class="flea-info-detail">
+        <div class="market_name"> <%= @flea_market.market_name %> </div>
+        <div class="market_daterange"> <%= @flea_market.start_date.strftime("%F %H:%M") %> ~ <%= @flea_market.end_date.strftime("%F %H:%M ") %> </div>
+        <div class="market_memo"><%= @flea_market.memo %></div>
+      </div>
+      <div class="flea-info-img">
+        <% if @flea_market.content_images.present? %>
+          <% @flea_market.content_images.each do |img| %>
+            <div class="img">
+              <%= image_tag img.image_url, alt: "Test", class: "img" %> 
+            </div>
+          <% end %>
+        <% else %>
+          <div class="img">
+            <%= image_tag "http://talkimg.imbc.com/TVianUpload//tvian/image/2015/10/10/IhjX4gdqTjQq635800827987838901.jpg", alt: "Test", class: "img" %> 
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div role="tabpanel" class="tab-pane" id="location">
+      
+          <div class="location-group ">
+            <div class="location-map col-sm-11">
+ <% if @flea_market.have_location? %>
+
+          <%#= render "google_map" %>
+
+          <%= render "daum_map" %>
+
+        <% else %>
+
+              <%= image_tag "no_location_info.png", alt: "NoLocation", class: "img"  %>
+
+        <% end %>
+            </div>
+            <div class="location-info col-sm-11">
+              <div class="market_location"><%= @flea_market.location %></div>
+            </div>
+          </div>
+
+
+    </div>
+
+    <div role="tabpanel" class="tab-pane" id="comments">
+      COMMENTS
+    </div>
+  </div>
+
+</div>
+</div>

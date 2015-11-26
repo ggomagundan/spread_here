@@ -1,0 +1,56 @@
+<div class="make-flea-market col-sm-8">
+  <%= form_for @flea_market, class: "form-horizontal"  do |f| %>
+
+    <div class="form-group">
+      <%= f.label :market_name, class: "col-sm-2 control-label" %>
+      <div class="col-sm-10">
+        <%= f.text_field :market_name, class: "col-sm-2 form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :start_date, class: "col-sm-2 control-label" %>
+      <div class="col-sm-10">
+        <%= f.text_field :start_date, class: "col-sm-2 form-control" %>
+        <%= f.text_field :end_date, class: "col-sm-2 form-control" %>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <%= f.label :location, class: "col-sm-2 control-label" %>
+      <div class="col-sm-10">
+        <%= f.text_field :location, class: "col-sm-2 form-control" %>
+      </div>
+    </div>
+
+
+
+
+    <div class="form-group">
+      <%= f.label :memo, class: "col-sm-2 control-label" %>
+      <div class="col-sm-10">
+        <%= f.text_field :memo, class: "col-sm-2 form-control" %>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <%= f.submit "생성" , class: "btn btn-primary" %>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <%= label_tag :captcha,  "", class: "col-sm-2 control-label" %>
+      <div class="col-sm-10">
+        <script src='https://www.google.com/recaptcha/api.js'></script>
+        <div class="g-recaptcha" data-sitekey="6LcSag8TAAAAALi8XiEEVpmYbbWK0CecQZPDy7m9"></div>
+      </div>
+    </div>
+
+
+
+  <% end %>
+</div>

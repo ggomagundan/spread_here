@@ -1,0 +1,47 @@
+
+<span> <%= FleaMarket.searchable.count %></span>
+<div id="fleamarket_list">
+  <%= render @flea_markets %>
+  <%= paginate @flea_markets %>
+</div>
+
+
+<div class="flea_market radius shadowDepth1">
+  <div class="flea_market__image border-tlr-radius">
+    <img src="http://lorempixel.com/400/200/sports/" alt="image" class="border-tlr-radius">
+  </div>
+
+  <div class="flea_market__content flea_market__padding">
+    <div class="flea_market__share">
+      <div class="flea_market__social">
+        <a class="share-icon facebook" href="#"><span class="fa fa-facebook"></span></a>
+        <a class="share-icon twitter" href="#"><span class="fa fa-twitter"></span></a>
+        <a class="share-icon googleplus" href="#"><span class="fa fa-google-plus"></span></a>
+      </div>
+
+      <a id="share" class="share-toggle share-icon" href="#"></a>
+    </div>
+
+    <div class="flea_market__meta">
+      <a href="#">Web Design</a>
+      <time>17th March</time>
+    </div>
+
+    <article class="flea_market__article">
+      <h2><a href="#">Material Design flea_market - For Blog Post Article</a></h2>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus harum...</p>
+    </article>
+  </div>
+
+  <div class="flea_market__action">
+    
+    <div class="flea_market__author">
+      <img src="http://lorempixel.com/40/40/sports/" alt="user">
+      <div class="flea_market__author-content">
+        By <a href="#">John Doe</a>
+      </div>
+    </div>
+  </div>
+</div>
+
