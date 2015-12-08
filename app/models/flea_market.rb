@@ -13,9 +13,10 @@ class FleaMarket
   field :memo, type: String
   
   #http://www.rubygeocoder.com/
-  
   field :latitude, type: Float
   field :longitude, type: Float
+
+  #UserInfo
 
   scope :searchable, -> { where(is_visible: 1).and(:end_date.gte => Time.now, :start_date.lte => Time.now) }
 

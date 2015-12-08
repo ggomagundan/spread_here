@@ -16,7 +16,7 @@
   <ul class="nav nav-tabs" role="tablist">
     <li role="presentation" class="active"><a href="#flea-info" aria-controls="flea-info" role="tab" data-toggle="tab">MainInfo</a></li>
     <li class="map-tab" role="presentation"><a href="#location" aria-controls="location" role="tab" data-toggle="tab">LocationInfo</a></li>
-    <li role="presentation" class="sns-comment none"><a href="#comments" aria-controls="comments" role="tab" data-toggle="tab">Comments</a></li>
+    <li role="presentation" class="sns-comment"><a href="#comments" aria-controls="comments" role="tab" data-toggle="tab">Comments</a></li>
   </ul>
 
   <!-- Tab panes -->
@@ -68,6 +68,30 @@
 
     <div role="tabpanel" class="tab-pane" id="comments">
       COMMENTS
+
+      <div id="disqus_thread"></div>
+      <script>
+        /**
+        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+        */
+
+        var disqus_config = function () {
+        this.page.url = "http://spreadhere.com";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "SPREAD_HERE"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+
+        (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+
+        s.src = '//ggomagundan.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
     </div>
   </div>
 
