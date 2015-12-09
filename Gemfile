@@ -39,6 +39,7 @@ gem 'spring',        group: :development
  gem 'nifty-generators'
  gem 'hirb'
  gem 'mini_magick'
+ gem 'mongoid', '~> 5.0.0'
  gem 'carrierwave'
  gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
  gem 'carrierwave-ftp', :require => 'carrierwave/storage/sftp' # SFTP only
