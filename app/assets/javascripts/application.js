@@ -15,4 +15,3 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require wookmark
-//= require social-share-button
