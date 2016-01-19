@@ -58,3 +58,8 @@ gem "mocha"
 gem "sorcery"
 
 gem 'font-awesome-sass'
+
+gem 'squire-rails' #For Wysiwyg
+
+gem 'brakeman' # For check Secitury
+

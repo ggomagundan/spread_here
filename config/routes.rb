@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :markets
   root 'flea_markets#index'
   resources :flea_markets
   # The priority is based upon order of creation: first created -> highest priority.

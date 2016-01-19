@@ -1,42 +1,4 @@
-list_refresh = ->
-  $(".flea_market").wookmark
-    autoResize: true
-    container: $("#fleamarket_list")
-    offset: 5
-    outerOffset: 10
-    itemWidth: "45%"
-
-list_refresh_smaller = ->
-  $(".flea_market").wookmark
-    autoResize: true
-    container: $("#fleamarket_list")
-    offset: 5
-    outerOffset: 10
-    itemWidth: "75%"
-
-
-
 ready = ->
-
-  $("#fleamarket_list .flea_market").wookmark
-    autoResize: true
-    container: $("body")
-    offset: 5
-    outerOffset: 10
-    itemWidth: "45%"
-
-  $("body .flea_market img").load ->
-    list_refresh()
-
-
-  $(window).resize ->
-    if $(window).width() > 800
-      list_refresh()
-    else
-      list_refresh_smaller()
-
-
-
 
   $("a[href='#location']").on 'shown.bs.tab', ->
     if $("#google_map") != undefined && $("#google_map").length > 0
@@ -72,5 +34,3 @@ ready = ->
 $(document).ready(ready)
 $(document).on('page:load', ready)
 
-
-window.list_refresh = list_refresh
