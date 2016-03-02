@@ -39,8 +39,17 @@ set :deploy_via, :remote_cache
 set :default_env, { path: "/home/deployer/.rbenv/versions/2.2.3/lib/ruby/gems:/home/deployer/.rbenv/versions/2.2.3/bin:$PATH" }
 
 
-
 namespace :deploy do
+
+  desc 'Restart application'
+  task :restart do
+    on roles(:app), in: :sequence, wait: 5 do
+      # Your restart mechanism here, for example:
+      # execute :touch, release_path.join('tmp/restart.txt')
+    end
+  end
+
+  after :publishing, :restart
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
@@ -50,5 +59,37 @@ namespace :deploy do
       # end
     end
   end
+
+ before 'deploy:assets:precompile', :link_assets
+ task :link_assets do
+    on roles(:app), :roles => :app, :except => { :no_release => true } do
+#      execute("ln -fs #{shared_path}/mongoid.yml #{release_path}/config/mongoid.yml")
+#      execute("ln -fs #{shared_path}/uploads #{release_path}/public/uploads")
+
+    end
+  end
+
+  task :restart_unicorn do
+    on roles(:app), in: :sequence, wait: 8 do
+
+      execute("cp #{shared_path}/unicorn.rb  #{fetch :current_deploy_path}/config/unicorn.rb")
+      execute("cd #{fetch :current_deploy_path}")
+      execute("service unlimited force-restart")
+
+    end
+  end
+
+ after :restart, :clear_cache do
+    on roles(:web), in: :groups, limit: 3, wait: 10 do
+      # Here we can do anything such as:
+      # within release_path do
+      #   execute :rake, 'cache:clear'
+      # end
+    end
+  end
+
+
+  after 'deploy:publishing', :restart_unicorn
+  #after 'deploy:finishing', 'whenever:start'
 
 end

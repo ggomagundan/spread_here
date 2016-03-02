@@ -79,5 +79,15 @@ Rails.application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   # Do not dump schema after migrations.
-  config.active_record.dump_schema_after_migration = false
+ #  config.active_record.dump_schema_after_migration = false
+  #
+  #  
+ #  config.log_formatter = ::Logger::Formatter.new
+ #  config.middleware.use ExceptionNotification::Rack,
+ #    :email => {
+ #      :email_prefix => "[UnlimitedImage ExceptionNotifier] ",
+ #      :sender_address => %{"notifier" <notifier@unlimited_image.com>},
+ #      :exception_recipients => %w{ggogun@gmail.com}
+ #    }
+
 end
