@@ -3,6 +3,15 @@
   <head>
     <title>Fleamarket</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <meta property="og:url"                content="<%= request.original_url %>" />
+    <meta property="og:type"               content="article" />
+    <meta property="og:title"              content="Spread Here" />
+    <meta property="og:description"        content="How much does culture influence creative thinking?" />
+    <meta property="og:image"              content="http://talkimg.imbc.com/TVianUpload//tvian/image/2015/10/10/IhjX4gdqTjQq635800827987838901.jpg" />
+
+
     <%= stylesheet_link_tag "application", controller_name %>
     <%= javascript_include_tag "application", controller_name, 'data-turbolinks-track' => true %>
     <% if Rails.env == "development" %>
@@ -29,5 +38,23 @@
 
     <%= render "layouts/footer" %>
 
+
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '1705707066372193',
+          xfbml      : true,
+          version    : 'v2.5'
+        });
+      };
+
+      (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
   </body>
 </html>
