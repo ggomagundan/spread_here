@@ -7,8 +7,9 @@ gem 'rails', '4.1.0'
 # gem 'sqlite3'
 # Use SCSS for stylesheets
 
-gem 'bootstrap-sass', '~> 3.3.5'
-gem 'sass-rails', '~> 4.0.3'
+#gem 'bootstrap', '~> 4.0.0.alpha3'
+
+gem 'sass-rails',  '~> 5.0'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -29,7 +30,6 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
- gem 'sprockets-rails'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -58,9 +58,13 @@ gem "mocha"
 
 gem "sorcery"
 
-gem 'font-awesome-sass'
+#gem 'font-awesome-sass'
 
 gem 'squire-rails' #For Wysiwyg
 
 gem 'brakeman' # For check Secitury
+
+gem 'capistrano', group: :development
+gem 'capistrano-rails', '~> 1.1.0', group: :development
+gem 'capistrano-bundler', '~> 1.1.2', group: :development
 
