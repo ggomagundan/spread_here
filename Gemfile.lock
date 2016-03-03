@@ -261,6 +261,7 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   sorcery
   spring
+  sprockets-rails
   squire-rails
   turbolinks
   uglifier (>= 1.3.0)
