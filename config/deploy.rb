@@ -74,7 +74,7 @@ namespace :deploy do
 
       execute("cp #{shared_path}/unicorn.rb  #{fetch :current_deploy_path}/config/unicorn.rb")
       execute("cd #{fetch :current_deploy_path}")
-      execute("service unlimited force-restart")
+      execute("service spread_here force-restart")
 
     end
   end

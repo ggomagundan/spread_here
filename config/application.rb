@@ -24,7 +24,8 @@ module Fleamarket
     # config.i18n.default_locale = :de
     config.assets.enabled = true
     config.assets.precompile << /(^[^_\/]|\/[^_])[^\/]*$/
-    config.assets.precompile += ["*css*","*js*", "*scss*", "*coffee*"]
+    config.assets.precompile += ["*css*","*js*", "*scss", "*coffee"]
+
 
     config.autoload_paths += %W(#{config.root}/lib)
 

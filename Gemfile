@@ -7,10 +7,13 @@ gem 'rails', '4.1.0'
 # gem 'sqlite3'
 # Use SCSS for stylesheets
 
+#gem 'sprockets-rails', '~> 2.1.4'
+
 #gem 'bootstrap', '~> 4.0.0.alpha3'
+#gem 'bootstrap', '~> 4.0.0.alpha3'
+#gem 'font-awesome-sass', '~> 4.5.0'
 
 gem 'sass-rails',  '~> 5.0'
-
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
