@@ -1,12 +1,12 @@
 <div id="daum_map"></div>
-
+ 
 
 <script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=<%= DEV_DAUM_KEY %>" ></script>
 <script>
   var container = document.getElementById('daum_map');
   var options = {
     center: new daum.maps.LatLng(<%= @flea_market.latitude %>,<%= @flea_market.longitude %>),
-    level: 3
+    level: 4
   };
 
   var daum_map = new daum.maps.Map(container, options);
@@ -20,6 +20,7 @@
 
   // 마커가 지도 위에 표시되도록 설정합니다
   marker.setMap(daum_map);
+
 
 </script>
 

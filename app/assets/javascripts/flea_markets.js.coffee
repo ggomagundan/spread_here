@@ -43,6 +43,7 @@ ready = ->
       google.maps.event.trigger(google_map, 'resize')
     if $("#daum_map") != undefined && $("#daum_map").length > 0
       daum_map.relayout()
+      daum_map.setCenter(markerPosition)
 
   $(window).resize ->
     if $(".map-tab").hasClass "active"

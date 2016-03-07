@@ -1,4 +1,5 @@
 
+<div class="main-img">
     <%= image_tag "http://talkimg.imbc.com/TVianUpload//tvian/image/2015/10/10/IhjX4gdqTjQq635800827987838901.jpg", alt: "Test" if @flea_market.top_image.blank? %> 
     <%= image_tag @flea_market.top_image.image_url, alt: "Test" if @flea_market.top_image.present? %>
   </div>
@@ -9,16 +10,6 @@
     /
     <div class="market_memo"><%= @flea_market.memo %></div>
   </div>
-
-  <div class="market_sharing">
-    <div
-      class="fb-like"
-      data-share="true"
-      data-width="450"
-      data-show-faces="true">
-    </div>
-  </div>
-
   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <!-- spreadHere Main -->
   <ins class="adsbygoogle"
@@ -29,6 +20,17 @@
        <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
        </script> 
+
+
+  <div class="market_sharing">
+    <div
+      class="fb-like"
+      data-share="true"
+      data-width="450"
+      data-show-faces="true">
+    </div>
+  </div>
+
 
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
@@ -77,7 +79,7 @@
         <% end %>
             </div>
             <div class="location-info col-sm-11">
-              <div class="market_location"><%= @flea_market.location %></div>
+              <div class="market_location"><%= @flea_market.location %> <%= @flea_market.latitude %>, <%= @flea_market.longitude %></div>
             </div>
           </div>
 

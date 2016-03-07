@@ -1,6 +1,8 @@
 #google_map, #daum_map{
-  width: 500px;
-  height: 300px;
+  width: 90%;
+  height: auto;
+  min-height: 400px;
+  margin:  0 auto;
 }
 
 .container.content-wrap {
@@ -300,4 +302,8 @@
 .twitter:hover,
 .googleplus:hover {
   color: #eee;
+}
+
+.market_sharing{
+  margin: 5px 0;
 }
