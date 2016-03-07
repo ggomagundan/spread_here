@@ -1,5 +1,5 @@
 class User
-  authenticates_with_sorcery!
+#  authenticates_with_sorcery!
 
   include Mongoid::Document
   include Mongoid::Timestamps
@@ -10,6 +10,7 @@ class User
   field :salt, type: String, default: nil
   field :user_type, type: Integer
 
+=begin
   # UserActivity
   field :last_login_at, type: DateTime, defualt: nil
   field :last_logout_at, type: DateTime, defualt: nil
@@ -41,5 +42,6 @@ class User
       .where(config.last_activity_at_attribute_name.gt => config.activity_timeout.seconds.ago.utc).order_by([:_id,:asc])
 
   end
+=end
 
 end
