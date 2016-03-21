@@ -64,7 +64,8 @@ namespace :deploy do
  task :link_assets do
     on roles(:app), :roles => :app, :except => { :no_release => true } do
 #      execute("ln -fs #{shared_path}/mongoid.yml #{release_path}/config/mongoid.yml")
-#      execute("ln -fs #{shared_path}/uploads #{release_path}/public/uploads")
+      execute("ln -fs #{shared_path}/uploads #{release_path}/public/uploads")
+      execute("ln -fs #{shared_path}/database.yml #{release_path}/config/database.yml")
 
     end
   end
