@@ -1,7 +1,7 @@
 <% if @flea_markets.length > 0 %> 
   <span> <% FleaMarket.searchable.count %></span>
 <% else %>
-  <span> <%= No Data On Today %></span>
+  <span> <%= "No Data On Today" %></span>
 <% end %>
 <div id="fleamarket_list">
   <%= render @flea_markets %>

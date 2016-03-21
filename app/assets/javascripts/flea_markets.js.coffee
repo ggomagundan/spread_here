@@ -37,7 +37,6 @@ ready = ->
 
 
 
-
   $("a[href='#location']").on 'shown.bs.tab', ->
     if $("#google_map") != undefined && $("#google_map").length > 0
       google.maps.event.trigger(google_map, 'resize')

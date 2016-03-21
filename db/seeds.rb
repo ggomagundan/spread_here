@@ -5,3 +5,16 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+  flea_market = FleaMarket.create(market_name: "MarketName",\
+                                  start_date: Time.parse("2015-01-01 00:01:02"), end_date: Time.parse("2020-12-30 23:38:23"),\
+                                  location: "Test Location", memo: "Test Memo", latitude: 37.565600, longitude: 126.977983 )
+
+  img = flea_market.fleamarket_images.new
+  img.remote_image_url = "http://img.yaplog.jp/img/17/pc/y/a/m/yamu98/26/26332.jpg"
+  img.save
+
+  tags = flea_market.fleamarket_tags.create(tag_name: "fleamarket")
+  tags = flea_market.fleamarket_tags.create(tag_name: "sharing")
+
+
+

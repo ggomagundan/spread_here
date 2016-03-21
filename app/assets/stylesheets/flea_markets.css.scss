@@ -202,7 +202,7 @@
 	padding-left: 1.6rem;
 	padding-bottom: 1.6rem;
 }
-	 
+
 .flea_market__author {}
 
 	.flea_market__author img,
@@ -218,6 +218,16 @@
     height: 40px;;
 	}
 
+
+.flea_market__tag{
+
+  margin-top: 20px;
+   div.label{
+     display:inline-block;
+     margin: 0 5px 3px 0;
+   }
+
+}
 .flea_market__share {
 	float: right;
 	position: relative;

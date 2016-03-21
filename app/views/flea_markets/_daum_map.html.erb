@@ -1,8 +1,8 @@
 <div id="daum_map"></div>
  
-
 <script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=<%= DEV_DAUM_KEY %>" ></script>
 <script>
+
   var container = document.getElementById('daum_map');
   var options = {
     center: new daum.maps.LatLng(<%= @flea_market.latitude %>,<%= @flea_market.longitude %>),

@@ -1,6 +1,7 @@
 class User
 #  authenticates_with_sorcery!
 
+=begin
   include Mongoid::Document
   include Mongoid::Timestamps
 
@@ -9,6 +10,7 @@ class User
   field :crypted_password, type: String, default: nil
   field :salt, type: String, default: nil
   field :user_type, type: Integer
+=end
 
 =begin
   # UserActivity

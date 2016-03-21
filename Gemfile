@@ -43,15 +43,16 @@ gem 'spring',        group: :development
  gem 'nifty-generators'
  gem 'hirb'
  gem 'mini_magick'
- gem 'mongoid', '~> 5.0.0'
+# gem 'mongoid', '~> 5.0.0'
+ gem 'mysql2', '~> 0.3.18'
  gem 'carrierwave'
- gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
+# gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
  gem 'carrierwave-ftp', :require => 'carrierwave/storage/sftp' # SFTP only
- gem 'mongoid-grid_fs', github: 'ahoward/mongoid-grid_fs'
+#  gem 'mongoid-grid_fs', github: 'ahoward/mongoid-grid_fs'
 
 
  gem 'whenever'
- gem 'bson_ext'
+# gem 'bson_ext'
  gem 'koala'
  gem 'nokogiri'
  gem 'pry'

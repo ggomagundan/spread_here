@@ -48,6 +48,11 @@
         By <a href="#">Someone</a>
       </div>
     </div>
+    <div class="flea_market__tag">
+      <% flea_market.fleamarket_tags.first(3).each do |tag| %>
+        <div class="label label-primary"><%= tag.tag_name %> </div>
+      <% end %>
+    </div>
   </div>
 
 </div>
