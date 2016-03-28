@@ -1,0 +1,12 @@
+<% title "Admin/Flea Market" %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @flea_market.name %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_admin_flea_market_path(@flea_market) %> |
+  <%= link_to "Destroy", [:admin, @flea_market], :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", admin_flea_markets_path %>
+</p>
