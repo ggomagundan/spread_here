@@ -1,7 +1,9 @@
+=begin
 # The first thing you need to configure is which modules you need in your app.
 # The default is nothing which will include only core features (password encryption, login/logout).
 # Available submodules are: :user_activation, :http_basic_auth, :remember_me,
 # :reset_password, :session_timeout, :brute_force_protection, :activity_logging, :external
+#
 Rails.application.config.sorcery.submodules = [:activity_logging, :brute_force_protection, :external]
 
 # Here you can configure each submodule's features.
@@ -461,3 +463,4 @@ Rails.application.config.sorcery.configure do |config|
   # Define which model authenticates with sorcery.
   config.user_class = "User"
 end
+=end

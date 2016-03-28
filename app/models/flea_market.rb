@@ -8,7 +8,10 @@ class FleaMarket < ActiveRecord::Base
   has_many :fleamarket_images#, inverse_of: :flea_market
   has_many :fleamarket_tags
 
-=begin 
+  accepts_nested_attributes_for :fleamarket_images,
+    allow_destroy: true
+
+=begin
   field :is_visible, type: Integer, default: 1
   field :market_name, type: String
   field :start_date, type: DateTime

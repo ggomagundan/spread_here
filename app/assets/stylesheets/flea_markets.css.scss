@@ -103,7 +103,10 @@
 
 .main-img{
 
-  img {
+
+  height: 300px;
+  overflow: hidden;
+  .fleamarket-top-img{
     width:100%;
   }
 

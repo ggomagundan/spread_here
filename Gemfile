@@ -60,11 +60,13 @@ gem 'spring',        group: :development
 
 gem "mocha"
 
-gem "sorcery"
+gem "devise"
 
 #gem 'font-awesome-sass'
 
 gem 'squire-rails' #For Wysiwyg
+
+gem 'nested_form'
 
 gem 'brakeman' # For check Secitury
 
