@@ -2,10 +2,10 @@
 
   <%= link_to flea_market_path(flea_market) do %>
     <div class="img flea_market__image border-tlr-radius">
-      <%= image_tag flea_market.top_image.image_url, alt: "test", class: "border-tlr-radius" if flea_market.top_image.present? %>
+      <%= image_tag flea_market.list_image_url, alt: "test", class: "border-tlr-radius" if flea_market.list_image.present? %>
       <% i = rand(100) % 2 %>
-      <%= image_tag "http://img.tenasia.hankyung.com/webwp_kr/wp-content/uploads/2014/05/2014051515474617545.jpg", alt: "test", class: "border-tlr-radius" if i == 0 && flea_market.top_image.blank? %>
-      <%= image_tag "http://img.yaplog.jp/img/17/pc/y/a/m/yamu98/26/26332.jpg", alt: "Test", class: "border-tlr-radius" if  i == 1 && flea_market.top_image.blank? %> 
+      <%= image_tag "http://img.tenasia.hankyung.com/webwp_kr/wp-content/uploads/2014/05/2014051515474617545.jpg", alt: "test", class: "border-tlr-radius" if i == 0 && flea_market.list_image.blank? %>
+      <%= image_tag "http://img.yaplog.jp/img/17/pc/y/a/m/yamu98/26/26332.jpg", alt: "Test", class: "border-tlr-radius" if  i == 1 && flea_market.list_image.blank? %> 
     </div>
   <% end %>
 

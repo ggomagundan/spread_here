@@ -8,7 +8,7 @@
   <% for flea_market in @flea_markets %>
     <tr>
       <td><%= flea_market.market_name %></td>
-      <td><%= image_tag flea_market.top_image.image_url, size: '200x200' if flea_market.top_image.present?%></td>
+      <td><%= image_tag flea_market.top_image_url, size: '200x200' if flea_market.top_image.present?%></td>
       <td><%= link_to "Edit", edit_admin_flea_market_path(flea_market) %></td>
       <td><%= link_to "Destroy", [:admin, flea_market], :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>

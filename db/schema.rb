@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160324083652) do
+ActiveRecord::Schema.define(version: 20160404083624) do
 
   create_table "flea_markets", force: true do |t|
     t.integer  "is_visible",              default: 0
@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 20160324083652) do
     t.float    "longitude"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "list_image"
+    t.string   "top_image"
   end
 
   create_table "fleamarket_images", force: true do |t|

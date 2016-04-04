@@ -8,6 +8,10 @@ class FleaMarket < ActiveRecord::Base
   has_many :fleamarket_images#, inverse_of: :flea_market
   has_many :fleamarket_tags
 
+
+  mount_uploader :list_image, MarketUploader
+  mount_uploader :top_image, MarketUploader
+
   accepts_nested_attributes_for :fleamarket_images,
     allow_destroy: true
 
@@ -38,9 +42,20 @@ class FleaMarket < ActiveRecord::Base
     self.latitude > 0 && self.longitude > 0 && self.latitude.present? &&  self.longitude.present?
   end
 
+=begin
   def top_image
     self.fleamarket_images.where(is_visible: 1, image_type: 0).first
+
+
+    FleaMarket.all.each do |fm|
+    fm.top_image = fm.fleamarket_images.where(is_visible: 1, image_type: 0).first.image
+    fm.list_image = fm.fleamarket_images.where(is_visible: 1, image_type: 0).first.image
+    fm.save
+
+end
+
   end
+=end
 
   def content_images
     self.fleamarket_images.where(is_visible: 1, image_type: 1).order("sort asc")
