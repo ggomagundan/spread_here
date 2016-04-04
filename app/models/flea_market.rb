@@ -11,6 +11,11 @@ class FleaMarket < ActiveRecord::Base
   accepts_nested_attributes_for :fleamarket_images,
     allow_destroy: true
 
+  after_create do |fm|
+    fm.fleamarket_tags.new(tag_name: "플리마켓")
+    fm.fleamarket_tags.new(tag_name: "spreadhere")
+  end
+
 =begin
   field :is_visible, type: Integer, default: 1
   field :market_name, type: String
