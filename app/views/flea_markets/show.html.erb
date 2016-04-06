@@ -6,7 +6,9 @@
 <div class="market_name"> <%= @flea_market.market_name %> </div>
 <div class="market_desc">
   <div class="market_location"> <%= @flea_market.location %> </div>
+  <% if @flea_market.memo.present? && @flea_market.lcation.present? %>
   /
+  <% end %>
   <div class="market_memo"><%= @flea_market.memo %></div>
 </div>
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -42,6 +44,12 @@
 <!-- Tab panes -->
 <div class="tab-content">
   <div role="tabpanel" class="tab-pane active" id="flea-info">
+    <div class="flea_market_tag">
+      <% @flea_market.fleamarket_tags.each do |tag| %>
+        <div class="label label-primary"><%= tag.tag_name %> </div>
+      <% end %>
+    </div>
+
     <div class="flea-info-detail">
       <div class="market_name"> <%= @flea_market.market_name %> </div>
       <div class="market_daterange"> <%= @flea_market.start_date.strftime("%F %H:%M") %> ~ <%= @flea_market.end_date.strftime("%F %H:%M ") %> </div>
@@ -51,7 +59,7 @@
       <% if @flea_market.content_images.present? %>
         <% @flea_market.content_images.each do |img| %>
           <div class="img">
-            <%= image_tag img.image_url, alt: "Test", class: "img" %> 
+            <%= image_tag img.image_url, alt: "Test", class: "img" if img.image.present? %>
           </div>
         <% end %>
       <% else %>

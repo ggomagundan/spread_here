@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fleamarket Login Page</title>
+
+    <%= favicon_link_tag "compass.ico" %>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,   initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+    <meta property="og:url"                content="<%= request.original_url %>" />
+    <meta property="og:type"               content="article" />
+    <meta property="og:title"              content="Spread Here" />
+    <meta property="og:description"        content="SPREAD HERE is FleaMarket curation Service" />
+    <meta property="og:image"              content="http://talkimg.imbc.com/TVianUpload//tvian/image/2015/10/10/IhjX4gdqTjQq635800827987838901.jpg" />
+
+
+    <%= stylesheet_link_tag "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+
+
+    <div class="container content-wrap">
+      <%= yield %>
+    </div>
+
+
+
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '1705707066372193',
+          xfbml      : true,
+          version    : 'v2.5'
+        });
+      };
+
+      (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+  </body>
+</html>

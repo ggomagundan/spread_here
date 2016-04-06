@@ -48,6 +48,9 @@
 
 #flea-info{
   text-align: center;
+  .flea_market_tag{
+    text-align:left;
+  }
   .flea-info-detail{
 
     text-align: left;
@@ -320,3 +323,16 @@
 .market_sharing{
   margin: 5px 0;
 }
+
+
+.flea_market_tag{
+
+  margin-top: 10px;
+   div.label{
+     display:inline-block;
+     margin: 0 5px 3px 0;
+   }
+
+}
+
+
