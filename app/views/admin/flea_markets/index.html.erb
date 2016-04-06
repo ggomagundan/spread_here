@@ -1,0 +1,17 @@
+<% title "Admin/Flea Markets" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+  <% for flea_market in @flea_markets %>
+    <tr>
+      <td><%= flea_market.name %></td>
+      <td><%= link_to "Show", [:admin, flea_market] %></td>
+      <td><%= link_to "Edit", edit_admin_flea_market_path(flea_market) %></td>
+      <td><%= link_to "Destroy", [:admin, flea_market], :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Admin/Flea Market", new_admin_flea_market_path %></p>
