@@ -24,7 +24,7 @@ class FleaMarket < ActiveRecord::Base
   #UserInfo
 
   #scope :searchable, -> { where(is_visible: 1).and(:end_date.gte => Time.now, :start_date.lte => Time.now) }
-  scope :searchable, -> { where(is_visible: 1).where("flea_markets.end_date >= ? and flea_markets.start_date <= ?", Time.now, Time.now)}
+  scope :searchable, -> { where(is_visible: 1).where("flea_markets.end_date >= ?", Time.now)}
 
   def have_location?
     self.latitude > 0 && self.longitude > 0 && self.latitude.present? &&  self.longitude.present?

@@ -74,7 +74,7 @@ user: 'deployer',
 roles: %w{app db web},
 ssh_options: {
   user: 'deployer',
-  keys: %w(~/.ssh/id_rsa ~/Copy/amazon/ggogungmail.pem),
-  #keys: %w(/media/kai/Data/copy_file/amazon/ggogungmail.pem),
+  #keys: %w(~/.ssh/id_rsa ~/Copy/amazon/ggogungmail.pem),
+  keys: %w(/media/kai/Data/copy_file/amazon/ggogungmail.pem),
   auth_methods: %w(publickey)
 }

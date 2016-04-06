@@ -60,7 +60,7 @@ gem 'spring',        group: :development
 
 gem "mocha"
 
-gem "sorcery"
+gem "devise"
 
 #gem 'font-awesome-sass'
 

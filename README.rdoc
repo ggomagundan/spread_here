@@ -5,15 +5,15 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version : 2.3
 
-* System dependencies
+* System dependencies : MariaDB, Nginx, Unicorn(Need to Change PUMA)
 
-* Configuration
+* Configuration 
 
-* Database creation
+* Database creation : rake db:migrate
 
-* Database initialization
+* Database initialization : rake db:seed
 
 * How to run the test suite
 

@@ -1,8 +1,17 @@
 Rails.application.routes.draw do
 
-  resources :markets
+  devise_for :users
   root 'flea_markets#index'
+
+  resources :markets
   resources :flea_markets
+
+  namespace(:admin){
+
+    root "flea_markets#index"
+    resources :flea_markets
+  }
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

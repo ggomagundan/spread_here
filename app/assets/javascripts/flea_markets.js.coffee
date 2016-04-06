@@ -18,22 +18,22 @@ list_refresh_smaller = ->
 
 ready = ->
 
-  $("#fleamarket_list .flea_market").wookmark
-    autoResize: true
-    container: $("body")
-    offset: 5
-    outerOffset: 10
-    itemWidth: "45%"
-
-  $("body .flea_market img").load ->
-    list_refresh()
-
-
-  $(window).resize ->
-    if $(window).width() > 800
-      list_refresh()
-    else
-      list_refresh_smaller()
+#  $("#fleamarket_list .flea_market").wookmark
+#    autoResize: true
+#    container: $("body")
+#    offset: 5
+#    outerOffset: 10
+#    itemWidth: "45%"
+#
+#  $("body .flea_market img").load ->
+#    list_refresh()
+#
+#
+#  $(window).resize ->
+#    if $(window).width() > 800
+#      list_refresh()
+#    else
+#      list_refresh_smaller()
 
 
 
