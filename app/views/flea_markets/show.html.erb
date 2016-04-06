@@ -1,7 +1,7 @@
 <div class="main-img">
     <%= image_tag "http://talkimg.imbc.com/TVianUpload//tvian/image/2015/10/10/IhjX4gdqTjQq635800827987838901.jpg", alt: "Test" if @flea_market.top_image.blank? %> 
-    <%= image_tag @flea_market.top_image.image_url, alt: "Test" if @flea_market.top_image.present? %>
-</div>
+    <%= image_tag @flea_market.top_image_url, alt: "Test", class: "fleamarket-top-img"  if @flea_market.top_image.present? %>
+  </div>
 
 <div class="market_name"> <%= @flea_market.market_name %> </div>
 <div class="market_desc">

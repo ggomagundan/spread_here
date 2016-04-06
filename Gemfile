@@ -66,6 +66,8 @@ gem "devise"
 
 gem 'squire-rails' #For Wysiwyg
 
+gem 'nested_form'
+
 gem 'brakeman' # For check Secitury
 
 gem 'capistrano', group: :development

@@ -1,15 +1,17 @@
 Rails.application.routes.draw do
 
-  devise_for :users
   root 'flea_markets#index'
 
   resources :markets
   resources :flea_markets
 
+  devise_for :users, path: :admin
+
   namespace(:admin){
 
     root "flea_markets#index"
     resources :flea_markets
+    resources :users
   }
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,6 +1,6 @@
-class Admin::FleaMarketsController < ApplicationController
+class Admin::FleaMarketsController < Admin::ApplicationController
   def index
-    @flea_markets = FleaMarket.all
+    @flea_markets = FleaMarket.page(params[:page]).per(20)
   end
 
   def show
