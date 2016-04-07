@@ -1,10 +1,38 @@
-<%= form_for [:admin, @flea_market] do |f| %>
+<%= form_for [:admin, @flea_market], :html => { :class => "form-horizontal" } do |f| %>
 
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :market_name %>
-  </p>
+  <div class="form-group">
+    <label class="control-label col-sm-2"><%= t("admin.common.is_visible") %></label>
+    <div class="controls col-sm-6">
+      <label class="radio">
+        <%= f.radio_button :is_visible, 0 %>
+        <%= f.label :is_visible, t("admin.common.invisible"), value: 0 %>
+      </label>
+      <label class="radio">
+        <%= f.radio_button :is_visible, 1 %>
+        <%= f.label :is_visible, t("admin.common.visible"), value: 1 %>
+      </label>
+    </div>
+  </div>
 
-  <p><%= f.submit %></p>
+
+  <div class="form-group">
+    <label class="control-label col-sm-2">이벤트명</label>
+    <div class="controls col-sm-6">
+      <%= f.text_field :market_name, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-sm-2">이벤트명</label>
+    <div class="controls col-sm-6">
+      <%= f.text_field :start_date, :class => "calendar col-sm-4 form-control"  %>
+      <%= f.text_field :end_date, :class => "calendar col-sm-4 form-control" %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit (@flea_market.new_record?? t("admin.buttons.create") : t("admin.buttons.modify") ), :class => "btn btn-success" %>
+  </div>
+
 
 <% end %>

@@ -14,6 +14,9 @@
 
     <%= stylesheet_link_tag "admin/application", "admin/#{controller_name}" %>
     <%= javascript_include_tag "admin/application", "admin/#{controller_name}", 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag "admin/moment.min", 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag "admin/bootstrap-datetimepicker", 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag "admin/bootstrap-datetimepicker.min" %>
 
     <%= csrf_meta_tags %>
   </head>
