@@ -1,8 +1,10 @@
 <%= form_for [:admin, @flea_market] do |f| %>
-  <%= f.error_messages %>
+
   <p>
     <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.text_field :market_name %>
   </p>
+
   <p><%= f.submit %></p>
+
 <% end %>
