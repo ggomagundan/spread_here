@@ -17,6 +17,8 @@
 /test
 /public/uploads
 
+.DS_Store
+*.DS_Store
 */.DS_Store
 /config/deploy/production.rb
 /config/database.yml
