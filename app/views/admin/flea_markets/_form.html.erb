@@ -23,12 +23,43 @@
   </div>
 
   <div class="form-group">
-    <label class="control-label col-sm-2">이벤트명</label>
+    <label class="control-label col-sm-2">DateRange</label>
     <div class="controls col-sm-6">
-      <%= f.text_field :start_date, :class => "calendar col-sm-4 form-control"  %>
+      <%= f.text_field :start_date, :class => "calendar col-sm-4 form-control", data: {:"date-format" => "YYYY-MM-DD HH:mm:59"} %>
+
       <%= f.text_field :end_date, :class => "calendar col-sm-4 form-control" %>
     </div>
   </div>
+
+  <div class="form-group">
+    <label class="control-label col-sm-2">Location</label>
+    <div class="controls col-sm-6">
+      <%= f.text_field :location, class: "form-control" %>
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <label class="control-label col-sm-2">Memo</label>
+    <div class="controls col-sm-6">
+      <%= f.text_field :memo, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-sm-2">ListImage</label>
+    <div class="controls col-sm-6">
+      <%= f.file_field :list_image, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-sm-2">TopImage</label>
+    <div class="controls col-sm-6">
+      <%= f.file_field :top_image, class: "form-control" %>
+    </div>
+  </div>
+
 
   <div class="form-actions">
     <%= f.submit (@flea_market.new_record?? t("admin.buttons.create") : t("admin.buttons.modify") ), :class => "btn btn-success" %>

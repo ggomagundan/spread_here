@@ -12,9 +12,9 @@ class Admin::FleaMarketsController < Admin::ApplicationController
   end
 
   def create
-    @flea_market = FleaMarket.new(params[:flea_market])
+    @flea_market = FleaMarket.new(market_params)
     if @flea_market.save
-      redirect_to [:admin, @flea_market], :notice => "Successfully created flea market."
+      redirect_to admin_flea_markets_path, :notice => "Successfully created flea market."
     else
       render :action => 'new'
     end
@@ -26,8 +26,8 @@ class Admin::FleaMarketsController < Admin::ApplicationController
 
   def update
     @flea_market = FleaMarket.find(params[:id])
-    if @flea_market.update_attributes(params[:flea_market])
-      redirect_to [:admin, @flea_market], :notice  => "Successfully updated flea market."
+    if @flea_market.update_attributes(market_params)
+      redirect_to admin_flea_markets_path, :notice  => "Successfully updated flea market."
     else
       render :action => 'edit'
     end
@@ -38,4 +38,10 @@ class Admin::FleaMarketsController < Admin::ApplicationController
     @flea_market.destroy
     redirect_to admin_flea_markets_url, :notice => "Successfully destroyed flea market."
   end
+
+  private
+  def market_params
+    params.require(:flea_market).permit(:is_visible, :market_name, :location, :memo, :list_image, :top_image, :start_date, :end_date)
+  end
+
 end
