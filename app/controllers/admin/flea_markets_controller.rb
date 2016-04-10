@@ -41,7 +41,8 @@ class Admin::FleaMarketsController < Admin::ApplicationController
 
   private
   def market_params
-    params.require(:flea_market).permit(:is_visible, :market_name, :location, :memo, :list_image, :top_image, :start_date, :end_date)
+    params.require(:flea_market).permit(:is_visible, :market_name, :location, :memo, :list_image, :top_image, :start_date, :end_date,\
+                                       :fleamarket_images_attributes => [:id, :image, :is_destroy])
   end
 
 end

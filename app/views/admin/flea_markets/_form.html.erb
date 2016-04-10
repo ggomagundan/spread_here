@@ -1,4 +1,4 @@
-<%= form_for [:admin, @flea_market], :html => { :class => "form-horizontal" } do |f| %>
+<%= nested_form_for [:admin, @flea_market], :html => { :class => "form-horizontal" } do |f| %>
 
   <div class="form-group">
     <label class="control-label col-sm-2"><%= t("admin.common.is_visible") %></label>
@@ -59,6 +59,24 @@
       <%= f.file_field :top_image, class: "form-control" %>
     </div>
   </div>
+
+
+  <%= f.fields_for :fleamarket_images do |flea_img_form| %>
+    <div class="well">
+      <div class="form-group">
+        <label class="control-label col-sm-2">이미지</label>
+          <div class="controls col-sm-6">
+          <label><%= flea_img_form.file_field :image %></label>
+          <%= image_tag flea_img_form.object.image.url if flea_img_form.object.image.present? %>
+        </div>
+      </div>
+      <%= flea_img_form.hidden_field :sort%>
+      <%= flea_img_form.link_to_remove "삭제", :confirm => "정말 삭제 하시겠습니까?", :class => "btn btn-danger" %>
+    </div>
+  <% end %>
+
+  <p><%= f.link_to_add "정보 추가", :fleamarket_images %></p>
+
 
 
   <div class="form-actions">

@@ -58,7 +58,7 @@ end
 =end
 
   def content_images
-    self.fleamarket_images.where(is_visible: 1, image_type: 1).order("sort asc")
+    self.fleamarket_images.where(is_visible: 1).order("sort asc")
   end
 
   def content_tags
