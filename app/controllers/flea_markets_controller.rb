@@ -1,6 +1,6 @@
 class FleaMarketsController < ApplicationController
   def index
-    @flea_markets = FleaMarket.searchable.page(params[:page]).per(5)
+    @flea_markets = FleaMarket.searchable.page(params[:page]).per(6)
   end
 
   def show

@@ -22,3 +22,4 @@
 */.DS_Store
 /config/deploy/production.rb
 /config/database.yml
+config/database.yml

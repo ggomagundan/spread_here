@@ -18,6 +18,12 @@ class FleaMarket < ActiveRecord::Base
   after_create do |fm|
     fm.fleamarket_tags.new(tag_name: "플리마켓")
     fm.fleamarket_tags.new(tag_name: "spreadhere")
+
+    if fm.content_images.present?
+      fm.top_image = fm.content_images.first.image if fm.top_image.blank?
+      fm.list_image = fm.content_images.first.image if fm.list_image.blank?
+      fm.save
+    end
   end
 
 =begin
@@ -39,7 +45,8 @@ class FleaMarket < ActiveRecord::Base
   scope :searchable, -> { where(is_visible: 1).where("flea_markets.end_date >= ?", Time.now)}
 
   def have_location?
-    self.latitude > 0 && self.longitude > 0 && self.latitude.present? &&  self.longitude.present?
+    self.latitude.present? &&  self.longitude.present? \
+    && self.latitude > 0 && self.longitude > 0
   end
 
 =begin
