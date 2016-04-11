@@ -36,7 +36,7 @@ set :repo_url, 'git@github.com:ggomagundan/spread_here.git'
 
 set :deploy_via, :remote_cache
 
-set :default_env, { path: "/home/deployer/.rbenv/versions/2.2.3/lib/ruby/gems:/home/deployer/.rbenv/versions/2.2.3/bin:$PATH" }
+set :default_env, { path: "/home/deployer/.rbenv/versions/2.3.0/lib/ruby/gems:/home/deployer/.rbenv/versions/2.3.0/bin:$PATH" }
 
 
 namespace :deploy do
