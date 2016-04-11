@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  before_create :confirm_skip
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -50,5 +52,9 @@ class User < ActiveRecord::Base
 
   end
 =end
+
+  def confirm_skip
+     self.skip_confirmation!
+  end
 
 end
