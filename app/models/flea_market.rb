@@ -8,6 +8,7 @@ class FleaMarket < ActiveRecord::Base
   has_many :fleamarket_images#, inverse_of: :flea_market
   has_many :fleamarket_tags
 
+  default_scope{ order("flea_markets.id desc") }
 
   mount_uploader :list_image, MarketUploader
   mount_uploader :top_image, MarketUploader
