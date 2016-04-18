@@ -42,14 +42,18 @@ class Api::FleaMarketsController < ApplicationController
 
   def get_latlon
 
+    url = "#{DAUM_FIND_LATLON_URL}&q=#{params[:addr]}"
+    uri = URI(url)
+    req = Net::HTTP.get(uri)
+
   end
 
   private
   def latlon_check
 
-    if params[:lat].blank? || parmas[:lon].blank?
+    if params[:addr].blank?
       @json_result.status = false
-      @json_result.message = "Not Present Lat,Lon parameter"
+      @json_result.message = "Not Present Addr parameter"
       render json: @json_result
     end
 
