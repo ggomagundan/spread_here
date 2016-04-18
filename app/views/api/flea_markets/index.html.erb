@@ -1,0 +1,17 @@
+<% title "Api/Flea Markets" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+  <% for flea_market in @flea_markets %>
+    <tr>
+      <td><%= flea_market.name %></td>
+      <td><%= link_to "Show", [:api, flea_market] %></td>
+      <td><%= link_to "Edit", edit_api_flea_market_path(flea_market) %></td>
+      <td><%= link_to "Destroy", [:api, flea_market], :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Api/Flea Market", new_api_flea_market_path %></p>

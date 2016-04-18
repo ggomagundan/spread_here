@@ -13,7 +13,7 @@ development:
   <<: *default
   database: spread_here
   username: root
-#  password: qwerty
+  password: qwerty
 
 
 # Warning: The database defined as "test" will be erased and
