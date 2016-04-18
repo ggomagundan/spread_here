@@ -5,7 +5,7 @@ class FleaMarketsController < ApplicationController
 
   def show
     @flea_market = FleaMarket.find(params[:id])
-    @flea_market.increament! :view_count
+    @flea_market.increment! :view_count
   end
 
   def new

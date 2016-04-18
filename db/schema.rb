@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160404083624) do
+ActiveRecord::Schema.define(version: 20160416083329) do
 
   create_table "flea_markets", force: :cascade do |t|
     t.integer  "is_visible",  limit: 4,   default: 0
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20160404083624) do
     t.datetime "updated_at"
     t.string   "list_image",  limit: 191
     t.string   "top_image",   limit: 191
+    t.integer  "view_count",  limit: 4,   default: 0
   end
 
   create_table "fleamarket_images", force: :cascade do |t|
