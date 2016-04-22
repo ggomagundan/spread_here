@@ -1,4 +1,4 @@
-class Api::FleaMarketsController < ApplicationController
+class Api::FleaMarketsController < Api::ApplicationController
 
   before_filter :latlon_check
 
@@ -43,8 +43,11 @@ class Api::FleaMarketsController < ApplicationController
   def get_latlon
 
     url = "#{DAUM_FIND_LATLON_URL}&q=#{params[:addr]}"
-    uri = URI(url)
-    req = Net::HTTP.get(uri)
+    uri = URI(URI::escape(url))
+    res = JSON.parse(Net::HTTP.get(uri))
+    res = res["channel"]["item"]
+    render json: res
+
 
   end
 
