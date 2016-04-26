@@ -46,7 +46,7 @@ class FleaMarket < ActiveRecord::Base
   scope :searchable, -> { where(is_visible: 1).where("flea_markets.end_date >= ?", Time.now)}
 
   def is_visible?
-    self.where(is_visible: 1).where("flea_markets.end_date >= ?", Time.now)
+    self.is_visible == 1 && self.end_date >= Time.now
   end
 
   def is_visible_str
