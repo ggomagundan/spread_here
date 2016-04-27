@@ -8,10 +8,34 @@ ready = ->
       format: "YYYY-MM-DD HH:mm:ss"
     )
 
+  $("body").on "click", ".set-latlon", ->
+    $("#flea_market_latitude").val $(this).data "lat"
+    $("#flea_market_longitude").val $(this).data "lon"
+
+
   $(".find-location").click ->
     q = $("#flea_market_location").val()
     url =  "https://apis.daum.net/local/geo/addr2coord?q=" + q + "&output=json&apikey=3eab053a5c7944b47887390d3c3a5493"
-    alert url
+    $.ajax(
+      url: "/api/flea_markets/get_latlon"
+      type: "get"
+      dataType: "json"
+      data:
+        addr: q
+    ).success (json) ->
+      if json.length < 1
+        alert "Check ADDR"
+      else
+        $(".latlon-lists div.latlon-list").remove()
+        $.each json, (index, data) ->
+          str = ""
+          str += "ADR: " + data.title
+          str += ",   LAT: " + data.point_y
+          str += ",   LON: " + data.point_x
+          str += " <span class='set-latlon label label-primary' data-lat='" + data.point_y + "' data-lon='" + data.point_x + "'>SET</span>"
+          $(".latlon-lists .controls").append str
+    return false
+
 
 
 
