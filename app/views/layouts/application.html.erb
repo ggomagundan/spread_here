@@ -11,12 +11,15 @@
 
     <%= stylesheet_link_tag "application", controller_name %>
     <%= javascript_include_tag "application", controller_name, 'data-turbolinks-track' => true %>
+    <script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=<%= DEV_DAUM_KEY %>" ></script>
     <% if Rails.env == "development" %>
       <!--
       <script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=<%= DEV_DAUM_KEY %>" async defer></script>
       -->
     <% else %>
+      <!--
       <script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=<%= PRODUC_DAUM_KEY %>" async defer></script>
+      -->
     <% end %>
 
     <!--

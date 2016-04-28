@@ -1,9 +1,9 @@
 <div id="daum_map"></div>
  
-<script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=<%= DEV_DAUM_KEY %>" ></script>
 <script>
 
   var container = document.getElementById('daum_map');
+
   var options = {
     center: new daum.maps.LatLng(<%= @flea_market.latitude %>,<%= @flea_market.longitude %>),
     level: 4
@@ -18,8 +18,19 @@
     position: markerPosition
   });
 
-  // 마커가 지도 위에 표시되도록 설정합니다
-  marker.setMap(daum_map);
+  $(document).ready(function(){
+    // 마커가 지도 위에 표시되도록 설정합니다
+    marker.setMap(daum_map);
+
+  });
+
+  $("a[href='#location']").on('shown.bs.tab', function() {
+
+      if ($("#daum_map") !== void 0 && $("#daum_map").length > 0) {
+        daum_map.relayout();
+        daum_map.setCenter(markerPosition);
+      }
+    });
 
 
 </script>

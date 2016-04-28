@@ -44,6 +44,7 @@ ready = ->
       daum_map.relayout()
       daum_map.setCenter(markerPosition)
 
+
   $(window).resize ->
     if $(".map-tab").hasClass "active"
       dm = document.getElementById("daum_map")
