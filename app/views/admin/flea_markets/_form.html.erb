@@ -96,6 +96,20 @@
 
   <p><%= f.link_to_add "정보 추가", :fleamarket_images %></p>
 
+  <%= f.fields_for :fleamarket_tags do |flea_tag_form| %>
+    <div class="well">
+      <div class="form-group">
+        <label class="control-label col-sm-2">태그명</label>
+          <div class="controls col-sm-6">
+          <%= flea_tag_form.text_field :tag_name, class: "form-control" %>
+        </div>
+      </div>
+      <%= flea_tag_form.link_to_remove "삭제", data: {confirm: "정말 삭제 하시겠습니까?"}, :class => "btn btn-danger" %>
+    </div>
+  <% end %>
+
+  <p><%= f.link_to_add "태그 추가", :fleamarket_tags %></p>
+
 
 
   <div class="form-actions">

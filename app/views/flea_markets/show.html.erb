@@ -2,7 +2,7 @@
     <%= image_tag "http://talkimg.imbc.com/TVianUpload//tvian/image/2015/10/10/IhjX4gdqTjQq635800827987838901.jpg", alt: "Test" if @flea_market.top_image.blank? %> 
     <%= image_tag @flea_market.top_image_url, alt: "Test", class: "fleamarket-top-img"  if @flea_market.top_image.present? %>
     <div class="end-overlay <%= "none" if @flea_market.is_visible? %>"><%= image_tag "end_up.png", class: "end-img" %> </div>
-  </div>
+</div>
 
 <div class="market_name"> <%= @flea_market.market_name %> </div>
 <div class="market_desc">
@@ -127,5 +127,16 @@
   </div>
 </div>
 
-</div>
-</div>
+<% if false &&  @recommend.present? %>
+  <div id="recommend">
+    <div id="recommend-title">Recommed</div>
+    <% @recommend.each do |rec| %>
+      <div class="col-md-4 col-sm-6 col-xs-12 recommend-market">
+        <%=  rec.market_name %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
+
+

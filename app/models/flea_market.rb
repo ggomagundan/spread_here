@@ -13,7 +13,7 @@ class FleaMarket < ActiveRecord::Base
   mount_uploader :list_image, MarketUploader
   mount_uploader :top_image, MarketUploader
 
-  accepts_nested_attributes_for :fleamarket_images,
+  accepts_nested_attributes_for :fleamarket_images, :fleamarket_tags,
     allow_destroy: true
 
   after_create do |fm|
@@ -63,6 +63,9 @@ class FleaMarket < ActiveRecord::Base
     && self.latitude > 0 && self.longitude > 0
   end
 
+  def pick_recommend(len)
+    FleaMarket.searchable.where.not(id: self.id).sample(len)
+  end
 =begin
   def top_image
     self.fleamarket_images.where(is_visible: 1, image_type: 0).first
