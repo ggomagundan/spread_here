@@ -15,7 +15,6 @@
 //= require jquery_nested_form
 //= require turbolinks
 //= require bootstrap
-// require summernote
 //= require moment.min
 //= require mdDateTimePicker.min
 //= require draggabilly.pkgd.min
