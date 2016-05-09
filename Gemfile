@@ -11,6 +11,7 @@ gem 'rails', '4.2.5'
 #gem 'bootstrap', '~> 4.0.0.alpha3'
 #gem 'font-awesome-sass', '~> 4.5.0'
 
+#gem 'bootstrap-sass'
 gem 'sass-rails',  '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -76,5 +77,11 @@ gem 'capistrano-bundler', '~> 1.1.2', group: :development
 gem 'unicorn'
 
 
-#gem 'summernote-rails'
+gem 'summernote-rails'
 #gem 'bootstrap-sass'
+
+#gem 'md-date-time-picker-rails'
+#gem 'md-date-time-picker-rails', github: "ggomagundan/md-date-time-picker-rails", branch: "dark_color_themes"
+gem 'md-date-time-picker-rails', path: "/Users/kai/Copy/projects/rails/md_date_time_picker-rails"
+
+

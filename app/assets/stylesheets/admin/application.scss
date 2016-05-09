@@ -1,5 +1,8 @@
 @import "bootstrap";
 @import "font-awesome";
+@import "summernote";
+@import "md-date-time-picker";
+/*@import "themes/light/blue/md-date-time-picker"; */
 
 .none{
   display:none !important;
@@ -15,6 +18,11 @@ html, body{
 
 img.img{
   width: 100%;
+}
+
+
+.form-control.inline-block{
+  display: inline-block;
 }
 
 /* HEADER */

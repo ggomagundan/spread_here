@@ -12,6 +12,69 @@ ready = ->
     $("#flea_market_latitude").val $(this).data "lat"
     $("#flea_market_longitude").val $(this).data "lon"
 
+  #toggleButton = $("#flea_market_market_name")
+  startDayEle = document.getElementById("start_day")
+  startTimeEle = document.getElementById("start_time")
+  endDayEle = document.getElementById("end_day")
+  endTimeEle = document.getElementById("end_time")
+
+  startDayDialog = new mdDateTimePicker.default(
+    type: 'date',
+    future: moment().add(4, 'months'),
+    locale: "ko",
+    trigger: startDayEle 
+  )
+
+  startTimeDialog = new mdDateTimePicker.default(
+    type: 'time',
+    locale: "ko",
+    trigger: startTimeEle 
+  )
+
+  endDayDialog = new mdDateTimePicker.default(
+    type: 'date',
+    future: moment().add(4, 'months'),
+    locale: "ko",
+    trigger: endDayEle 
+  )
+
+  endTimeDialog = new mdDateTimePicker.default(
+    type: 'time',
+    locale: "ko",
+    trigger: endTimeEle 
+  )
+
+
+
+  if startDayEle != null
+    startDayEle.addEventListener "click", ->
+      startDayDialog.toggle()
+    startDayEle.addEventListener "onOk", (e) ->
+      this.value = startDayDialog.time.format('YYYY-MM-DD')
+      $("#flea_market_start_date").val $("#start_day").val() + " " + $("#start_time").val()
+
+  if startTimeEle != null
+    startTimeEle.addEventListener "click", ->
+      startTimeDialog.toggle()
+    startTimeEle.addEventListener "onOk", (e) ->
+      this.value = startTimeDialog.time.format('HH:mm')
+      $("#flea_market_start_date").val $("#start_day").val() + " " + $("#start_time").val()
+
+  if endDayEle != null
+    endDayEle.addEventListener "click", ->
+      endDayDialog.toggle()
+    endDayEle.addEventListener "onOk", (e) ->
+      this.value = endDayDialog.time.format('YYYY-MM-DD')
+      $("#flea_market_end_date").val $("#end_day").val() + " " + $("#end_time").val()
+
+  if endTimeEle != null
+    endTimeEle.addEventListener "click", ->
+      endTimeDialog.toggle()
+    endTimeEle.addEventListener "onOk", (e) ->
+      this.value = endTimeDialog.time.format('HH:mm')
+      $("#flea_market_end_date").val $("#end_day").val() + " " + $("#end_time").val()
+
+
 
   $(".find-location").click ->
     q = $("#flea_market_location").val()

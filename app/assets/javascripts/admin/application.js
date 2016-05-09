@@ -15,3 +15,7 @@
 //= require jquery_nested_form
 //= require turbolinks
 //= require bootstrap
+//= require summernote
+//= require moment_locales
+//= require mdDateTimePickerLocale
+//= require draggabilly.pkgd.min

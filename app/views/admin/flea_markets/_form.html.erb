@@ -25,9 +25,17 @@
   <div class="form-group">
     <label class="control-label col-sm-2">DateRange</label>
     <div class="controls col-sm-6">
-      <%= f.text_field :start_date, :class => "calendar col-sm-4 form-control", data: {:"date-format" => "YYYY-MM-DD HH:mm:ss"} %>
+      <div class="col-sm-10">
+        <%= text_field_tag :start_day, f.object.start_date.present?? f.object.start_date.strftime("%Y-%m-%d"): "", :class => "col-sm-2 form-control inline-block"  %>
+        <%= text_field_tag :start_time, f.object.start_date.present?? f.object.start_date.strftime("%H:%M"): "", :class => "col-sm-2 form-control inline-block"  %>
+        <%= f.hidden_field :start_date, :class => "col-sm-4 form-control" %>
+      </div>
 
-      <%= f.text_field :end_date, :class => "calendar col-sm-4 form-control" %>
+      <div class="col-sm-10">
+        <%= text_field_tag :end_day, f.object.end_date.present?? f.object.end_date.strftime("%Y-%m-%d"): "", :class => "col-sm-2 form-control inline-block"  %>
+        <%= text_field_tag :end_time, f.object.end_date.present?? f.object.end_date.strftime("%H:%M"): "", :class => "col-sm-2 form-control inline-block"  %>
+        <%= f.hidden_field :end_date, :class => "col-sm-4 form-control" %>
+      </div>
     </div>
   </div>
 

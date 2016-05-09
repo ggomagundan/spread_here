@@ -16,6 +16,7 @@
 /tmp
 /test
 /public/uploads
+/public/assets
 
 .DS_Store
 *.DS_Store
