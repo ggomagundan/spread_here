@@ -130,6 +130,7 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
+    md-date-time-picker-rails (2.0.2)
     metaclass (0.0.4)
     method_source (0.8.2)
     mime-types (3.0)
@@ -269,6 +270,7 @@ DEPENDENCIES
   jquery-rails
   kaminari
   koala
+  md-date-time-picker-rails
   mini_magick
   mocha
   mysql2 (~> 0.3.18)
