@@ -77,7 +77,7 @@ gem 'capistrano-bundler', '~> 1.1.2', group: :development
 gem 'unicorn'
 
 
-gem 'summernote-rails'
+#gem 'summernote-rails'
 #gem 'bootstrap-sass'
 
 gem 'md-date-time-picker-rails'
