@@ -16,6 +16,6 @@
 //= require turbolinks
 //= require bootstrap
 //= require summernote
-//= require moment
-//= require mdDateTimePicker
+//= require moment.min
+//= require mdDateTimePicker.min
 //= require draggabilly.pkgd.min
