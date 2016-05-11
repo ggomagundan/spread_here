@@ -1,9 +1,0 @@
-$('#fleamarket_list').append('<%= j render(@flea_markets) %>');
-<% if (@flea_markets.current_page < @flea_markets.num_pages) %>
-  $('.pagination').replaceWith('<%= j paginate(@flea_markets) %>');
-<% else %>
-  $('.pagination').remove();
-<% end %>
-
-
-list_refresh();

@@ -8,6 +8,8 @@ class FleaMarket < ActiveRecord::Base
   has_many :fleamarket_images#, inverse_of: :flea_market
   has_many :fleamarket_tags
 
+  belongs_to :city
+
   default_scope{ order("flea_markets.id desc") }
 
   mount_uploader :list_image, MarketUploader
@@ -19,6 +21,8 @@ class FleaMarket < ActiveRecord::Base
   after_create do |fm|
     fm.fleamarket_tags.new(tag_name: "플리마켓")
     fm.fleamarket_tags.new(tag_name: "spreadhere")
+    fm.fleamarket_tags.new(tag_name: fm.city.name) if fm.city_id.present?
+    fm.save
 
     if fm.content_images.present?
       fm.top_image = fm.content_images.first.image if fm.top_image.blank?

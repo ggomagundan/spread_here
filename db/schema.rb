@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160416083329) do
+ActiveRecord::Schema.define(version: 20160511071314) do
+
+  create_table "cities", force: :cascade do |t|
+    t.string   "name",       limit: 191
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
 
   create_table "flea_markets", force: :cascade do |t|
     t.integer  "is_visible",  limit: 4,   default: 0
@@ -20,13 +26,14 @@ ActiveRecord::Schema.define(version: 20160416083329) do
     t.datetime "end_date"
     t.string   "location",    limit: 255
     t.string   "memo",        limit: 255
-    t.float    "latitude",    limit: 24
-    t.float    "longitude",   limit: 24
+    t.float    "latitude",    limit: 53
+    t.float    "longitude",   limit: 53
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "list_image",  limit: 191
     t.string   "top_image",   limit: 191
     t.integer  "view_count",  limit: 4,   default: 0
+    t.integer  "city_id",     limit: 4
   end
 
   create_table "fleamarket_images", force: :cascade do |t|
@@ -48,7 +55,7 @@ ActiveRecord::Schema.define(version: 20160416083329) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "username",               limit: 255
+    t.string   "username",               limit: 191
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "email",                  limit: 191, default: "", null: false

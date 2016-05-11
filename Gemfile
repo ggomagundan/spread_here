@@ -84,4 +84,5 @@ gem 'md-date-time-picker-rails'
 #gem 'md-date-time-picker-rails', github: "ggomagundan/md-date-time-picker-rails", branch: "dark_color_themes"
 #gem 'md-date-time-picker-rails', path: "/Users/kai/Copy/projects/rails/md_date_time_picker-rails"
 
+gem "instagram"
 

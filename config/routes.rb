@@ -2,7 +2,6 @@ Rails.application.routes.draw do
 
   root 'flea_markets#index'
 
-  resources :markets
   resources :flea_markets
 
   devise_for :users, path: :admin
