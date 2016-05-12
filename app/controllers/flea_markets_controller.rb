@@ -1,6 +1,7 @@
 class FleaMarketsController < ApplicationController
   def index
     @flea_markets = FleaMarket.searchable.page(params[:page]).per(6)
+    @flea_markets = @flea_markets.where("start_date <= ? and end_date >= ?",params[:date], params[:date]) if params[:date].present?
   end
 
   def show

@@ -9,6 +9,28 @@
   padding-bottom: 45px;
 }
 
+#search-bar{
+  width:100%;
+  display: table;
+  div.col-md-6.col-xs-12{
+    background: #CECECE;
+    height: 40px;
+    line-height: 40px;
+    padding-top: 3px;
+
+  }
+  .form-control.find-date{
+    width: 70%;
+  }
+  .btn.find-btn{
+    position: absolute;
+    top: 3px;
+    right: 15px;
+  }
+  
+}
+   
+
 #fleamarket_list{
   position:relative;
   .pagination{

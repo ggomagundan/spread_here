@@ -4,8 +4,31 @@
 <% else %>
   <span> <%= "No Data On Today" %></span>
 <% end %>
-  <%= stylesheet_link_tag "material-cards" %>
-  <%= javascript_include_tag "jquery.material-cards", 'data-turbolinks-track' => true %>
+
+<%= stylesheet_link_tag "material-cards" %>
+<%= javascript_include_tag "jquery.material-cards", 'data-turbolinks-track' => true %>
+
+<%= javascript_include_tag "moment", 'data-turbolinks-track' => true %>
+<%= javascript_include_tag "bootstrap-datetimepicker", 'data-turbolinks-track' => true %>
+<%= stylesheet_link_tag "bootstrap-datetimepicker" %>
+
+<div id="search-bar">
+  <%= form_tag flea_markets_path, method: :get  do |f|  %>
+    <div class="col-xs-12 col-md-6">
+      <% cache do %>
+
+        <% collection_select :q, :city,  City.all, :id, :name , {}, {class: "form-control"} %>
+
+      <% end %>
+    </div>
+    <div class="col-xs-12 col-md-6">
+      <%= text_field_tag :date, params[:date],  class: "form-control find-date" %>
+      <span class="btn btn-primary find-btn">해당 날짜 찾기</span>
+    </div>
+  <% end %>
+
+</div>
+
 <div id="fleamarket_list" class="row active-with-click">
   <%= render @flea_markets %>
   <%= paginate @flea_markets %>
