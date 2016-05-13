@@ -14,16 +14,18 @@
 
 <div id="search-bar">
   <%= form_tag flea_markets_path, method: :get  do |f|  %>
-    <div class="col-xs-12 col-md-6">
+    <div class="col-xs-12 col-md-6 form-group">
       <% cache do %>
 
-        <% collection_select :q, :city,  City.all, :id, :name , {}, {class: "form-control"} %>
+        <%= collection_select :q, :city,  City.all, :id, :name , {select: params[:q].present?? params[:q][:city] : "", prompt: "지역"}, {class: "form-control"} %>
+        <i class="bar"></i>
 
       <% end %>
     </div>
     <div class="col-xs-12 col-md-6">
-      <%= text_field_tag :date, params[:date],  class: "form-control find-date" %>
-      <span class="btn btn-primary find-btn">해당 날짜 찾기</span>
+      <%= text_field_tag :date, params[:date],  class: "form-control find-date", placeholder: "날짜" %>
+      <i class="bar find-date-bar"></i>
+      <span class="btn btn-primary find-btn">마켓 찾기</span>
     </div>
   <% end %>
 

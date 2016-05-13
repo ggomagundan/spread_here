@@ -12,20 +12,107 @@
 #search-bar{
   width:100%;
   display: table;
+
+  $search-font-size: 1.6rem !default;
+  $search-active-font-size: $search-font-size * 0.8 !default;
+  $search-active-top: -$search-font-size !default;
+
+  
+  $search-spacer: $search-font-size / 8 !default;
+  $search-input-color: #333 !default;
+  $search-border-color: #999 !default;
+$search-label-color: lighten($search-border-color, 10%) !default;
+$search-active-color: darken($search-border-color, 10%) !default;
+$search-focus-color: #337ab7 !default;
+
+$search-transition-speed: 0.28s !default;
+
+
   div.col-md-6.col-xs-12{
-    background: #CECECE;
+    background: #E3F4FB;
     height: 40px;
     line-height: 40px;
     padding-top: 3px;
 
+    select,  input{
+      font-size: $search-font-size;
+      height: ($search-font-size * 1.6);
+      padding: $search-spacer $search-spacer ($search-spacer / 2);
+      background: none;
+      border: none;
+      line-height: 1.6;
+      box-shadow: none;
+    }
+
+.bar {
+		position: relative;
+		border-bottom: ($search-font-size / 16) solid $search-border-color;
+		display: block;
+		
+		&::before {
+			content: '';
+			height: ($search-font-size / 8);
+			width: 0;
+			left: 50%;
+			bottom: ($search-font-size / -16);
+			position: absolute;
+			background: $search-focus-color;
+			transition: left $search-transition-speed ease, width $search-transition-speed ease;
+			z-index: 2;
+		}
+	}
+	
+	select,
+	input:focus,
+	input:valid,
+	input.form-file,
+	input.has-value,
+	textarea:focus,
+	textarea:valid,
+	textarea.form-file,
+	textarea.has-value {
+		color: $search-input-color;
+
+		~ .control-label {
+			font-size: $search-active-font-size;
+			color: $search-active-color;
+			top: $search-active-top;
+			left: 0;
+		}
+	}
+
+	select,
+	input,
+	textarea {
+		&:focus {
+			outline: none;
+
+			~ .control-label {
+				color: $search-focus-color;
+			}
+
+			~ .bar {
+				&::before {
+					width: 100%;
+					left: 0;
+				}
+			}
+		}
+	}
+
+
+
+
+
   }
-  .form-control.find-date{
+  .form-control.find-date,   .form-control.find-date-bar{
     width: 70%;
   }
   .btn.find-btn{
     position: absolute;
     top: 3px;
     right: 15px;
+    border-radius: 0px;
   }
   
 }

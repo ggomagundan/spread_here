@@ -2,7 +2,8 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.5'
+gem 'rails', '5.0.0.rc1'
+gem 'puma'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
 # Use SCSS for stylesheets
@@ -71,8 +72,11 @@ gem 'nested_form'
 gem 'brakeman' # For check Secitury
 
 gem 'capistrano', group: :development
-gem 'capistrano-rails', '~> 1.1.0', group: :development
-gem 'capistrano-bundler', '~> 1.1.2', group: :development
+gem 'capistrano-rails', group: :development
+gem 'capistrano-bundler', group: :development
+gem 'capistrano3-puma', group: :development
+
+
 
 gem 'unicorn'
 

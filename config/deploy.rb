@@ -23,7 +23,7 @@ set :repo_url, 'git@github.com:ggomagundan/spread_here.git'
 # set :pty, true
 
 # Default value for :linked_files is []
-# set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
+set :linked_files, fetch(:linked_files, []).push('config/database.yml')
 
 # Default value for linked_dirs is []
 # set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
@@ -65,7 +65,7 @@ namespace :deploy do
     on roles(:app), :roles => :app, :except => { :no_release => true } do
 #      execute("ln -fs #{shared_path}/mongoid.yml #{release_path}/config/mongoid.yml")
       execute("ln -fs #{shared_path}/uploads #{release_path}/public/uploads")
-      execute("ln -fs #{shared_path}/database.yml #{release_path}/config/database.yml")
+#      execute("ln -fs #{shared_path}/database.yml #{release_path}/config/database.yml")
 
     end
   end
@@ -90,7 +90,7 @@ namespace :deploy do
   end
 
 
-  after 'deploy:publishing', :restart_unicorn
+  #after 'deploy:publishing', :restart_unicorn
   #after 'deploy:finishing', 'whenever:start'
 
 end
