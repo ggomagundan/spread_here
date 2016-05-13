@@ -57,7 +57,7 @@ gem 'web-console', '~> 2.0', group: :development
  gem 'koala'
  gem 'nokogiri'
  gem 'pry'
- gem 'kaminari'
+ gem 'kaminari',  github: "amatsuda/kaminari", branch: '0-17-stable'
 
 gem "mocha"
 
