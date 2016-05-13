@@ -15,12 +15,10 @@
 <div id="search-bar">
   <%= form_tag flea_markets_path, method: :get  do |f|  %>
     <div class="col-xs-12 col-md-6 form-group">
-      <% cache do %>
 
-        <%= collection_select :q, :city,  City.all, :id, :name , {select: params[:q].present?? params[:q][:city] : "", prompt: "지역"}, {class: "form-control"} %>
-        <i class="bar"></i>
+      <%= select_tag :city, options_from_collection_for_select(City.all, :id, :name, params[:city].to_i ), prompt: "지역",  class: "form-control" %>
+      <i class="bar"></i>
 
-      <% end %>
     </div>
     <div class="col-xs-12 col-md-6">
       <%= text_field_tag :date, params[:date],  class: "form-control find-date", placeholder: "날짜" %>
