@@ -60,6 +60,9 @@
       <div class="market_memo"><%= @flea_market.memo %></div>
     </div>
     <div class="flea-info-img">
+      <div class="top-text">
+        <%=  @flea_market.top_text.gsub(/\r\n/, "<br/>").html_safe %>
+      </div>
       <% if @flea_market.content_images.present? %>
         <% @flea_market.content_images.each do |img| %>
           <div class="img">
@@ -71,6 +74,9 @@
           <%= image_tag "http://talkimg.imbc.com/TVianUpload//tvian/image/2015/10/10/IhjX4gdqTjQq635800827987838901.jpg", alt: "Test", class: "img" %> 
         </div>
       <% end %>
+      <div class="bottom-text">
+        <%=  @flea_market.top_text.gsub(/\r\n/, "<br/>").html_safe %>
+      </div>
     </div>
   </div>
 

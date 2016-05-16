@@ -69,7 +69,7 @@ set :rails_env, :production
 set :deploy_to, '/home/deployer/spread_here'
 set :current_deploy_path, "/home/deployer/spread_here/current"
 
-server '52.193.42.116',
+server '52.196.192.161',
 user: 'deployer',
 roles: %w{app db web},
 ssh_options: {
