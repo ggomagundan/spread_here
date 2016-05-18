@@ -8,6 +8,11 @@ ready = ->
       format: "YYYY-MM-DD HH:mm:ss"
     )
 
+  if $("#flea_market_top_text").length > 0
+    $('#flea_market_top_text').summernote()
+  if $("#flea_market_bottom_text").length > 0
+    $('#flea_market_bottom_text').summernote()
+
   $("body").on "click", ".set-latlon", ->
     $("#flea_market_latitude").val $(this).data "lat"
     $("#flea_market_longitude").val $(this).data "lon"
@@ -53,7 +58,7 @@ ready = ->
       this.value = startDayDialog.time.format('YYYY-MM-DD')
       $("#flea_market_start_date").val $("#start_day").val() + " " + $("#start_time").val()
 
-  if startTimeEle != null
+  if startTimyeEle != null
     startTimeEle.addEventListener "click", ->
       startTimeDialog.toggle()
     startTimeEle.addEventListener "onOk", (e) ->

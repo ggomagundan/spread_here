@@ -1,13 +1,3 @@
-<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.css" rel="stylesheet">
-<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.js" ></script>
-
-<script>
-$(document).ready(function() {
-  $('#flea_market_top_text').summernote();
-  $('#flea_market_bottom_text').summernote();
-});
-</script>
-
 
 
 <%= nested_form_for [:admin, @flea_market], :html => { :class => "form-horizontal" } do |f| %>
