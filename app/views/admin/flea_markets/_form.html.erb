@@ -1,3 +1,15 @@
+<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.css" rel="stylesheet">
+<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.js" ></script>
+
+<script>
+$(document).ready(function() {
+  $('#flea_market_top_text').summernote();
+  $('#flea_market_bottom_text').summernote();
+});
+</script>
+
+
+
 <%= nested_form_for [:admin, @flea_market], :html => { :class => "form-horizontal" } do |f| %>
 
   <div class="form-group">
@@ -90,8 +102,8 @@
 
   <div class="form-group">
     <label class="control-label col-sm-2">TopText</label>
-    <div class="controls col-sm-6">
-      <%= f.text_area :top_text, class: "form-control" %>
+    <div class="controls col-sm-11">
+      <%= f.text_area :top_text, class: "form-control", as: :summernote, data: {provider: "summernote" }  %>
     </div>
   </div>
 
@@ -99,8 +111,8 @@
 
   <div class="form-group">
     <label class="control-label col-sm-2">BottomText</label>
-    <div class="controls col-sm-6">
-      <%= f.text_area :bottom_text, class: "form-control" %>
+    <div class="controls col-sm-11">
+      <%= f.text_area :bottom_text, class: "form-control", as: :summernote, data: {provider: "summernote" }  %>
     </div>
   </div>
 

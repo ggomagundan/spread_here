@@ -35,13 +35,15 @@ ready = ->
 #    else
 #      list_refresh_smaller()
 
-  $(".find-date").datetimepicker(
-    format: "YYYY-MM-DD"
-    locale: "ko"
-  )
+  if $(".find-date").length > 0
+    $(".find-date").datetimepicker(
+      format: "YYYY-MM-DD"
+      locale: "ko"
+    )
 
-  $(".find-btn").click ->
-    $(this).closest("form").submit()
+  if $(".find-btn").length > 0
+    $(".find-btn").click ->
+      $(this).closest("form").submit()
 
 
   $("a[href='#location']").on 'shown.bs.tab', ->
