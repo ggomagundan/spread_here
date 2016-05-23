@@ -90,3 +90,5 @@ gem 'md-date-time-picker-rails'
 
 gem "instagram"
 
+gem 'rails_emoji'
+
