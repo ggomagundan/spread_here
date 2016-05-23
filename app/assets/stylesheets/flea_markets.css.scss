@@ -121,6 +121,7 @@ $search-transition-speed: 0.28s !default;
 #fleamarket_list{
   position:relative;
   .pagination{
+    left:0;
     bottom: -145px;
     display:inline-block;
     position:absolute;
