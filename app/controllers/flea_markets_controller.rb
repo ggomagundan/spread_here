@@ -41,6 +41,5 @@ class FleaMarketsController < ApplicationController
 
   def flea_params
     params.require(:flea_market).permit(:market_name, :start_date, :end_date, :location, :memo, :latitude, :longitude)
-
   end
 end

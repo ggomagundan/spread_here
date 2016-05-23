@@ -3,37 +3,31 @@ class Api::FleaMarketsController < Api::ApplicationController
   before_filter :latlon_check
 
   def index
-    @flea_markets = FleaMarket.all
+
+    @flea_markets = FleaMarket.searchable.page(params[:page]).per(6)
+    @flea_markets = @flea_markets.where("STR_TO_DATE(?, '%Y-%m-%d') between str_to_date(start_date, '%Y-%m-%d') and str_to_date(end_date, '%Y-%m-%d')", params[:date]) if params[:date].present?
+    @flea_markets = @flea_markets.where(city_id: params[:city]) if params[:city].present?
+
   end
 
   def show
+
     @flea_market = FleaMarket.find(params[:id])
+    @flea_market.increment! :view_count
+    @recommend = @flea_market.pick_recommend(3)
+
   end
 
   def new
-    @flea_market = FleaMarket.new
   end
 
   def create
-    @flea_market = FleaMarket.new(params[:flea_market])
-    if @flea_market.save
-      redirect_to [:api, @flea_market], :notice => "Successfully created flea market."
-    else
-      render :action => 'new'
-    end
   end
 
   def edit
-    @flea_market = FleaMarket.find(params[:id])
   end
 
   def update
-    @flea_market = FleaMarket.find(params[:id])
-    if @flea_market.update_attributes(params[:flea_market])
-      redirect_to [:api, @flea_market], :notice  => "Successfully updated flea market."
-    else
-      render :action => 'edit'
-    end
   end
 
   def destroy

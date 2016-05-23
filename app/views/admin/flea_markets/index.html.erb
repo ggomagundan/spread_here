@@ -1,4 +1,16 @@
 
+<div class="search_form">
+   <%= form_tag admin_flea_markets_path, remote: true, class: "form-inline",  :method => :get  do %>
+     <div class="form-group">
+       <%= label_tag  :name, "마켓명"  %>
+       <%= text_field_tag :name, params[:name], :class => 'form-control'  %>
+     </div>
+     <%= submit_tag "Search", class: "btn btn-warning" %>
+   <% end %>
+</div>
+
+
+
 <p><%= link_to "New Admin/Flea Market", new_admin_flea_market_path, class: "btn btn-primary" %></p>
 
 <table class="table table-hove">

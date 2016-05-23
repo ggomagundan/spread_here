@@ -58,7 +58,7 @@ ready = ->
       this.value = startDayDialog.time.format('YYYY-MM-DD')
       $("#flea_market_start_date").val $("#start_day").val() + " " + $("#start_time").val()
 
-  if startTimyeEle != null
+  if startTimeEle != null
     startTimeEle.addEventListener "click", ->
       startTimeDialog.toggle()
     startTimeEle.addEventListener "onOk", (e) ->
@@ -105,6 +105,9 @@ ready = ->
     return false
 
 
+  $(document).on "submit", "form[method=get]", (e) ->
+    Turbolinks.visit(this.action + (if this.action.indexOf('?') ==  -1 then '?' else '&') + $(this).serialize())
+    return false
 
 
 $(document).ready(ready)

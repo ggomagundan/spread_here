@@ -1,6 +1,8 @@
 class Admin::FleaMarketsController < Admin::ApplicationController
   def index
+
     @flea_markets = FleaMarket.page(params[:page]).per(10)
+    @flea_markets = @flea_markets.where("market_name like ?", "%#{params[:name]}%") if params[:name].present?
   end
 
   def show
