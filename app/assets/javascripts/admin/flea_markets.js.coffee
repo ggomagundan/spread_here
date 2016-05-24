@@ -8,10 +8,33 @@ ready = ->
       format: "YYYY-MM-DD HH:mm:ss"
     )
 
+  sendFile = (file) ->
+    data = new FormData
+    data.append 'content_image[image]', file
+    $.ajax
+      data: data
+      type: 'POST'
+      url: '/api/uploads'
+      cache: false
+      contentType: false
+      processData: false
+      success: (data) ->
+        $("#flea_market_bottom_text").summernote "insertImage", data.url
+
+
   if $("#flea_market_top_text").length > 0
     $('#flea_market_top_text').summernote()
   if $("#flea_market_bottom_text").length > 0
-    $('#flea_market_bottom_text').summernote()
+    sum = $('#flea_market_bottom_text').summernote
+      callbacks:
+        onImageUpload: (files) ->
+          #alert files[0]
+          sendFile files[0]
+        onMediaDelete: ($target, editor, $editable) ->
+          alert "111"
+        onChange: (editor, $editable) ->
+          alert editor
+          alert "sef"
 
   $("body").on "click", ".set-latlon", ->
     $("#flea_market_latitude").val $(this).data "lat"

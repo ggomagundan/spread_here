@@ -17,6 +17,10 @@ Rails.application.routes.draw do
     resources :flea_markets do
       get :get_latlon, on: :collection
     end
+    post 'uploads' => 'content_images#create'
+    post 'removes' => 'content_images#destroy'
+
+
   }
 
   # The priority is based upon order of creation: first created -> highest priority.

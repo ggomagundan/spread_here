@@ -11,12 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160516063535) do
+ActiveRecord::Schema.define(version: 20160524070841) do
 
   create_table "cities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "content_images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
+    t.string   "image"
+    t.string   "content_type"
+    t.integer  "content_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "flea_markets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -35,7 +43,7 @@ ActiveRecord::Schema.define(version: 20160516063535) do
     t.integer  "view_count",                default: 0
     t.integer  "city_id"
     t.text     "top_text",    limit: 65535
-    t.text     "bottom_text", limit: 65535
+    t.text     "bottom_text", limit: 65535,             collation: "utf8mb4_general_ci"
     t.integer  "priority",                  default: 1
   end
 

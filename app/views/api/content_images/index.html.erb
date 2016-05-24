@@ -1,0 +1,17 @@
+<% title "Api/Content Images" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+  <% for content_image in @content_images %>
+    <tr>
+      <td><%= content_image.name %></td>
+      <td><%= link_to "Show", [:api, content_image] %></td>
+      <td><%= link_to "Edit", edit_api_content_image_path(content_image) %></td>
+      <td><%= link_to "Destroy", [:api, content_image], :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Api/Content Image", new_api_content_image_path %></p>

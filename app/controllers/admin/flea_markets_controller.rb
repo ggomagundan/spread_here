@@ -1,7 +1,7 @@
 class Admin::FleaMarketsController < Admin::ApplicationController
   def index
 
-    @flea_markets = FleaMarket.page(params[:page]).per(10)
+    @flea_markets = FleaMarket.admin_list.page(params[:page]).per(10)
     @flea_markets = @flea_markets.where("market_name like ?", "%#{params[:name]}%") if params[:name].present?
   end
 
@@ -46,8 +46,8 @@ class Admin::FleaMarketsController < Admin::ApplicationController
     params.require(:flea_market).permit(:is_visible, :market_name, :location, :memo, :list_image, :top_image, :start_date, :end_date,\
                                         :priority, :top_text, :bottom_text, \
                                         :latitude, :longitude, :city_id, \
-                                       :fleamarket_images_attributes => [:id, :image, :sort, :is_destroy], \
-                                       :fleamarket_tags_attributes => [:id, :tag_name, :is_destroy])
+                                       :fleamarket_images_attributes => [:id, :image, :sort, :_destroy], \
+                                       :fleamarket_tags_attributes => [:id, :tag_name, :_destroy])
   end
 
 end
