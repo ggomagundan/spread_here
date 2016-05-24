@@ -10,7 +10,7 @@ class FleaMarket < ActiveRecord::Base
 
   belongs_to :city
 
-  default_scope{ order("flea_markets.id desc") }
+  default_scope{ order("flea_markets.priority desc, flea_markets.id desc") }
 
   mount_uploader :list_image, MarketUploader
   mount_uploader :top_image, MarketUploader
@@ -47,7 +47,7 @@ class FleaMarket < ActiveRecord::Base
   #UserInfo
 
   #scope :searchable, -> { where(is_visible: 1).and(:end_date.gte => Time.now, :start_date.lte => Time.now) }
-  scope :searchable, -> { where(is_visible: 1).where("flea_markets.end_date >= ?", Time.now).order("flea_markets.priority desc") }
+  scope :searchable, -> { where(is_visible: 1).where("flea_markets.end_date >= ?", Time.now) }
   scope :non_searchable, -> { where(is_visible: 1).where("flea_markets.end_date <= ?", Time.now)}
 
   def is_visible?
