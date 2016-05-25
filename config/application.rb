@@ -31,6 +31,7 @@ module Fleamarket
     config.assets.precompile += ["*css*","*js*", "*scss", "*coffee"]
 
 
+
     config.autoload_paths += %W(#{config.root}/lib)
 
   end

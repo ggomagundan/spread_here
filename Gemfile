@@ -93,3 +93,6 @@ gem "instagram"
 
 gem 'rails_emoji'
 
+gem 'dotenv-rails'
+
+
