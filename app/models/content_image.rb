@@ -1,5 +1,5 @@
 class ContentImage < ActiveRecord::Base
 
-  mount_uploader :image, MarketUploader
+  mount_uploader :image, ContentUploader
 
 end

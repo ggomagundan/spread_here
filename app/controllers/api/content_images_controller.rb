@@ -24,13 +24,28 @@ class Api::ContentImagesController < ApplicationController
   end
 
   def destroy
-    @content_image = ContentImage.find(params[:id])
-    @content_image.destroy
-    redirect_to api_content_images_url, :notice => "Successfully destroyed content image."
+    #id = del_image_params[:url].split("/").last(2).first   # FOR FIND ID
+    image_name = del_image_params[:url].split("/").last     # FOR Find IMAGE_NAME 
+    @content_image = ContentImage.where(image: image_name).first
+    if @content_image.present?
+      @content_image.destroy
+      respond_to do |format| 
+        format.json { render :json => { status: true } }
+      end
+    else
+      respond_to do |format| 
+        format.json { render :json => { status: false} }
+      end
+    end 
+
   end
 
   private 
   def image_params
     params.require(:content_image).permit(:image)
+  end
+
+  def del_image_params
+    params.require(:content_image).permit(:url)
   end
 end

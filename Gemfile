@@ -50,12 +50,13 @@ gem 'web-console', '~> 3.0', group: :development
 # gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
  gem 'carrierwave-ftp', :require => 'carrierwave/storage/sftp' # SFTP only
 #  gem 'mongoid-grid_fs', github: 'ahoward/mongoid-grid_fs'
-
+ #gem 'fog-aws'
+ gem 'fog'
 
  gem 'whenever'
 # gem 'bson_ext'
  gem 'koala'
- gem 'nokogiri'
+ #gem 'nokogiri'
  gem 'pry'
  gem 'kaminari',  github: "amatsuda/kaminari", branch: '0-17-stable'
 

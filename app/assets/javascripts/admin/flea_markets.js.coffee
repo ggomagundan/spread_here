@@ -20,6 +20,21 @@ ready = ->
       processData: false
       success: (data) ->
         $("#flea_market_bottom_text").summernote "insertImage", data.url
+  deleteFile = (file_url) ->
+    del_data = new FormData
+    del_data.append 'content_image[url]', file_url
+    $.ajax
+      data: del_data
+      type: 'DELETE'
+      url: '/api/removes'
+      cache: false
+      contentType: false
+      processData: false
+      success: (data) ->
+        if data.status is false
+          alert "Delete Fail"
+
+        true
 
 
   if $("#flea_market_top_text").length > 0
@@ -28,13 +43,12 @@ ready = ->
     sum = $('#flea_market_bottom_text').summernote
       callbacks:
         onImageUpload: (files) ->
-          #alert files[0]
           sendFile files[0]
         onMediaDelete: ($target, editor, $editable) ->
-          alert "111"
+          deleteFile $target[0].src
         onChange: (editor, $editable) ->
-          alert editor
-          alert "sef"
+          #alert editor
+          #alert "sef"
 
   $("body").on "click", ".set-latlon", ->
     $("#flea_market_latitude").val $(this).data "lat"

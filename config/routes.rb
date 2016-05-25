@@ -18,7 +18,7 @@ Rails.application.routes.draw do
       get :get_latlon, on: :collection
     end
     post 'uploads' => 'content_images#create'
-    post 'removes' => 'content_images#destroy'
+    delete 'removes' => 'content_images#destroy'
 
 
   }
