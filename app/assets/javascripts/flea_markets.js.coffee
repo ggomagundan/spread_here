@@ -46,6 +46,55 @@ ready = ->
       $(this).closest("form").submit()
 
 
+  sendFile = (file) ->
+    data = new FormData
+    data.append 'content_image[image]', file
+    $.ajax
+      data: data
+      type: 'POST'
+      url: '/api/uploads'
+      cache: false
+      contentType: false
+      processData: false
+      success: (data) ->
+        $("#flea_market_top_text").summernote "insertImage", data.url
+  deleteFile = (file_url) ->
+    del_data = new FormData
+    del_data.append 'content_image[url]', file_url
+    $.ajax
+      data: del_data
+      type: 'DELETE'
+      url: '/api/removes'
+      cache: false
+      contentType: false
+      processData: false
+      success: (data) ->
+        if data.status is false
+          alert "Delete Fail"
+
+        true
+
+
+
+  if $("#flea_market_top_text").length > 0
+    $('#flea_market_top_text').summernote
+      height: 300
+      callbacks:
+        onImageUpload: (files) ->
+          sendFile files[0]
+        onMediaDelete: ($target, editor, $editable) ->
+          deleteFile $target[0].src
+ 
+  
+  if $("#flea_market_start_date").length > 0
+    $('#flea_market_start_date').datetimepicker
+      format: "YYYY-MM-DD HH:mm"
+
+  if $("#flea_market_start_date").length > 0
+    $('#flea_market_start_date').datetimepicker
+      format: "YYYY-MM-DD HH:mm"
+
+
   $("a[href='#location']").on 'shown.bs.tab', ->
     if $("#google_map") != undefined && $("#google_map").length > 0
       google.maps.event.trigger(google_map, 'resize')
