@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hi <%= @market.market_name %></h1>
+    <p>
+      Sample mail sent using smtp.
+    </p>
+    <div class="">
+      <%=  @market.top_text.gsub(/\r\n/, "<br/>").html_safe %>
+    </div>
+  </body>
+</html>

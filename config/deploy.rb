@@ -39,6 +39,11 @@ set :deploy_via, :remote_cache
 set :default_env, { path: "/home/deployer/.rbenv/versions/2.3.0/lib/ruby/gems:/home/deployer/.rbenv/versions/2.3.0/bin:$PATH" }
 
 
+# For DelayedJob And Mailer
+set :delayed_job_workers, 2
+set :delayed_job_roles, [:app, :background]
+
+
 namespace :deploy do
 
   desc 'Restart application'
@@ -88,6 +93,10 @@ namespace :deploy do
       # end
     end
   end
+
+ after :published, 'delayed_job:restart' do
+       invoke 'delayed_job:restart'
+ end
 
 
   #after 'deploy:publishing', :restart_unicorn

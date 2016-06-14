@@ -39,4 +39,18 @@ Rails.application.configure do
   config.action_view.raise_on_missing_translations = true
 
   config.active_record.raise_in_transactional_callbacks = true
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+
+  config.active_job.queue_adapter = :delayed_job
+  # SMTP settings for gmail
+  config.action_mailer.smtp_settings = {
+    :address              => "smtp.gmail.com",
+    :port                 => 587,
+    :user_name            => ENV['gmail_addr'],
+    :password             => ENV['gmail_passwd'],
+    :authentication       => "plain",
+    :enable_starttls_auto => true
+  }
 end

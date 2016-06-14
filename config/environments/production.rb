@@ -82,12 +82,32 @@ Rails.application.configure do
  #  config.active_record.dump_schema_after_migration = false
   #
   #  
- #  config.log_formatter = ::Logger::Formatter.new
- #  config.middleware.use ExceptionNotification::Rack,
- #    :email => {
- #      :email_prefix => "[UnlimitedImage ExceptionNotifier] ",
- #      :sender_address => %{"notifier" <notifier@unlimited_image.com>},
- #      :exception_recipients => %w{ggogun@gmail.com}
- #    }
+  
+  
+ config.active_job.queue_adapter = :delayed_job
+
+
+ config.log_formatter = ::Logger::Formatter.new
+ config.middleware.use ExceptionNotification::Rack,
+   :email => {
+     :email_prefix => "[SpreadHere ExceptionNotifier] ",
+     :sender_address => %{"notifier" <notifier@spredhere.com>},
+     :exception_recipients => %w{spreadherenow@gmail.com}
+   }
+
+
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+
+  # SMTP settings for gmail
+  config.action_mailer.smtp_settings = {
+    :address              => "smtp.gmail.com",
+    :port                 => 587,
+    :user_name            => ENV['gmail_addr'],
+    :password             => ENV['gmail_passwd'],
+    :authentication       => "plain",
+    :enable_starttls_auto => true
+  }
 
 end

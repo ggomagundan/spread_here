@@ -76,8 +76,11 @@ gem 'capistrano', group: :development
 gem 'capistrano-rails', group: :development
 gem 'capistrano-bundler', group: :development
 gem 'capistrano3-puma', group: :development
+gem 'capistrano3-delayed-job', '~> 1.0'
+gem 'delayed_job_active_record'
+gem 'daemons'
 
-
+gem 'exception_notification'
 
 #gem 'unicorn'
 
