@@ -6,7 +6,11 @@ class MarketNoticeMailer < ActionMailer::Base
 
   def market_apply(market)
     @market = market
-    mail(to: "spreadherenow@gmail.com", subject: "[TEST] #{market.market_name} Apply" )
+    if Rails.env == "development"
+      mail(to: "spreadherenow@gmail.com", subject: "[TEST] #{market.market_name} Apply" )
+    else
+      mail(to: "spreadherenow@gmail.com", subject: "#{market.market_name} Apply" )
+    end
   end
 
 end
