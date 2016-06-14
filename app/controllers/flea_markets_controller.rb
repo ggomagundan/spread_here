@@ -19,7 +19,7 @@ class FleaMarketsController < ApplicationController
     @flea_market = FleaMarket.new(flea_params)
     @flea_market.is_visible = 2
     if @flea_market.save
-      MarketNoticeMailer.delay.market_apply(@flea_market)
+      MarketNoticeMailer.market_apply(@flea_market).deliver_later
       redirect_to flea_markets_path, notice: "성공적으로 등록 요청 되었습니다."
     else
       render :action => 'new'
