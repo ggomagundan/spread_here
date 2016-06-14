@@ -94,8 +94,8 @@ namespace :deploy do
     end
   end
 
- after :published, 'delayed_job:restart' do
-       invoke 'delayed_job:restart'
+ after :published, 'actionjob:restart' do
+   invoke 'rake jobs:work'
  end
 
 
