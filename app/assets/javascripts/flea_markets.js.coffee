@@ -126,7 +126,9 @@ ready = ->
         $.getScript(url)
     $(window).scroll()
 
-
+  setTimeout (->
+    $('#flash-msg').fadeOut('slow')
+  ), 3000
 
 $(document).ready(ready)
 $(document).on('page:load', ready)

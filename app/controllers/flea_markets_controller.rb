@@ -17,8 +17,9 @@ class FleaMarketsController < ApplicationController
 
   def create
     @flea_market = FleaMarket.new(flea_params)
+    @flea_market.is_visible = 2
     if @flea_market.save
-      redirect_to flea_markets_path
+      redirect_to flea_markets_path, notice: "성공적으로 등록 요청 되었습니다."
     else
       render :action => 'new'
     end
@@ -40,6 +41,6 @@ class FleaMarketsController < ApplicationController
   private
 
   def flea_params
-    params.require(:flea_market).permit(:market_name, :start_date, :end_date, :location, :memo, :latitude, :longitude)
+    params.require(:flea_market).permit(:market_name, :start_date, :end_date, :location, :memo, :latitude, :longitude, :top_text)
   end
 end

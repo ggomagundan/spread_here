@@ -4,7 +4,9 @@
      <div class="form-group">
        <%= label_tag  :name, "마켓명"  %>
        <%= text_field_tag :name, params[:name], :class => 'form-control'  %>
+       <%= check_box_tag :pending, "1", params[:pending], :class => 'form-control'  %> 심사만
      </div>
+
      <%= submit_tag "Search", class: "btn btn-warning" %>
    <% end %>
 </div>
@@ -17,6 +19,7 @@
   <tr>
     <th>Name</th>
     <th>Visible</th>
+    <th>DateRange</th>
     <th>Img</th>
     <th></th>
   </tr>
@@ -24,6 +27,7 @@
     <tr>
       <td><%= flea_market.market_name %></td>
       <td><%= flea_market.is_visible_str%></td>
+      <td><%= flea_market.start_date.strftime("%Y-%m-%d %H:%M") if flea_market.start_date.present? %> ~ <%= flea_market.end_date.strftime("%Y-%m-%d %H:%M") if flea_market.end_date.present? %></td>
       <td><%= image_tag flea_market.top_image_url, size: '200x200' if flea_market.top_image.present?%></td>
       <td><%= link_to "Edit", edit_admin_flea_market_path(flea_market), class: "btn btn-warning" %>
       <%= link_to "Destroy", [:admin, flea_market], :confirm => 'Are you sure?', :method => :delete, class: "btn btn-danger" %></td>

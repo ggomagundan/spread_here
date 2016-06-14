@@ -2,7 +2,9 @@ class Admin::FleaMarketsController < Admin::ApplicationController
   def index
 
     @flea_markets = FleaMarket.admin_list.page(params[:page]).per(10)
+    @flea_markets = @flea_markets.where(is_visible: 2) if params[:pending].present?
     @flea_markets = @flea_markets.where("market_name like ?", "%#{params[:name]}%") if params[:name].present?
+
   end
 
   def show

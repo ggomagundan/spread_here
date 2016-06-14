@@ -11,6 +11,15 @@
 
     <%= stylesheet_link_tag "application", controller_name %>
     <%= javascript_include_tag "application", controller_name, 'data-turbolinks-track' => true %>
+
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.css" rel="stylesheet">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.js" ></script>
+
+    <%= stylesheet_link_tag "bootstrap-datetimepicker" %>
+    <%= javascript_include_tag "moment" %>
+    <%= javascript_include_tag "bootstrap-datetimepicker" %>
+
+
     <script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=<%= DEV_DAUM_KEY %>" ></script>
     <% if Rails.env == "development" %>
       <!--
@@ -33,6 +42,15 @@
     <%= render "layouts/header" %>
 
     <div class="container content-wrap">
+      <% if !flash.empty? %>
+        <div id="flash-msg">
+          <% flash.each do |key, value| %>
+            <div class="alert alert-success"><%= value %></div>
+          <% end %>
+          <% flash.clear %>
+        </div>
+      <% end %>
+
       <%= yield %>
     </div>
 

@@ -59,6 +59,8 @@ class FleaMarket < ActiveRecord::Base
   def is_visible_str
     if self.is_visible?
       "O"
+    elsif self.is_visible == 2
+      "심사"
     else
       "X"
     end
