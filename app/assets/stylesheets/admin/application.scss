@@ -130,3 +130,139 @@ img.img{
     }
   }
 }
+
+
+
+
+.panel-orange-rust {
+    border-color: #d9763f;
+}
+.panel-green-rust {
+    border-color: #7e9e3a;
+}
+
+.panel-blue-rust {
+    border-color: #1c538d;
+}
+.panel-red-rust {
+    border-color: #d9534f;
+}
+.panel {
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+}
+
+.panel-orange-rust .panel-heading {
+    background-color: #d9762f;
+    border-color: #d9762f;
+    color: white;
+}
+.panel-green-rust .panel-heading {
+    background-color: #7e9e3a;
+    border-color: #7e9e3a;
+    color: white;
+}
+.panel-blue-rust .panel-heading {
+    background-color: #1c538d;
+    border-color: #1c538d;
+    color: white;
+}
+.panel-red-rust .panel-heading {
+    background-color: #d9534f;
+    border-color: #d9534f;
+    color: white;
+}
+.panel-heading {
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    padding: 10px 15px;
+}
+.huge {
+    font-size: 40px;
+}
+#wrapper{
+width:100%;
+}
+.navbar-brand {
+  text-transform: uppercase;
+}
+.navbar-brand {
+  float: left;
+  font-size: 18px;
+  height: 50px;
+  line-height: 20px;
+  padding: 15px;
+}
+
+.navbar-brand img {
+      display: inline;
+          margin-top: -7px;
+              max-width: 100px;
+            }
+
+#sidebar-wrapper {
+    background: #f8f8f8 none repeat scroll 0 0;
+    border-right: 1px solid transparent;
+    height: 100%;
+    left: 250px;
+    margin-left: -250px;
+    overflow: hidden;
+    position: fixed;
+    top: 51px;
+    transition: all 0.5s ease 0s;
+    width: 55px;
+    z-index: 1000;
+}
+
+
+#sidebar-wrapper:hover, #sidebar-wrapper.expadned, #sidevar-wrap.hoverOn{
+  border-right: 1px solid #ebebeb;
+  width: 250px;
+}
+#sidebar-wrapper .sidebar-nav {
+    list-style: outside none none;
+    margin: 2px 0 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    width: 250px;
+}
+#sidebar-wrapper .sidebar-nav li {
+    line-height: 40px;
+    text-indent: 15px;
+}
+#sidebar-wrapper .sidebar-nav li a:hover, #sidebar-wrapper .sidebar-nav li a.active {
+    background: rgba(255, 255, 255, 0.2) none repeat scroll 0 0;
+    border-left: 2px solid #d9534f;
+}
+#sidebar-wrapper .sidebar-nav li a {
+    border-left: 2px solid transparent;
+    display: block;
+    text-decoration: none;
+}
+
+#sidebar-wrapper .fa-stack {
+    line-height: 2.3em !important;
+}
+.fa-stack {
+    display: inline-block;
+    height: 2em;
+    line-height: 2em;
+    position: relative;
+    vertical-align: middle;
+    width: 2em;
+}
+
+.fa-lg {
+    font-size: 1.33333em;
+    line-height: 0.75em;
+    vertical-align: -15%;
+}
+
+
+
+
