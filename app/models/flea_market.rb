@@ -53,7 +53,8 @@ class FleaMarket < ActiveRecord::Base
   scope :admin_list, -> {reorder("flea_markets.id desc") }
 
   def is_visible?
-    self.is_visible == 1 && self.end_date >= Time.now
+    
+    self.end_date.present? && self.is_visible == 1 && self.end_date >= Time.now
   end
 
   def is_visible_str

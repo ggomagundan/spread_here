@@ -1,0 +1,14 @@
+<div class="panel panel-default">
+  <% if @chat.messages.any? %>
+    <ul class="panel-body messages" id="messages" data-chat-id="#{params[:id]}">
+      <% @chat.messages.each do |message| %>
+        <%= render partial: 'chats/message', locals: {message: message} %>
+      <% end %>        
+    </ul>
+  <%else%>
+    <div class="panel-body hidden" id="messages" data-chat-id="#{params[:id]}">
+    </div>
+  <%end%>
+</div>
+
+<%= render partial: 'chats/message_form', locals: {message: @chat.messages.new, chat: @chat}%>

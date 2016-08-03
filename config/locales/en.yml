@@ -20,14 +20,12 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
-
-
-  admin:
-    common:
-      is_visible: "노출 여부"
-      visible: "노출"
-      invisible: "비노출"
-    buttons:
-      create: "생성"
-      modify: "수정"
+  admin: 
+    common: 
+      is_visible: 노출여부
+      invisible: 비노출
+      visible: 노출
+    buttons: 
+      create: 생성
+      modify: 수정
+      

@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root 'flea_markets#index'
 
   resources :flea_markets
+  resources :chats, only: [:index, :show]
+  resources :messages, only: [:create]
 
   devise_for :users, path: :admin
 
