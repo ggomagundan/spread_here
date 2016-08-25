@@ -1,6 +1,6 @@
 ready = ->
 
-  messages = $('#messages');
+  messages = $('#messages')
   if messages.length > 0
     scrollBottom = ->
       messages.scrollTop messages.prop("scrollHeight")
@@ -9,17 +9,17 @@ ready = ->
 
     App.chat = App.cable.subscriptions.create({
       channel: "ChatChannel",
-      chatId: messages.data('chatId')
+      chat_id: messages.data('chatId')
     },
       connected: ->
         #서버 사이드에서 구독을 시작했을 때
       disconnected: ->
         # 서버 사이드에서 구독이 끝났을 때
       received: (data)->
-        message.append data['message']
+        messages.append data['message']
         scrollBottom()
       sendMessage: (text) ->
-        perform 'send_message',
+        this.perform 'send_message',
           text: text
           chat_id: messages.data('chatId')
     )

@@ -32,5 +32,5 @@ ready = ->
 
 
 $(document).ready(ready)
-$(document).on('page:load', ready)
+$(document).on('turbonliks:load', ready)
 

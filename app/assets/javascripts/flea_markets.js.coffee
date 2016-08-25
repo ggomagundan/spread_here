@@ -126,12 +126,16 @@ ready = ->
         $.getScript(url)
     $(window).scroll()
 
+  $(window).scroll ->
+    if $(window).scrollTop() > $(document).height() - $(window).height() - 250
+      $(".chat-room").css "bottom", "300px;"
+
   setTimeout (->
     $('#flash-msg').fadeOut('slow')
   ), 3000
 
 $(document).ready(ready)
-$(document).on('page:load', ready)
+$(document).on('turbolinks:load', ready)
 
 
 window.list_refresh = list_refresh

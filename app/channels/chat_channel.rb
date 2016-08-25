@@ -1,7 +1,7 @@
 # Be sure to restart your server when you modify this file. Action Cable runs in a loop that does not support auto reloading.
 class ChatChannel < ApplicationCable::Channel
   def subscribed
-    stream_from "chat_#{params[:chat_id]}"
+    stream_from "chat_#{params[:chat_id]}" 
   end
 
   def unsubscribed
@@ -15,7 +15,7 @@ class ChatChannel < ApplicationCable::Channel
     )
     if message.save
       ActionCable.server.broadcast("chat_#{data['chat_id']}",
-        message: render_message(message)
+      message: render_message(message)
     )
     end
   end

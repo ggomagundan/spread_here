@@ -489,3 +489,13 @@ $search-transition-speed: 0.28s !default;
   }
 }
 
+
+.chat-room{
+  position:fixed;
+  bottom: 50px;
+  right: 30px;
+
+  img{
+    background: #123456;
+  }
+}

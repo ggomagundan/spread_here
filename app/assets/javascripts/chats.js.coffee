@@ -4,10 +4,10 @@ ready = ->
     $('#new_message').submit (e) ->
       textarea = $(this).find('#message_text')
       if $.trim(textarea.val()).length > 1
-        App.chat.send_message textarea.val(), messages.data('chatId')
+        App.chat.sendMessage textarea.val()
         textarea.val ''
       e.preventDefault()
-      false;
+      false
 
 $(document).ready(ready)
-$(document).on('page:load', ready)
+$(document).on('turbolinks:load', ready)

@@ -3,7 +3,7 @@
     <ul class="panel-body chats" id="chats">
       <% @chats.each do |chat| %>
         <li class="chat">
-          <span><%= chat.users.count %> people</span>
+        <span><%=link_to  "ChatRoom #{chat.id}", chat_path(chat)  %>(<%= chat.users.count %>)</span>
           <span><%= chat.messages.last.text[0, 32] if chat.messages.any? %><span>
         </li>
       <% end %>
