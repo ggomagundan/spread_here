@@ -1,4 +1,5 @@
 ready = ->
+
   if $("#flea_market_start_date").length > 0
     $("#flea_market_start_date").datetimepicker(
       format: "YYYY-MM-DD HH:mm:ss"
@@ -147,5 +148,5 @@ ready = ->
     return false
 
 
-$(document).ready(ready)
+#$(document).ready(ready)
 $(document).on('turbolinks:load', ready)
