@@ -98,5 +98,5 @@ gem 'rails_emoji'
 
 gem 'dotenv-rails'
 
-gem 'skylight'
+gem 'skylight', group: :production
 
