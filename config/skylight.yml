@@ -1,0 +1,2 @@
+SKYLIGHT_AUTHENTICATION: ENV['skylight_key']
+
