@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -42,15 +41,15 @@ ActiveRecord::Schema.define(version: 20160614073731) do
     t.index ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
   end
 
-  create_table "flea_markets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "flea_markets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
     t.integer  "is_visible",                default: 0
-    t.string   "market_name", limit: 255
+    t.string   "market_name"
     t.datetime "start_date"
     t.datetime "end_date"
-    t.string   "location",    limit: 255
-    t.string   "memo",        limit: 255
-    t.float    "latitude",    limit: 53
-    t.float    "longitude",   limit: 53
+    t.string   "location"
+    t.string   "memo"
+    t.float    "latitude",    limit: 24
+    t.float    "longitude",   limit: 24
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "list_image"
@@ -58,24 +57,24 @@ ActiveRecord::Schema.define(version: 20160614073731) do
     t.integer  "view_count",                default: 0
     t.integer  "city_id"
     t.text     "top_text",    limit: 65535
-    t.text     "bottom_text", limit: 65535,             collation: "utf8mb4_general_ci"
+    t.text     "bottom_text", limit: 65535
     t.integer  "priority",                  default: 1
   end
 
-  create_table "fleamarket_images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "is_visible",                 default: 1
+  create_table "fleamarket_images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
+    t.integer  "is_visible",     default: 1
     t.integer  "flea_market_id"
-    t.string   "image",          limit: 255
-    t.integer  "image_type",                 default: 0
+    t.string   "image"
+    t.integer  "image_type",     default: 0
     t.integer  "sort"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "fleamarket_tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "is_visible",                 default: 1
+  create_table "fleamarket_tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
+    t.integer  "is_visible",     default: 1
     t.integer  "flea_market_id"
-    t.string   "tag_name",       limit: 255
+    t.string   "tag_name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

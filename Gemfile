@@ -100,3 +100,4 @@ gem 'dotenv-rails'
 
 gem 'skylight', group: :production
 
+gem 'rails-controller-testing', group: :test
