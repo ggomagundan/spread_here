@@ -98,4 +98,5 @@ gem 'rails_emoji'
 
 gem 'dotenv-rails'
 
+gem 'skylight'
 
