@@ -1,0 +1,12 @@
+<% title "Admin/Parsing" %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @parsing.name %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_admin_parsing_path(@parsing) %> |
+  <%= link_to "Destroy", [:admin, @parsing], :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", admin_parsings_path %>
+</p>

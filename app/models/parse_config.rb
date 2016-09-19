@@ -1,0 +1,2 @@
+class ParseConfig < ApplicationRecord
+end

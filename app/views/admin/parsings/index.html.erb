@@ -1,0 +1,25 @@
+
+<table class="table table-hover">
+  <tr>
+    <th>image</th>
+    <th>tag</th>
+    <th>content</th>
+    <th>link</th>
+    <th>user_link</th>
+    <th></th>
+  </tr>
+  <% for parsing in @parsings %>
+    <tr>
+      <td><%= image_tag parsing.image_url, size: "100x100" %></td>
+      <td><%= parsing.tags %></td>
+      <td><%= parsing.content %></td>
+      <td><%= parsing.link %></td>
+      <td><%= link_to parsing.user_name, "https://www.instagram.com/#{parsing.user_name}", target: "_blank" %></td>
+      <td><%= link_to "Edit", edit_admin_parsing_path(parsing) %></td>
+      <td><%= link_to "Edit", edit_admin_parsing_path(parsing) %>
+      <%= link_to "Destroy", [:admin, parsing], data: { :confirm => 'Are you sure?'} , :method => :delete, class: "btn btn-danger" %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Admin/Parsing", new_admin_parsing_path %></p>

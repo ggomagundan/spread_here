@@ -1,0 +1,2 @@
+class Parsing < ApplicationRecord
+end
