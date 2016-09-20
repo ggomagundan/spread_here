@@ -14,7 +14,10 @@ Rails.application.routes.draw do
     root "flea_markets#index"
     resources :flea_markets
     resources :users
-    resources :parsings
+    resources :parse_configs
+    resources :parsings do 
+      get :move, on: :member
+    end
   }
 
   namespace(:api){

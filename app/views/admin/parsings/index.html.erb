@@ -15,8 +15,16 @@
       <td><%= parsing.content %></td>
       <td><%= parsing.link %></td>
       <td><%= link_to parsing.user_name, "https://www.instagram.com/#{parsing.user_name}", target: "_blank" %></td>
-      <td><%= link_to "Edit", edit_admin_parsing_path(parsing) %></td>
-      <td><%= link_to "Edit", edit_admin_parsing_path(parsing) %>
+      <td>
+        <% if parsing.is_complete == 0 %>
+          <%= link_to "GoLive", move_admin_parsing_path(parsing), class: "btn btn-primary" %>
+        <% elsif parsing.is_complete == 1 %>
+          <%= link_to "Del", "#", class: "btn btn-danger" %>
+        <% else %>
+          <%= link_to "NowLive", "#", class: "btn btn-warning" %>
+        <% end %>
+      </td>
+      <td><%= link_to "Edit", edit_admin_parsing_path(parsing), class: "btn btn-warning" %>
       <%= link_to "Destroy", [:admin, parsing], data: { :confirm => 'Are you sure?'} , :method => :delete, class: "btn btn-danger" %></td>
     </tr>
   <% end %>

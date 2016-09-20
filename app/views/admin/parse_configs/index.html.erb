@@ -1,0 +1,16 @@
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+  <% for parse_config in @parse_configs %>
+    <tr>
+      <td><%= parse_config.name %></td>
+      <td><%= link_to "Show", [:admin, parse_config] %></td>
+      <td><%= link_to "Edit", edit_admin_parse_config_path(parse_config) %></td>
+      <td><%= link_to "Destroy", [:admin, parse_config], :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Admin/Parse Config", new_admin_parse_config_path %></p>
