@@ -3,6 +3,7 @@ require File.dirname(__FILE__) + '/../../config/environment.rb'
 namespace :websta do
   task :api  => :environment do
 
+    puts "Crawled Start"
 
     if ParseConfig.where(content_type: 1).first.updated_at >= Time.now - 1.days
       cookie = ParseConfig.where(content_type: 1).first.cookie
@@ -12,6 +13,7 @@ namespace :websta do
       data = body["data"]
       data.each do |d|
         id = d["id"]
+        puts d
         if Parsing.where(content_id: id).blank?
           tags  = d["tags"]
           image = d["images"]["standard_resolution"]
@@ -29,6 +31,7 @@ namespace :websta do
         end
       end
     end
+    puts "Crawled End"
 
   end
 end

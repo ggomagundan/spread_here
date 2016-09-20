@@ -14,7 +14,7 @@
 # end
 #
  every 30.minutes do
-   rake "websta:api",  :output => "/cron_log/hourly_rank.log", :environment => ENV['RAILS_ENV']
+   rake "websta:api",  :output => "log/websta_api.log", :environment => ENV['RAILS_ENV']
  end
 
 # Learn more: http://github.com/javan/whenever
