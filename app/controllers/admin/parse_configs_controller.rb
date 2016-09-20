@@ -1,6 +1,6 @@
 class Admin::ParseConfigsController < Admin::ApplicationController
   def index
-    @parse_configs = ParseConfig.page(params[:page]).per(20)
+    #@parse_configs = ParseConfig.page(params[:page]).per(20)
     redirect_to edit_admin_parse_config_path(@parse_configs.first)
   end
 

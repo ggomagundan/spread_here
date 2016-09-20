@@ -19,7 +19,7 @@ class Admin::ParsingsController < Admin::ApplicationController
   def destroy
     @parsing = Parsing.find(params[:id])
     @parsing.update_attributes(is_complete: 1)
-    redirect_to admin_parsings_path, :notice  => "Successfully updated parsing."
+    redirect_to admin_parsings_path(page: params[:page]), :notice  => "Successfully updated parsing."
   end
 
   def move

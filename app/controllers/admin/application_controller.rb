@@ -8,4 +8,10 @@ class Admin::ApplicationController < ActionController::Base
 
   layout 'admin'
 
+=begin
+   def default_url_options(options = {})
+     { page: params[:page]  }.merge options
+   end
+=end 
+
 end

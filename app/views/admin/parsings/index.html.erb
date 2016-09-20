@@ -25,9 +25,9 @@
         <% end %>
       </td>
       <td><%= link_to "Edit", edit_admin_parsing_path(parsing), class: "btn btn-warning" %>
-      <%= link_to "Destroy", [:admin, parsing], data: { :confirm => 'Are you sure?'} , :method => :delete, class: "btn btn-danger" %></td>
+      <%= link_to "Destroy", admin_parsing_path(parsing, page: params[:page]), data: { :confirm => 'Are you sure?'} , :method => :delete, class: "btn btn-danger" %></td>
     </tr>
   <% end %>
 </table>
+<%= paginate @parsings %>
 
-<p><%= link_to "New Admin/Parsing", new_admin_parsing_path %></p>

@@ -25,8 +25,8 @@
             <i class="fa fa-arrow-up fa-5x"></i>
           </div>
           <div class="col-xs-9 text-right">
-            <div class="huge">97 %</div>
-            <div>Average uptime</div>
+            <div class="huge"><%= Parsing.where(is_complete: 0).count %></div>
+            <div><%= link_to "Waiting Count", admin_parsings_path %></div>
           </div>
         </div>
       </div>
