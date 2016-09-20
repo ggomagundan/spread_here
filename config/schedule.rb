@@ -3,7 +3,8 @@
 # It's helpful, but not entirely necessary to understand cron before proceeding.
 # http://en.wikipedia.org/wiki/Cron
 
-env :PATH, ENV['PATH'] 
+env :PATH, ENV['PATH']
+env :GEM_PATH, ENV['GEM_PATH']
 
  every 30.minutes do
    rake "websta:api",  :output => "log/websta_api.log", :environment => ENV['RAILS_ENV']
