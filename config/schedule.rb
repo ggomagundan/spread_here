@@ -3,16 +3,8 @@
 # It's helpful, but not entirely necessary to understand cron before proceeding.
 # http://en.wikipedia.org/wiki/Cron
 
-# Example:
-#
-# set :output, "/path/to/my/cron_log.log"
-#
-# every 2.hours do
-#   command "/usr/bin/some_great_command"
-#   runner "MyModel.some_method"
-#   rake "some:great:rake:task"
-# end
-#
+env :PATH, ENV['PATH'] 
+
  every 30.minutes do
    rake "websta:api",  :output => "log/websta_api.log", :environment => ENV['RAILS_ENV']
  end
