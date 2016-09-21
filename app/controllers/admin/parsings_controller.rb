@@ -20,7 +20,7 @@ class Admin::ParsingsController < Admin::ApplicationController
     @parsing = Parsing.find(params[:id])
     @parsing.update_attributes(is_complete: 1)
     respond_to do |format|
-      format.html { render :nothing => true }
+      format.html { head :ok }
       format.json { head :no_content } 
     end
     #redirect_to admin_parsings_path(page: params[:page]), :notice  => "Successfully updated parsing."

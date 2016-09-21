@@ -1,7 +1,10 @@
 ready = ->
   $('.delete_post').on 'click', ->
     if confirm("Are you sures?")
-      $(this).closest('tr').delay().fadeOut()
+      row = $(this).closest("tr").get(0)
+      $.post(this.href, {_method:'delete'}, null, "script")
+      $(row).hide("slow" )
+      false
     else
       false
 
