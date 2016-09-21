@@ -19,7 +19,11 @@ class Admin::ParsingsController < Admin::ApplicationController
   def destroy
     @parsing = Parsing.find(params[:id])
     @parsing.update_attributes(is_complete: 1)
-    redirect_to admin_parsings_path(page: params[:page]), :notice  => "Successfully updated parsing."
+    respond_to do |format|
+      format.html { render :nothing => true }
+      format.json { head :no_content } 
+    end
+    #redirect_to admin_parsings_path(page: params[:page]), :notice  => "Successfully updated parsing."
   end
 
   def move
@@ -39,7 +43,8 @@ class Admin::ParsingsController < Admin::ApplicationController
           flea.fleamarket_tags.new(tag_name: t_name).save
         end
       end
-      redirect_to edit_admin_flea_market_path(flea)
+      redirect_to edit_admin_flea_market_path(flea), turbolinks: true
+      #redirect_via_turbolinks_to edit_admin_flea_market_path(flea)
     else
       render :back
     end
