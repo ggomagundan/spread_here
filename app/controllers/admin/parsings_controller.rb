@@ -1,6 +1,6 @@
 class Admin::ParsingsController < Admin::ApplicationController
   def index
-    @parsings = Parsing.order("is_complete asc, id desc").page(params[:page]).per(20)
+    @parsings = Parsing.order("is_complete asc, id desc").page(params[:page]).per(40)
   end
 
   def edit
