@@ -95,6 +95,9 @@ ready = ->
     startDayEle.addEventListener "onOk", (e) ->
       this.value = startDayDialog.time.format('YYYY-MM-DD')
       $("#flea_market_start_date").val $("#start_day").val() + " " + $("#start_time").val()
+      if $("#flea_market_end_date").val() is ""
+        $("#flea_market_end_date").val startDayDialog.time.format('YYYY-MM-DD')
+        $("#end_day").val startDayDialog.time.format('YYYY-MM-DD')
 
   if startTimeEle != null
     startTimeEle.addEventListener "click", ->
