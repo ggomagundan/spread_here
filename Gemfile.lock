@@ -10,7 +10,7 @@ GIT
 PATH
   remote: /Users/kai/Copy/projects/rails/md_date_time_picker-rails
   specs:
-    md-date-time-picker-rails (2.0.5)
+    md-date-time-picker-rails (2.1.0)
 
 GEM
   remote: https://rubygems.org/
