@@ -15,6 +15,7 @@
 //= require jquery_nested_form
 //= require turbolinks
 //= require bootstrap
-//= require moment.min
-//= require mdDateTimePicker.min
+// require moment.min
+// require moment.locales
+//= require mdDateTimePicker
 //= require draggabilly.pkgd.min

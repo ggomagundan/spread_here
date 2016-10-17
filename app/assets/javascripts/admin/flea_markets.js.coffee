@@ -1,13 +1,14 @@
 ready = ->
 
-  if $("#flea_market_start_date").length > 0
-    $("#flea_market_start_date").datetimepicker(
-      format: "YYYY-MM-DD HH:mm:ss"
-    )
-  if $("#flea_market_end_date").length > 0
-    $("#flea_market_end_date").datetimepicker(
-      format: "YYYY-MM-DD HH:mm:ss"
-    )
+
+#  if $("#flea_market_start_date").length > 0
+#    $("#flea_market_start_date").datetimepicker(
+#      format: "YYYY-MM-DD HH:mm:ss"
+#    )
+#  if $("#flea_market_end_date").length > 0
+#    $("#flea_market_end_date").datetimepicker(
+#      format: "YYYY-MM-DD HH:mm:ss"
+#    )
 
   sendFile = (file) ->
     data = new FormData
@@ -55,6 +56,7 @@ ready = ->
     $("#flea_market_latitude").val $(this).data "lat"
     $("#flea_market_longitude").val $(this).data "lon"
 
+  moment.locale('ko')
   #toggleButton = $("#flea_market_market_name")
   startDayEle = document.getElementById("start_day")
   startTimeEle = document.getElementById("start_time")

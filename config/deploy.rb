@@ -107,7 +107,9 @@ namespace :deploy do
  end
 
  after :published, 'link_vector_monitoring' do
-   execute("cp  -rf #{shared_path}/vector #{release_path}/public/vector")
+   on roles(:app), in: :sequence, wait: 8 do
+     execute("cp  -rf #{shared_path}/vector #{release_path}/public/vector")
+   end
  end
 
   #after 'deploy:publishing', :restart_unicorn

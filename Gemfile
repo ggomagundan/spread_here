@@ -80,7 +80,6 @@ gem 'capistrano3-delayed-job', '~> 1.0'
 gem 'delayed_job_active_record'
 gem 'daemons'
 
-gem 'exception_notification'
 
 #gem 'unicorn'
 
@@ -88,9 +87,9 @@ gem 'exception_notification'
 #gem 'summernote-rails'
 #gem 'bootstrap-sass'
 
-gem 'md-date-time-picker-rails'
+#gem 'md-date-time-picker-rails'
 #gem 'md-date-time-picker-rails', github: "ggomagundan/md-date-time-picker-rails", branch: "dark_color_themes"
-#gem 'md-date-time-picker-rails', path: "/Users/kai/Copy/projects/rails/md_date_time_picker-rails"
+gem 'md-date-time-picker-rails', path: "/Users/kai/Copy/projects/rails/md_date_time_picker-rails"
 
 gem "instagram"
 

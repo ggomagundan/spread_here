@@ -14,7 +14,7 @@ namespace :websta do
       data.each do |d|
         id = d["id"]
         puts d
-        if Parsing.where(content_id: id).blank?
+        if Parsing.where(content_id: id).blank? && d["type"] == "image"
           tags  = d["tags"]
           image = d["images"]["standard_resolution"]
           image = d["images"]["low_resolution"] if image.blank?
