@@ -36,6 +36,26 @@
     -->
 
     <%= csrf_meta_tags %>
+
+
+  <meta property="og:url"                content="<%= request.original_url %>" />
+  <meta property="og:type"               content="article" />
+  <% if @flea_market.present? && controller_name == "flea_markets" && params[:action] == "show" %> 
+    <meta property="og:title"              content="<%= @flea_market.market_name%>" />
+    <meta property="og:description"        content="SPREAD HERE is FleaMarket curation Service" />
+    <% if @flea_market.list_image.present? %>
+      <meta property="og:image"              content="http://www.spreadhere.com<%= @flea_market.list_image_url %>">
+    <% else %>
+      <meta property="og:image"              content="http://talkimg.imbc.com/TVianUpload//tvian/image/2015/10/10/IhjX4gdqTjQq635800827987838901.jpg" />
+    <% end %>
+  <% else %>
+    <meta property="og:title"              content="Spread Here" />
+    <meta property="og:description"        content="SPREAD HERE is FleaMarket curation Service" />
+    <meta property="og:image"              content="http://talkimg.imbc.com/TVianUpload//tvian/image/2015/10/10/IhjX4gdqTjQq635800827987838901.jpg" />
+  <% end %>
+
+
+
   </head>
   <body>
 
