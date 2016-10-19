@@ -56,7 +56,8 @@ ready = ->
     $("#flea_market_latitude").val $(this).data "lat"
     $("#flea_market_longitude").val $(this).data "lon"
 
-  moment.locale('ko')
+  #moment.locale('ko')
+  moment.locale('en')
   #toggleButton = $("#flea_market_market_name")
   startDayEle = document.getElementById("start_day")
   startTimeEle = document.getElementById("start_time")
@@ -66,26 +67,22 @@ ready = ->
   startDayDialog = new mdDateTimePicker.default(
     type: 'date',
     future: moment().add(4, 'months'),
-    locale: "ko",
     trigger: startDayEle 
   )
 
   startTimeDialog = new mdDateTimePicker.default(
     type: 'time',
-    locale: "ko",
-    trigger: startTimeEle 
+    trigger: startTimeEle
   )
 
   endDayDialog = new mdDateTimePicker.default(
     type: 'date',
     future: moment().add(4, 'months'),
-    locale: "ko",
     trigger: endDayEle 
   )
 
   endTimeDialog = new mdDateTimePicker.default(
     type: 'time',
-    locale: "ko",
     trigger: endTimeEle 
   )
 

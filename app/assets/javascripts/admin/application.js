@@ -16,6 +16,6 @@
 //= require turbolinks
 //= require bootstrap
 // require moment.min
-// require moment.locales
-//= require mdDateTimePicker
+//= require moment.locales
 //= require draggabilly.pkgd.min
+//= require mdDateTimePicker
