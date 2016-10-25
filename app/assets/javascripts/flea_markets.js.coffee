@@ -1,10 +1,13 @@
 list_refresh = ->
-  $(".flea_market").wookmark
-    autoResize: true
-    container: $("#fleamarket_list")
-    offset: 5
-    outerOffset: 10
-    itemWidth: "45%"
+
+  width = $("#fleamarket_list .flea_market:first").width()
+  $("#fleamarket_list .flea_market .card-image").css("height",width)
+#  $(".flea_market").wookmark
+#    autoResize: true
+#    container: $("#fleamarket_list")
+#    offset: 5
+#    outerOffset: 10
+#    itemWidth: "45%"
 
 list_refresh_smaller = ->
   $(".flea_market").wookmark
@@ -17,6 +20,11 @@ list_refresh_smaller = ->
 
 
 ready = ->
+
+  list_refresh()
+
+  $(window).resize ->
+    list_refresh()
 
 #  $("#fleamarket_list .flea_market").wookmark
 #    autoResize: true
@@ -124,6 +132,7 @@ ready = ->
       if url && $(window).scrollTop() > $(document).height() - $(window).height() - 250
         $('.pagination').html("<div class='loading'><img src='/spread_here/loading.gif'><p>추가 로딩 중 입니다..</p></div>")
         $.getScript(url)
+        list_refresh()
     $(window).scroll()
 
   $(window).scroll ->

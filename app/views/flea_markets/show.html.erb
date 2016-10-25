@@ -1,3 +1,199 @@
+<!-- Google Adsence -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- spreadHere Main -->
+<ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-9646834340680693"
+       data-ad-slot="7863576658"
+       data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+
+<div class="col-md-12">
+  <article class="">
+    <div class="row">
+
+      <div class="col-md-8 col-sm-12">
+        <h3 class="market_name">
+         <%= @flea_market.market_name %> 
+        </h3>
+        <div class="market_location"> 
+          <%= @flea_market.location %> 
+        </div>
+        <% if @flea_market.memo.present? && @flea_market.location.present? %>
+          /
+        <% end %>
+
+        <div class="market_memo"><%= @flea_market.memo %></div>
+        <div class="spread_notice"> 마켓에 대한 정보는 spreadherenow@gmail.com 으로 많이 알려주세요</div>
+  
+        <div class="top-text">
+          <%=  @flea_market.top_text.gsub(/\r\n/, "<br/>").html_safe %>
+        </div>
+        <% if @flea_market.content_images.present? %>
+          <% @flea_market.content_images.each do |img| %>
+            <div class="img">
+              <%= image_tag img.image_url, alt: "Test", class: "img responsive-img" if img.image.present? %>
+            </div>
+          <% end %>
+        <% else %>
+          <div class="img">
+            <%= image_tag "http://talkimg.imbc.com/TVianUpload//tvian/image/2015/10/10/IhjX4gdqTjQq635800827987838901.jpg", alt: "Test", class: "img responsive-img" %> 
+          </div>
+        <% end %>
+
+        <div class="bottom-text">
+          <%=  @flea_market.bottom_text.gsub(/\r\n/, "<br/>").html_safe %>
+        </div>
+
+      </div>
+
+      <div class="col-md-4 col-sm-12">
+        <div class="card-panel market_desc" style="min-height: 640px;">
+          <h6>DETAILS</h6>
+          <div class="dividor" style="width:100%;height:1px;background:#eee;margin:20px 0;"></div>
+
+          <div class="market_location">
+            <div class="detail-title"><i class="fa fa-map-marker"></i> Address</div>
+            <div class="market_location"> <%= @flea_market.location %> </div>
+            <div class="market_memo"><%= @flea_market.memo %></div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="market_daterange">
+            <span class="detail-title"><i class="fa fa-calendar-check-o"></i> Opening Hours</span>
+            <ul class="opening-hours">
+              <li>
+                <%= @flea_market.start_date.strftime("%F %H:%M") %>
+              </li>
+              <li>
+                ~ <%= @flea_market.end_date.strftime("%F %H:%M ") %> 
+              </li>
+            </ul>
+          </div>
+
+          <div class="divider"></div>
+
+          <span class="detail-title"><i class="fa fa-hashtag"></i> HashTag</span>
+            <div class="flea_market_tag">
+              <% @flea_market.fleamarket_tags.each do |tag| %>
+                <div class="label label-primary"><%= tag.tag_name %> </div>
+              <% end %>
+            </div>
+          </span>
+          <div class="divider"></div>
+
+          <div class="market_sharing">
+            <div
+              class="fb-like"
+
+              data-href="<%= request.original_url%>" 
+              data-layout="button" 
+              data-action="like" 
+              data-size="small" 
+              data-show-faces="false"
+              data-share="true">
+            </div>
+
+          </div>
+
+          <a class="waves-effect waves-light btn" href="#location-map">Scroll Map</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12">
+       <div id="location-map" class="location-group ">
+         <div class="location-map col-sm-11">
+           <% if @flea_market.have_location? %>
+             <%= render "daum_map" %>
+           <% else %>
+             <%= image_tag "no_location_info.png", alt: "NoLocation", class: "img"  %>
+           <% end %>
+        </div>
+        <div class="location-info col-sm-11">
+          <div class="market_location none"><%= @flea_market.location %> <%= @flea_market.latitude %>, <%= @flea_market.longitude %></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="row">
+    <div class="col-sm-12">
+
+      <div class="fb-comments" data-href="<%= request.original_url %>" data-numposts="5"></div>
+
+      <div id="disqus_thread"></div>
+        <script>
+          /**
+          *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+          *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+          */
+
+          var disqus_config = function () {
+          this.page.url = "http://spreadhere.com";  // Replace PAGE_URL with your page's canonical URL variable
+          this.page.identifier = "SPREAD_HERE"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+          };
+
+          (function() {  // DON'T EDIT BELOW THIS LINE
+          var d = document, s = d.createElement('script');
+
+          s.src = '//ggomagundan.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+          })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+      </div>
+    </div>
+
+    <% if false &&  @recommend.present? %>
+      <div id="recommend">
+        <div id="recommend-title">Recommed</div>
+        <% @recommend.each do |rec| %>
+          <div class="col md4 sm6 xs12 recommend-market">
+            <%=  rec.market_name %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+
+
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
 <div class="main-img">
     <%= image_tag "http://talkimg.imbc.com/TVianUpload//tvian/image/2015/10/10/IhjX4gdqTjQq635800827987838901.jpg", alt: "Test" if @flea_market.top_image.blank? %> 
     <%= image_tag @flea_market.top_image_url, alt: "Test", class: "fleamarket-top-img"  if @flea_market.top_image.present? %>
@@ -15,37 +211,20 @@
 
 <div class="spread_notice"> 마켓에 대한 정보는 spreadherenow@gmail.com 으로 많이 알려주세요</div>
 
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- spreadHere Main -->
-<ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-9646834340680693"
-       data-ad-slot="7863576658"
-       data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
 
-
-
-<div class="market_sharing">
-  <div
-    class="fb-like"
-    data-share="true"
-    data-width="450"
-    data-show-faces="true">
-  </div>
-</div>
-
+-->
 
 <!-- Nav tabs -->
+<!--
 <ul class="nav nav-tabs" role="tablist">
   <li role="presentation" class="active"><a href="#flea-info" aria-controls="flea-info" role="tab" data-toggle="tab">기본정보</a></li>
   <li class="map-tab" role="presentation"><a href="#location" aria-controls="location" role="tab" data-toggle="tab" data-lat="<%= @flea_market.latitude %>" data-lon="<%= @flea_market.longitude %>">위치정보</a></li>
   <li role="presentation" class="sns-comment"><a href="#comments" aria-controls="comments" role="tab" data-toggle="tab">댓글</a></li>
 </ul>
+-->
 
 <!-- Tab panes -->
+<!--
 <div class="tab-content">
   <div role="tabpanel" class="tab-pane active" id="flea-info">
     <div class="flea_market_tag">
@@ -132,17 +311,4 @@
 
   </div>
 </div>
-
-<% if false &&  @recommend.present? %>
-  <div id="recommend">
-    <div id="recommend-title">Recommed</div>
-    <% @recommend.each do |rec| %>
-      <div class="col-md-4 col-sm-6 col-xs-12 recommend-market">
-        <%=  rec.market_name %>
-      </div>
-    <% end %>
-  </div>
-<% end %>
-
-
-
+-->

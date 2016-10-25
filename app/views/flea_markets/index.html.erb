@@ -5,15 +5,16 @@
   <span> <%= "No Data On Today" %></span>
 <% end %>
 
-<%= stylesheet_link_tag "material-cards" %>
-<%= javascript_include_tag "jquery.material-cards", 'data-turbolinks-track' => true %>
+<% stylesheet_link_tag "material-cards" %>
+<% javascript_include_tag "jquery.material-cards", 'data-turbolinks-track' => true %>
 
 <%= javascript_include_tag "moment", 'data-turbolinks-track' => true %>
 <%= javascript_include_tag "bootstrap-datetimepicker", 'data-turbolinks-track' => true %>
 <%= stylesheet_link_tag "bootstrap-datetimepicker" %>
 
-<div id="search-bar">
+<div id="search-bar" class="row">
   <%= form_tag flea_markets_path, method: :get  do |f|  %>
+
     <div class="col-xs-12 col-md-6 form-group">
 
       <%= select_tag :city, options_from_collection_for_select(City.all, :id, :name, params[:city].to_i ), prompt: "지역",  class: "form-control" %>
@@ -25,6 +26,7 @@
       <i class="bar find-date-bar"></i>
       <span class="btn btn-primary find-btn">마켓 찾기</span>
     </div>
+
   <% end %>
 
 </div>

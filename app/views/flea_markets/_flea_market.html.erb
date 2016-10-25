@@ -1,101 +1,28 @@
-<div class="flea_market radius shadowDepth1 none">
-
-  <% link_to flea_market_path(flea_market) do %>
-    <div class="img flea_market__image border-tlr-radius">
-      <%= image_tag flea_market.list_image_url, alt: "test", class: "border-tlr-radius" if flea_market.list_image.present? %>
-      <% i = rand(100) % 2 %>
-      <%= image_tag "http://img.tenasia.hankyung.com/webwp_kr/wp-content/uploads/2014/05/2014051515474617545.jpg", alt: "test", class: "border-tlr-radius" if i == 0 && flea_market.list_image.blank? %>
-      <%= image_tag "http://img.yaplog.jp/img/17/pc/y/a/m/yamu98/26/26332.jpg", alt: "Test", class: "border-tlr-radius" if  i == 1 && flea_market.list_image.blank? %> 
-    </div>
-  <% end %>
-
-  <div class="flea_market__content flea_market__padding">
-
-    <!--
-    <div class="flea_market__share">
-      <div class="flea_market__social">
-        <a class="share-icon facebook" href="<%= "https://www.facebook.com/sharer/sharer.php?u=#{flea_market_url(flea_market)}&display=popup&ref=plugin&src=like&app_id=1705707066372193" %>" target="_popup"><span class="fa fa-facebook"></span></a>
-        <a class="share-icon twitter" href="#"><span class="fa fa-twitter"></span></a>
-        <a class="share-icon googleplus" href="#"><span class="fa fa-google-plus"></span></a>
-      </div>
-
-      <a id="share" class="share-toggle share-icon" href="#"></a>
-    </div>
-    -->
-
-    <div class="flea_market__meta">
-      <a href="#">Web Design</a>
-      <time><%=  flea_market.created_at.strftime("%F %H:%M") %></time> 
-    </div>
-
-
-    <div class="market_name"> 
-      <%= link_to flea_market.market_name, flea_market_path(flea_market) %>
-      <% if flea_market.have_location? %>
-        <span class="label label-primary">지도있음</span>
-      <% end %>
-    </div>
-    <div class="market_daterange"> <%= flea_market.start_date.strftime("%F %H:%M") %> ~ <%= flea_market.end_date.strftime("%F %H:%M ") %> </div>
-    <div class="market_location"> <%= flea_market.location %> </div>
-    <div class="market_memo"><%= flea_market.memo %></div>
-    <div class="market_map none"><%= flea_market.latitude %> , <%= flea_market.longitude %> </div>
-  </div>
-  <div class="flea_market__action">
-    <div class="flea_market__author">
-      <%= image_tag "compass.png", alt: "user_img" %>
-      <div class="flea_market__author-content">
-        By <a href="#">Someone</a>
-      </div>
-    </div>
-    <div class="flea_market__tag">
-      <% flea_market.fleamarket_tags.first(3).each do |tag| %>
-        <div class="label label-primary"><%= tag.tag_name %> </div>
-      <% end %>
-    </div>
-  </div>
-
-</div>
-
-
-<% arr = %w{Red Purple Deep-Purple Indigo Blue Light-Blue Cyan Teal Green Light-Green Lime Yellow Amber Orange Deep-Orange  Brown Grey Blue-Grey Pink} %>
-
 <%= link_to flea_market_path(flea_market) do %>
   <div class="col-md-4 col-sm-6 col-xs-12 flea_market">
-    <article class="material-card <%= arr.sample %>">
-      <h2>
-        <span><%= flea_market.market_name %> <span> <%= flea_market.location %></span ></span>
-        <strong>
-          <i class="fa fa-fw fa-star"></i>
-          <%= flea_market.start_date.strftime("%F %H:%M") %> ~ <%= flea_market.end_date.strftime("%F %H:%M ") %>
-        </strong>
+    <article class="card">
+
+      <div class="card-image">
+        <%= image_tag flea_market.top_image_url, alt: "test", class: "img-responsive" if flea_market.top_image.present? %>
+        <% i = rand(100) % 2 %>
+        <%= image_tag "http://img.tenasia.hankyung.com/webwp_kr/wp-content/uploads/2014/05/2014051515474617545.jpg", alt: "test", class: "img-responsive" if i == 0 && flea_market.top_image.blank? %>
+        <%= image_tag "http://img.yaplog.jp/img/17/pc/y/a/m/yamu98/26/26332.jpg", alt: "Test", class: "img-responsive" if  i == 1 && flea_market.top_image.blank? %> 
+      </div>
+      <div class="card-content">
+        <span class="market-name"><%= flea_market.market_name %></span>
+        <div> <%= flea_market.location %></div>
+
+        <i class="fa fa-fw fa-star"></i>
+        <%= flea_market.start_date.strftime("%F %H:%M") %> ~ <%= flea_market.end_date.strftime("%F %H:%M ") %>
+
+      </div>
+
+      <div class="card-content-tag">
         <div class="flea_market_tag">
           <% flea_market.fleamarket_tags.first(3).each do |tag| %>
             <div class="label label-primary"><%= tag.tag_name %> </div>
           <% end %>
         </div>
-      </h2>
-      <div class="mc-content">
-        <div class="img-container">
-          <%= image_tag flea_market.top_image_url, alt: "test", class: "img-responsive" if flea_market.top_image.present? %>
-          <% i = rand(100) % 2 %>
-          <%= image_tag "http://img.tenasia.hankyung.com/webwp_kr/wp-content/uploads/2014/05/2014051515474617545.jpg", alt: "test", class: "img-responsive" if i == 0 && flea_market.top_image.blank? %>
-          <%= image_tag "http://img.yaplog.jp/img/17/pc/y/a/m/yamu98/26/26332.jpg", alt: "Test", class: "img-responsive" if  i == 1 && flea_market.top_image.blank? %> 
-        </div>
-        <div class="mc-description">
-          <%= flea_market.memo %>
-        </div>
-      </div>
-      <a class="mc-btn-action">
-        <i class="fa fa-bars"></i>
-      </a>
-      <div class="mc-footer">
-        <h4>
-          Social
-        </h4>
-        <a class="fa fa-fw fa-facebook"></a>
-        <a class="fa fa-fw fa-twitter"></a>
-        <!--<a class="fa fa-fw fa-linkedin"></a> -->
-        <a class="fa fa-fw fa-google-plus"></a>
       </div>
     </article>
   </div>

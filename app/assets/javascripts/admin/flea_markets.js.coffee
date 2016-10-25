@@ -56,8 +56,8 @@ ready = ->
     $("#flea_market_latitude").val $(this).data "lat"
     $("#flea_market_longitude").val $(this).data "lon"
 
-  #moment.locale('ko')
-  moment.locale('en')
+  moment.locale('ko')
+  #moment.locale('en')
   #toggleButton = $("#flea_market_market_name")
   startDayEle = document.getElementById("start_day")
   startTimeEle = document.getElementById("start_time")

@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Fleamarket</title>
+    <% if @flea_market.present? && controller_name == "flea_markets" && params[:action] == "show" %> 
+      <title><%= @flea_market.market_name%></title>
+    <% else %>
+      <title>SpreadHere, 플리마켓 모으미</title>
+    <% end %>
 
     <%= favicon_link_tag "compass.ico" %>
 
@@ -9,11 +13,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,   initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 
+<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <%= stylesheet_link_tag "application", controller_name %>
     <%= javascript_include_tag "application", controller_name, 'data-turbolinks-track' => true %>
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.js" ></script>
+
+    <!-- Compiled and minified CSS -->
+    <!--
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+    -->
+    <!-- Compiled and minified JavaScript -->
+    <!--
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    -->
+
+
 
     <%= stylesheet_link_tag "bootstrap-datetimepicker" %>
     <%= javascript_include_tag "moment" %>
@@ -62,6 +78,7 @@
     <%= render "layouts/header" %>
 
     <div class="container content-wrap">
+      <div id="fb-root"></div>
       <% if !flash.empty? %>
         <div id="flash-msg">
           <% flash.each do |key, value| %>
@@ -75,9 +92,9 @@
     </div>
 
     <%= render "layouts/footer" %>
+<!--
 
-
-    <script>
+   <script>
       window.fbAsyncInit = function() {
         FB.init({
           appId      : '1705707066372193',
@@ -94,7 +111,7 @@
           fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     </script>
-
+    -->
 
     <% if Rails.env == "production" %>
       <script>

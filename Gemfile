@@ -25,6 +25,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
+gem 'jquery-turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
@@ -87,9 +88,9 @@ gem 'daemons'
 #gem 'summernote-rails'
 #gem 'bootstrap-sass'
 
-gem 'md-date-time-picker-rails'
+#gem 'md-date-time-picker-rails'
 #gem 'md-date-time-picker-rails', github: "ggomagundan/md-date-time-picker-rails", branch: "dark_color_themes"
-#gem 'md-date-time-picker-rails', path: "/Users/kai/Copy/projects/rails/md_date_time_picker-rails"
+gem 'md-date-time-picker-rails', path: "/Users/kai/Copy/projects/rails/md_date_time_picker-rails"
 
 gem "instagram"
 
@@ -100,3 +101,4 @@ gem 'dotenv-rails'
 gem 'skylight', group: :production
 
 gem 'rails-controller-testing', group: :test
+
