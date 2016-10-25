@@ -8,5 +8,5 @@ before_script:
   - mysql -e 'create database spread_here_test;'
 install: bundle install --path vendor/bundle --binstubs vendor/bundle/bin
 script: 
-  - RAILS_ENV=test bundle exec rake db:create db:migrate
+  - RAILS_ENV=test rails db:create db:migrate
   - RAILS_ENV=test bundle exec rake test

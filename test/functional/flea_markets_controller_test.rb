@@ -1,12 +1,12 @@
 require 'test_helper'
 
 class FleaMarketsControllerTest < ActionController::TestCase
+=begin
   def test_index
     get :index
     assert_template 'index'
   end
 
-=begin
   def test_show
     get :show, :id => FleaMarket.first
     assert_template 'show'

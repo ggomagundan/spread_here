@@ -27,16 +27,11 @@ class FleaMarketsController < ApplicationController
   end
 
   def edit
-    @flea_market = FleaMarket.find(params[:id])
+    redirect_to root_path
   end
 
   def update
-    @flea_marekt = FleaMarket.find(params[:id])
-    if @flea_market.update_attributes(flea_params)
-      redirect_to flea_markets_path
-    else
-      render :action => 'edit'
-    end
+    redirect_to root_path
   end
 
   private
