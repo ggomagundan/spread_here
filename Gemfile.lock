@@ -7,11 +7,6 @@ GIT
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
 
-PATH
-  remote: /Users/kai/Copy/projects/rails/md_date_time_picker-rails
-  specs:
-    md-date-time-picker-rails (2.1.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -287,6 +282,7 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
+    md-date-time-picker-rails (2.0.5)
     metaclass (0.0.4)
     method_source (0.8.2)
     mime-types (3.1)
@@ -438,7 +434,7 @@ DEPENDENCIES
   jquery-turbolinks
   kaminari!
   koala
-  md-date-time-picker-rails!
+  md-date-time-picker-rails
   mini_magick
   mocha
   mysql2 (~> 0.3.18)
