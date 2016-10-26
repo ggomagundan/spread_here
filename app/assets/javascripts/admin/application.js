@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require jquery_nested_form
 //= require turbolinks
+//= require tether
 //= require bootstrap
 // require moment.min
 //= require moment.locales

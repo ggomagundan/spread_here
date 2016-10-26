@@ -1,29 +1,31 @@
 <%= nested_form_for [:admin, @flea_market], :html => { :class => "form-horizontal" } do |f| %>
 
-  <div class="form-group">
-    <label class="control-label col-sm-2"><%= t("admin.common.is_visible") %></label>
+  <div class="form-group row">
+    <label class="col-form-label col-sm-2"><%= t("admin.common.is_visible") %></label>
     <div class="controls col-sm-6">
-      <label class="radio">
-        <%= f.radio_button :is_visible, 0 %>
-        <%= f.label :is_visible, t("admin.common.invisible"), value: 0 %>
-      </label>
-      <label class="radio">
-        <%= f.radio_button :is_visible, 1 %>
-        <%= f.label :is_visible, t("admin.common.visible"), value: 1 %>
-      </label>
+      <div class="form-check">
+        <label class="form-check-label">
+          <%= f.radio_button :is_visible, 0 %>
+          <%= f.label :is_visible, t("admin.common.invisible"), value: 0 %>
+        </label>
+        <label class="form-check-label">
+          <%= f.radio_button :is_visible, 1 %>
+          <%= f.label :is_visible, t("admin.common.visible"), value: 1 %>
+        </label>
+      </div>
     </div>
   </div>
 
 
-  <div class="form-group">
-    <label class="control-label col-sm-2">이벤트명</label>
+  <div class="form-group row">
+    <label class="col-form-label col-sm-2">이벤트명</label>
     <div class="controls col-sm-6">
       <%= f.text_field :market_name, class: "form-control" %>
     </div>
   </div>
 
-  <div class="form-group">
-    <label class="control-label col-sm-2">DateRange</label>
+  <div class="form-group row">
+    <label class="col-form-label col-sm-2">DateRange</label>
     <div class="controls col-sm-6">
       <div class="col-sm-10">
         <%= text_field_tag :start_day, f.object.start_date.present?? f.object.start_date.strftime("%Y-%m-%d"): "", :class => "col-sm-2 form-control inline-block"  %>
@@ -39,16 +41,16 @@
     </div>
   </div>
 
-  <div class="form-group">
-    <label class="control-label col-sm-2">City</label>
+  <div class="form-group row">
+    <label class="col-form-label col-sm-2">City</label>
     <div class="controls col-sm-6">
       <%= f.collection_select :city_id, City.all, :id, :name, {}, { class: "form-control"} %>
     </div>
   </div>
 
 
-  <div class="form-group">
-    <label class="control-label col-sm-2">Location</label>
+  <div class="form-group row">
+    <label class="col-form-label col-sm-2">Location</label>
     <div class="controls col-sm-6">
       <%= f.text_field :location, class: "form-control" %>
       <%= content_tag :span, "Search", class: "btn btn-primary find-location" %>
@@ -56,31 +58,31 @@
   </div>
 
 
-  <div class="form-group">
-    <label class="control-label col-sm-2">Memo</label>
+  <div class="form-group row">
+    <label class="col-form-label col-sm-2">Memo</label>
     <div class="controls col-sm-6">
       <%= f.text_field :memo, class: "form-control" %>
     </div>
   </div>
 
 
-  <div class="form-group">
-    <label class="control-label col-sm-2">Priority</label>
+  <div class="form-group row">
+    <label class="col-form-label col-sm-2">Priority</label>
     <div class="controls col-sm-6">
       <%= f.text_field :priority, class: "form-control" %>
     </div>
   </div>
 
 
-  <div class="form-group latlon-lists">
-    <label class="control-label col-sm-2"></label>
+  <div class="form-group row latlon-lists">
+    <label class="col-form-label col-sm-2"></label>
     <div class="controls col-sm-6">
     </div>
   </div>
 
 
-  <div class="form-group">
-    <label class="control-label col-sm-2">LatLon</label>
+  <div class="form-group row">
+    <label class="col-form-label col-sm-2">LatLon</label>
     <div class="controls col-sm-6">
       <%= f.text_field :latitude, class: "form-control" %>
       <%= f.text_field :longitude, class: "form-control" %>
@@ -88,8 +90,8 @@
   </div>
 
 
-  <div class="form-group">
-    <label class="control-label col-sm-2">TopText</label>
+  <div class="form-group row">
+    <label class="col-form-label col-sm-2">TopText</label>
     <div class="controls col-sm-11">
       <%= f.text_area :top_text, class: "form-control", as: :summernote, data: {provider: "summernote" }  %>
     </div>
@@ -97,8 +99,8 @@
 
 
 
-  <div class="form-group">
-    <label class="control-label col-sm-2">BottomText</label>
+  <div class="form-group row">
+    <label class="col-form-label col-sm-2">BottomText</label>
     <div class="controls col-sm-11">
       <%= f.text_area :bottom_text, class: "form-control", as: :summernote, data: {provider: "summernote" }  %>
     </div>
@@ -107,16 +109,16 @@
 
 
 
-  <div class="form-group">
-    <label class="control-label col-sm-2">ListImage</label>
+  <div class="form-group row">
+    <label class="col-form-label col-sm-2">ListImage</label>
     <div class="controls col-sm-6">
       <%= f.file_field :list_image, class: "form-control" %>
       <%= image_tag f.object.list_image.url if f.object.list_image.present? %>
     </div>
   </div>
 
-  <div class="form-group">
-    <label class="control-label col-sm-2">TopImage</label>
+  <div class="form-group row">
+    <label class="col-form-label col-sm-2">TopImage</label>
     <div class="controls col-sm-6">
       <%= f.file_field :top_image, class: "form-control" %>
       <%= image_tag f.object.top_image.url if f.object.top_image.present? %>
@@ -125,9 +127,9 @@
 
 
   <%= f.fields_for :fleamarket_images do |flea_img_form| %>
-    <div class="well">
-      <div class="form-group">
-        <label class="control-label col-sm-2">이미지</label>
+    <div class="card card-block">
+      <div class="form-group row">
+        <label class="col-form-label col-sm-2">이미지</label>
           <div class="controls col-sm-6">
           <label><%= flea_img_form.file_field :image %></label>
           <%= image_tag flea_img_form.object.image.url if flea_img_form.object.image.present? %>
@@ -138,12 +140,12 @@
     </div>
   <% end %>
 
-  <p><%= f.link_to_add "정보 추가", :fleamarket_images %></p>
+  <p class=""><%= f.link_to_add "정보 추가", :fleamarket_images, class: "btn btn-info" %></p>
 
   <%= f.fields_for :fleamarket_tags do |flea_tag_form| %>
-    <div class="well">
-      <div class="form-group">
-        <label class="control-label col-sm-2">태그명</label>
+    <div class="card card-block">
+      <div class="form-group row">
+        <label class="col-form-label col-sm-2">태그명</label>
           <div class="controls col-sm-6">
           <%= flea_tag_form.text_field :tag_name, class: "form-control" %>
         </div>
@@ -152,7 +154,7 @@
     </div>
   <% end %>
 
-  <p><%= f.link_to_add "태그 추가", :fleamarket_tags %></p>
+  <p class=""><%= f.link_to_add "태그 추가", :fleamarket_tags, class: "btn btn-info" %></p>
 
 
 

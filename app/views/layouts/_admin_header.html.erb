@@ -1,103 +1,70 @@
-<div id="header" class="navbar navbar-inverse navbar-fixed-top">
-  <div class="navbar-innner">
-    <div class="container">
-      <%= link_to "SPREAD HERE ADMIN", admin_flea_markets_path, class: "navbar-brand" %>
-
-      <ul class="nav navbar-nav pull-right">
-        <li class="nav-item">
-          <%= link_to "About", "#", class: "nav-link", data: {toggle: "modal", target: "#about-modal"} %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "BackToService", root_path, class: "nav-link" %>
-        </li>
-
-        <li class="nav-item">
-          <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-        </li>
-      </ul>
+<div id="wrapper">
+  <nav style="margin-bottom: 0" role="navigation" class="navbar navbar-dark bg-inverse navbar-fixed-top">
+    <!-- Logo -->
+    <div class="navbar-header">
+      <%= link_to admin_flea_markets_path, class: "navbar-brand" do %>
+      <img alt="Rust Logo" title="" src="https://www.rustmonitor.com/static/img/rust-monitor-logo-small.jpg"> SpreadHere Admin
+      <% end %>
     </div>
+    <ul class="nav navbar-nav pull-right">
+      <li class="nav-item">
+        <%= link_to "About", "#", class: "nav-link", data: {toggle: "modal", target: "#about-modal"} %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "BackToService", root_path, class: "nav-link" %>
+      </li>
 
-  </div>
+      <li class="nav-item">
+        <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: "nav-link" %>
+      </li>
+    </ul>
 
+    <div id="sidebar-wrapper">
+      <ul id="menu" class="sidebar-nav nav-stacked">
+        <li>
+          <%= link_to admin_parse_configs_path do %>
+            <span class="fa-stack fa-lg pull-left"><i class="fa fa-dashboard fa-stack-1x"></i></span>Dashboard
+          <% end %>
+        </li>
+        <li>
+          <%= link_to admin_parsings_path do %>
+            <span class="fa-stack fa-lg pull-left"><i class="fa fa-server fa-stack-1x"></i></span> Servers
+          <% end %>
+        </li>
+        <li>
+            <a href="https://www.rustmonitor.com/commits"><span class="fa-stack fa-lg pull-left"><i class="fa fa-code-fork fa-stack-1x"></i></span> Commits</a>
+        </li>
+        <li>
+            <a href="https://www.rustmonitor.com/about"><span class="fa-stack fa-lg pull-left"><i class="fa fa-info fa-stack-1x"></i></span> About</a>
+        </li>
+        <li>
+            <a target="_blank" href="https://twitter.com/RustMonitor"><span class="fa-stack fa-lg pull-left"><i class="fa fa-twitter fa-stack-1x"></i></span> Twitter</a>
+        </li>
+        <li>
+            <a href="https://www.reddit.com/r/RustMonitor/"><span class="fa-stack fa-lg pull-left"><i class="fa fa-reddit-alien fa-stack-1x"></i></span> Discuss</a>
+        </li>
+        <li>
+            <a href="http://slack.rustmonitor.com"><span class="fa-stack fa-lg pull-left"><i class="fa fa-bug fa-stack-1x"></i></span> Report a bug</a>
+        </li>
+        <li class="sidebar-search-icon">
+            <a><span class="fa-stack fa-lg pull-left"><i class="fa fa-search fa-stack-1x"></i></span> Search</a>
+        </li>
+
+        <li class="sidebar-search">
+            <div class="input-group custom-search-form">
+                <input type="text" placeholder="Search..." id="search" class="form-control" autocomplete="off">
+                <span class="input-group-btn">
+                    <button type="button" id="searchButton" class="btn btn-default">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </span>
+            </div>
+        <div class="autocomplete-suggestions " style="top: 0px; left: 0px; width: 192px; position: relative;"></div></li>
+
+    </ul>
 </div>
 
-<div id="wrapper">
-<nav style="margin-bottom: 0" role="navigation" class="navbar navbar-default navbar-fixed-top">
-        <!-- Logo -->
-            <div class="navbar-header">
-                <button id="menuToggle" class="navbar-toggle" type="button">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <%= link_to admin_flea_markets_path, class: "navbar-brand" do %>
-                  <img alt="Rust Logo" title="" src="https://www.rustmonitor.com/static/img/rust-monitor-logo-small.jpg"> SpreadHere Admin
-                <% end %>
-
-            </div>
-      <ul class="nav navbar-nav pull-right">
-        <li class="nav-item">
-          <%= link_to "About", "#", class: "nav-link", data: {toggle: "modal", target: "#about-modal"} %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "BackToService", root_path, class: "nav-link" %>
-        </li>
-
-        <li class="nav-item">
-          <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-        </li>
-      </ul>
-
-
-
-            <div id="sidebar-wrapper">
-                <ul id="menu" class="sidebar-nav nav-stacked">
-
-                    <li>
-                      <%= link_to admin_parse_configs_path do %>
-                        <span class="fa-stack fa-lg pull-left"><i class="fa fa-dashboard fa-stack-1x"></i></span>Dashboard
-                      <% end %>
-                    </li>
-                    <li>
-                      <%= link_to admin_parsings_path do %>
-                        <span class="fa-stack fa-lg pull-left"><i class="fa fa-server fa-stack-1x"></i></span> Servers
-                      <% end %>
-                    </li>
-                    <li>
-                        <a href="https://www.rustmonitor.com/commits"><span class="fa-stack fa-lg pull-left"><i class="fa fa-code-fork fa-stack-1x"></i></span> Commits</a>
-                    </li>
-                    <li>
-                        <a href="https://www.rustmonitor.com/about"><span class="fa-stack fa-lg pull-left"><i class="fa fa-info fa-stack-1x"></i></span> About</a>
-                    </li>
-                    <li>
-                        <a target="_blank" href="https://twitter.com/RustMonitor"><span class="fa-stack fa-lg pull-left"><i class="fa fa-twitter fa-stack-1x"></i></span> Twitter</a>
-                    </li>
-                    <li>
-                        <a href="https://www.reddit.com/r/RustMonitor/"><span class="fa-stack fa-lg pull-left"><i class="fa fa-reddit-alien fa-stack-1x"></i></span> Discuss</a>
-                    </li>
-                    <li>
-                        <a href="http://slack.rustmonitor.com"><span class="fa-stack fa-lg pull-left"><i class="fa fa-bug fa-stack-1x"></i></span> Report a bug</a>
-                    </li>
-                    <li class="sidebar-search-icon">
-                        <a><span class="fa-stack fa-lg pull-left"><i class="fa fa-search fa-stack-1x"></i></span> Search</a>
-                    </li>
-
-                    <li class="sidebar-search">
-                        <div class="input-group custom-search-form">
-                            <input type="text" placeholder="Search..." id="search" class="form-control" autocomplete="off">
-                            <span class="input-group-btn">
-                                <button type="button" id="searchButton" class="btn btn-default">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </span>
-                        </div>
-                    <div class="autocomplete-suggestions " style="top: 0px; left: 0px; width: 192px; position: relative;"></div></li>
-
-                </ul>
-            </div>
-
-        </nav>
-        </div>
+  </nav>
+</div>
 
 

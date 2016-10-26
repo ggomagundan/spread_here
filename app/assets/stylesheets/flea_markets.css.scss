@@ -13,19 +13,18 @@
   width:100%;
   display: table;
 
-  $search-font-size: 1.6rem !default;
+  $search-font-size: 1.2rem !default;
   $search-active-font-size: $search-font-size * 0.8 !default;
   $search-active-top: -$search-font-size !default;
 
-  
   $search-spacer: $search-font-size / 8 !default;
   $search-input-color: #333 !default;
   $search-border-color: #999 !default;
-$search-label-color: lighten($search-border-color, 10%) !default;
-$search-active-color: darken($search-border-color, 10%) !default;
-$search-focus-color: #337ab7 !default;
+  $search-label-color: lighten($search-border-color, 10%) !default;
+  $search-active-color: darken($search-border-color, 10%) !default;
+  $search-focus-color: #337ab7 !default;
 
-$search-transition-speed: 0.28s !default;
+  $search-transition-speed: 0.28s !default;
 
 
   div.col-md-6.col-xs-12{
@@ -44,71 +43,68 @@ $search-transition-speed: 0.28s !default;
       box-shadow: none;
     }
 
-.bar {
-		position: relative;
-		border-bottom: ($search-font-size / 16) solid $search-border-color;
-		display: block;
-		
-		&::before {
-			content: '';
-			height: ($search-font-size / 8);
-			width: 0;
-			left: 50%;
-			bottom: ($search-font-size / -16);
-			position: absolute;
-			background: $search-focus-color;
-			transition: left $search-transition-speed ease, width $search-transition-speed ease;
-			z-index: 2;
-		}
-	}
-	
-	select,
-	input:focus,
-	input:valid,
-	input.form-file,
-	input.has-value,
-	textarea:focus,
-	textarea:valid,
-	textarea.form-file,
-	textarea.has-value {
-		color: $search-input-color;
+    .bar {
+      position: relative;
+      border-bottom: ($search-font-size / 16) solid $search-border-color;
+      display: block;
 
-		~ .control-label {
-			font-size: $search-active-font-size;
-			color: $search-active-color;
-			top: $search-active-top;
-			left: 0;
-		}
-	}
+      &::before {
+        content: '';
+        height: ($search-font-size / 8);
+        width: 0;
+        left: 50%;
+        bottom: ($search-font-size / -16);
+        position: absolute;
+        background: $search-focus-color;
+        transition: left $search-transition-speed ease, width $search-transition-speed ease;
+        z-index: 2;
+      }
+    }
 
-	select,
-	input,
-	textarea {
-		&:focus {
-			outline: none;
+    select,
+    input:focus,
+    input:valid,
+    input.form-file,
+    input.has-value,
+    textarea:focus,
+    textarea:valid,
+    textarea.form-file,
+    textarea.has-value {
+      color: $search-input-color;
 
-			~ .control-label {
-				color: $search-focus-color;
-			}
+      ~ .control-label {
+        font-size: $search-active-font-size;
+        color: $search-active-color;
+        top: $search-active-top;
+        left: 0;
+      }
+    }
 
-			~ .bar {
-				&::before {
-					width: 100%;
-					left: 0;
-				}
-			}
-		}
-	}
+    select,
+    input,
+    textarea {
+      &:focus {
+        outline: none;
 
+        ~ .control-label {
+          color: $search-focus-color;
+        }
 
-
-
+        ~ .bar {
+          &::before {
+            width: 100%;
+            left: 0;
+          }
+        }
+      }
+    }
 
   }
 
   .form-control.find-date,   .form-control.find-date-bar{
     width: 70%;
   }
+
   .btn.find-btn{
     position: absolute;
     top: 3px;
@@ -138,7 +134,7 @@ $search-transition-speed: 0.28s !default;
     }
 
     .market-name{
-      font-size: 1.8em;
+      font-size: 1.4em;
       color: #88aaa9 !important;
     }
 
@@ -171,12 +167,12 @@ $search-transition-speed: 0.28s !default;
     .card-content {
       border-radius: 0 0 2px 2px;
       padding: 20px;
-      font-size: 1.2rem;
+      font-size: .8rem;
       padding:5px;
     }
 
     .card-content-tag{
-      font-size: 1.2rem;
+      font-size: .8rem;
       padding:10px;
     }
 
@@ -339,187 +335,6 @@ $search-transition-speed: 0.28s !default;
  * codepen.io/mithicher/pen/azQKNN/
  */
 
-.border-tlr-radius { 
-	border-top-left-radius: 2px;
-	border-top-right-radius: 2px; 
-}
-
-.text-center { text-align: center; }
-
-.radius { border-radius: 2px; }
-
-.padding-tb { padding-top: 1.6rem; padding-bottom: 1.6rem;}
-
-.shadowDepth0 { box-shadow: 0 1px 3px rgba(0,0,0, 0.12); }
-
-.shadowDepth1 {
-   box-shadow: 
-  		0 1px 3px rgba(0,0,0, 0.12),
-    	0 1px 2px rgba(0,0,0, 0.24);      
-}
-
-
-/**
- * flea_market Styles
- */
-
-.flea_market__padding {
-	padding: 1.6rem;
-}
-
-.flea_market__image {
-	min-height: 100px;
-	background-color: #eee;
-	img {
-		width: 100%;
-		max-width: 100%;
-		display: block;
-  }
-}
-
-.flea_market__content {
-	position: relative;
-}
-
-/* flea_market meta */
-.flea_market__meta time {
-	font-size: 1.5rem;
-	color: #bbb;
-	margin-left: 0.8rem;
-}
-
-/* flea_market article */
-.flea_market__article a {
-	text-decoration: none;
-	color: #444;
-	transition: all 0.5s ease;
-}
-	.flea_market__article a:hover {
-		color: #2980b9;
-	}
-
-/* flea_market action */
-.flea_market__action {
-	overflow: hidden;
-	padding-right: 1.6rem;
-	padding-left: 1.6rem;
-	padding-bottom: 1.6rem;
-}
-
-.flea_market__author {}
-
-	.flea_market__author img,
-	.flea_market__author-content {
-		display: inline-block;
-		vertical-align: middle;
-	}
-
-	.flea_market__author img{
-		border-radius: 50%;
-		margin-right: 0.6em;
-    width: 40px;
-    height: 40px;;
-	}
-
-
-.flea_market__tag{
-
-  margin-top: 20px;
-   div.label{
-     display:inline-block;
-     margin: 0 5px 3px 0;
-   }
-
-}
-.flea_market__share {
-	float: right;
-	position: relative;
-	margin-top: -42px;
-}
-
-.flea_market__social {
-	position: absolute;
-	top: 0;
-	right: 0;
-	visibility: hidden;
-	width: 160px;
-	transform: translateZ(0);
-  	transform: translateX(0px);
-  	transition: transform 0.35s ease;
-}
-	.flea_market__social--active {
-		visibility: visible;
-		/*z-index: 3;*/
-		transform: translateZ(0);
- 		transform: translateX(-48px);
-  		transition: transform 0.35s ease;
-	}
-
-.share-toggle {
-	z-index: 2;
-}
-.share-toggle:before {
-	content: "\f1e0";
-	font-family: 'FontAwesome';
-	color: #3498db;
-}
-	.share-toggle.share-expanded:before {
-		content: "\f00d";
-	}
-
-.share-icon {
-	display: inline-block;
-	width: 48px;
-	height: 48px;
-	line-height: 48px;
-	text-align: center;
-	border-radius: 50%;
-	background-color: #fff;
-	transition: all 0.3s ease;
-	outline: 0;
-
-	box-shadow: 
-	  		0 2px 4px rgba(0,0,0, 0.12),
-	    	0 2px 4px rgba(0,0,0, 0.24);
-}
-	.share-icon:hover,
-	.share-icon:focus {
-		box-shadow: 
-	  		0 3px 6px rgba(0,0,0, 0.12),
-	    	0 3px 6px rgba(0,0,0, 0.24);
-
-	    -webkit-transform: scale(1.2);
-	    -moz-transform: scale(1.2);
-	    -ms-transform: scale(1.2);
-	    -o-transform: scale(1.2);
-	    transform: scale(1.2);
-	}
-
-.facebook {
-	background-color: #3b5998; 
-}
-.twitter {
-	background-color: #00abe3; 
-}
-.googleplus {
-	background-color: #d3492c;
-}
-
-.facebook,
-.twitter,
-.googleplus {
-	color: #fff;
-}
-
-.facebook:hover,
-.twitter:hover,
-.googleplus:hover {
-  color: #eee;
-}
-
-.market_sharing{
-  margin: 5px 0;
-}
 
 
 .flea_market_tag{

@@ -134,13 +134,14 @@ ready = ->
       if json.length < 1
         alert "Check ADDR"
       else
-        $(".latlon-lists div.latlon-list").remove()
+        $(".latlon-lists span.latlon-list").remove()
         $.each json, (index, data) ->
-          str = ""
+          str = "<span class='latlon-list'>"
           str += "ADR: " + data.title
           str += ",   LAT: " + data.point_y
           str += ",   LON: " + data.point_x
-          str += " <span class='set-latlon label label-primary' data-lat='" + data.point_y + "' data-lon='" + data.point_x + "'>SET</span>"
+          str += " <span class='set-latlon tag tag-primary' data-lat='" + data.point_y + "' data-lon='" + data.point_x + "'>SET</span>"
+          str += "</span>"
           $(".latlon-lists .controls").append str
     return false
 

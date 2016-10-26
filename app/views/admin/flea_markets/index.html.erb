@@ -4,10 +4,10 @@
     <div class="panel panel-orange-rust">
       <div class="panel-heading">
         <div class="row">
-          <div class="col-xs-3">
-            <i class="fa fa-tv fa-5x"></i>
+          <div class="col-xs-4">
+            <i class="fa fa-tv fa-4x"></i>
           </div>
-          <div class="col-xs-9 text-right">
+          <div class="col-xs-8 text-right">
             <div class="huge"><%= FleaMarket.searchable.count %></div>
             <div>Live Fleamarket</div>
           </div>
@@ -21,10 +21,10 @@
     <div class="panel panel-green-rust">
       <div class="panel-heading">
         <div class="row">
-          <div class="col-xs-3">
-            <i class="fa fa-arrow-up fa-5x"></i>
+          <div class="col-xs-4">
+            <i class="fa fa-arrow-up fa-4x"></i>
           </div>
-          <div class="col-xs-9 text-right">
+          <div class="col-xs-8 text-right">
             <div class="huge"><%= Parsing.where(is_complete: 0).count %></div>
             <div><%= link_to "Waiting Count", admin_parsings_path %></div>
           </div>
@@ -38,10 +38,10 @@
     <div class="panel panel-blue-rust">
       <div class="panel-heading">
         <div class="row">
-          <div class="col-xs-3">
-            <i class="fa fa-line-chart fa-5x"></i>
+          <div class="col-xs-4">
+            <i class="fa fa-line-chart fa-4x"></i>
           </div>
-          <div class="col-xs-9 text-right">
+          <div class="col-xs-8 text-right">
             <div class="huge">17.6 k</div>
             <div>Players online</div>
           </div>
@@ -55,10 +55,10 @@
     <div class="panel panel-red-rust panel-serversDown" style="cursor: pointer;">
       <div class="panel-heading">
         <div class="row">
-          <div class="col-xs-3">
-            <i class="fa fa-arrow-down fa-5x"></i>
+          <div class="col-xs-4">
+            <i class="fa fa-arrow-down fa-4x"></i>
           </div>
-          <div class="col-xs-9 text-right">
+          <div class="col-xs-8 text-right">
             <div class="huge"><%= FleaMarket.where(is_visible: 2).count %></div>
             <div>Waiting Count</div>  
           </div>
@@ -100,7 +100,7 @@
       <td><%= flea_market.start_date.strftime("%Y-%m-%d %H:%M") if flea_market.start_date.present? %> ~ <%= flea_market.end_date.strftime("%Y-%m-%d %H:%M") if flea_market.end_date.present? %></td>
       <td><%= image_tag flea_market.top_image_url, size: '200x200' if flea_market.top_image.present?%></td>
       <td><%= link_to "Edit", edit_admin_flea_market_path(flea_market), class: "btn btn-warning" %>
-      <%= link_to "Destroy", [:admin, flea_market], :confirm => 'Are you sure?', :method => :delete, class: "btn btn-danger" %></td>
+      <%= link_to "Destroy", [:admin, flea_market], data: {:confirm => 'Are you sure?'}, :method => :delete, class: "btn btn-danger" %></td>
     </tr>
   <% end %>
 </table>

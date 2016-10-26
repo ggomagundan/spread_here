@@ -9,10 +9,8 @@ gem 'puma'
 # Use SCSS for stylesheets
 
 #gem 'sprockets-rails', '~> 2.1.4'
-#gem 'bootstrap', '~> 4.0.0.alpha3'
 #gem 'font-awesome-sass', '~> 4.5.0'
 
-#gem 'bootstrap-sass'
 gem 'sass-rails',  '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -86,7 +84,11 @@ gem 'daemons'
 
 
 #gem 'summernote-rails'
-#gem 'bootstrap-sass'
+gem 'bootstrap', '~> 4.0.0.alpha5'
+
+source 'https://rails-assets.org' do
+    gem 'rails-assets-tether', '>= 1.1.0'
+end
 
 gem 'md-date-time-picker-rails'
 #gem 'md-date-time-picker-rails', github: "ggomagundan/md-date-time-picker-rails", branch: "dark_color_themes"

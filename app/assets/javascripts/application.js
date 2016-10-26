@@ -15,6 +15,7 @@
 //= require jquery.turbolinks
 //= require turbolinks
 //= require cable
+//= require tether
 //= require bootstrap
 // require compatibility
 

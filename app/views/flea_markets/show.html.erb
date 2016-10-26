@@ -29,7 +29,7 @@
 
         <div class="market_memo"><%= @flea_market.memo %></div>
         <div class="spread_notice"> 마켓에 대한 정보는 spreadherenow@gmail.com 으로 많이 알려주세요</div>
-  
+
         <div class="top-text">
           <%=  @flea_market.top_text.gsub(/\r\n/, "<br/>").html_safe %>
         </div>
@@ -81,7 +81,7 @@
           <span class="detail-title"><i class="fa fa-hashtag"></i> HashTag</span>
             <div class="flea_market_tag">
               <% @flea_market.fleamarket_tags.each do |tag| %>
-                <div class="label label-primary"><%= tag.tag_name %> </div>
+                <div class="tag tag-primary"><%= tag.tag_name %> </div>
               <% end %>
             </div>
           </span>
