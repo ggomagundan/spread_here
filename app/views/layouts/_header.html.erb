@@ -1,21 +1,11 @@
 <div id="header" class="navbar navbar-dark navbar-fixed-top bg-inverse">
   <div class="container">
+    <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar" aria-controls="exCollapsingNavbar" aria-expanded="false" aria-label="Toggle navigation"></button>
     <%= link_to "SPREAD HERE", root_path, class: "navbar-brand" %>
-
-    <ul class="nav navbar-nav pull-right">
-      <li class="nav-item">
-        <%= link_to "About", "#", class: "nav-link", data: {toggle: "modal", target: "#about-modal"} %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "플리마켓 등록 요청", new_flea_market_path, class: "nav-link"  %>
-      </li>
-    </ul>
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar" aria-controls="exCollapsingNavbar" aria-expanded="false" aria-label="Toggle navigation"></button>
-    <div class="collapse " id="exCollapsingNavbar">
+    <div class="collapse navbar-toggleable-md" id="exCollapsingNavbar">
       <div class="bg-inverse">
 
-        <ul class="">
+        <ul class="nav navbar-nav pull-right">
           <li class="nav-item">
             <%= link_to "About", "#", class: "nav-link", data: {toggle: "modal", target: "#about-modal"} %>
           </li>
