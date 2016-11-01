@@ -167,13 +167,18 @@
     .card-content {
       border-radius: 0 0 2px 2px;
       padding: 20px;
-      font-size: .8rem;
+      font-size: 1rem;
       padding:5px;
     }
 
     .card-content-tag{
-      font-size: .8rem;
+      font-size: 1rem;
       padding:10px;
+      .flea_market_tag{
+        div{
+          padding: 0.5em 0.8em;
+        }
+      }
     }
 
 
@@ -264,7 +269,7 @@
  
     .market_name{
       color: #ffffff;
-      font-size: 1.6em;
+      font-size: 2rem;
       margin: 0;
     }
 

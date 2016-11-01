@@ -56,7 +56,7 @@
           <div class="dividor" style="width:100%;height:1px;background:#eee;margin:20px 0;"></div>
 
           <div class="market_location">
-            <div class="detail-title"><i class="fa fa-map-marker"></i> Address</div>
+            <div class="detail-title"><i class="fa fa-map-marker"></i> 장소</div>
             <div class="market_location"> <%= @flea_market.location %> </div>
             <div class="market_memo"><%= @flea_market.memo %></div>
           </div>
@@ -64,7 +64,7 @@
           <div class="divider"></div>
 
           <div class="market_daterange">
-            <span class="detail-title"><i class="fa fa-calendar-check-o"></i> Opening Hours</span>
+            <span class="detail-title"><i class="fa fa-calendar-check-o"></i> 시간</span>
             <ul class="opening-hours">
               <li>
                 <%= @flea_market.start_date.strftime("%F %H:%M") %>
@@ -100,7 +100,7 @@
 
           </div>
 
-          <a class="btn btn-success" href="#location-map">Scroll Map</a>
+          <a class="btn btn-success" href="#location-map">지도 보기</a>
         </div>
       </div>
     </div>
