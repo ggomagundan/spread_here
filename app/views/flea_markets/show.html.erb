@@ -22,12 +22,11 @@
         </h3>
         <div class="market_location"> 
           <%= @flea_market.location %> 
-        </div>
         <% if @flea_market.memo.present? && @flea_market.location.present? %>
           /
         <% end %>
-
-        <div class="market_memo"><%= @flea_market.memo %></div>
+        <span class="market_memo"><%= @flea_market.memo %></span>
+        </div>
         <div class="spread_notice"> 마켓에 대한 정보는 spreadherenow@gmail.com 으로 많이 알려주세요</div>
 
         <div class="top-text">
@@ -101,7 +100,7 @@
 
           </div>
 
-          <a class="waves-effect waves-light btn" href="#location-map">Scroll Map</a>
+          <a class="btn btn-success" href="#location-map">Scroll Map</a>
         </div>
       </div>
     </div>
