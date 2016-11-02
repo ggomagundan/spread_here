@@ -1,6 +1,6 @@
 <span class="eee btn btn-primary">Redo</span>
 <div class=""><%= Parsing.where(is_complete: 0).count %> Counts</div>
-<table class="table table-hover">
+<table class="table table-hover parsing-table">
   <tr>
     <th>image</th>
     <th>tag</th>
@@ -15,7 +15,7 @@
       <td><%= parsing.tags.truncate(100) %></td>
       <td><%= parsing.content.truncate(100) %></td>
       <td><%= parsing.link %></td>
-      <td><%= link_to parsing.user_name, "https://websta.me/n/#{parsing.user_name}", target: "_blank" %></td>
+      <td><%= link_to parsing.user_name, "https://websta.me/n/#{parsing.user_name}", target: "_blank", class: "user-link" %></td>
       <td>
         <% if parsing.is_complete == 0 %>
           <%= link_to "GoLive", move_admin_parsing_path(parsing), class: "btn btn-primary" %>

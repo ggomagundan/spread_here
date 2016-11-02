@@ -288,7 +288,7 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
-    md-date-time-picker-rails (2.1.1)
+    md-date-time-picker-rails (2.1.2)
     metaclass (0.0.4)
     method_source (0.8.2)
     mime-types (3.1)
