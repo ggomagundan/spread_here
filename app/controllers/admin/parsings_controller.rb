@@ -1,6 +1,9 @@
 class Admin::ParsingsController < Admin::ApplicationController
+
+  before_filter :set_params, only: :index
+
   def index
-    @parsings = Parsing.order("is_complete asc, id desc").page(params[:page]).per(40)
+    @parsings = Parsing.order("is_complete asc, id desc").page(@page).per(@per)
   end
 
   def edit
@@ -54,6 +57,13 @@ class Admin::ParsingsController < Admin::ApplicationController
   private
   def parse_params
     params.require(:parsing).permit(:tags, :image_url, :content )
+  end
+
+  def set_params
+
+    @per = params[:per].present?? params[:per] :5 
+    @page = params[:page].present?? params[:page] :1
+
   end
   
 end

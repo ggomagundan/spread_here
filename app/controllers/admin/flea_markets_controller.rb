@@ -1,4 +1,5 @@
 class Admin::FleaMarketsController < Admin::ApplicationController
+
   def index
 
     @flea_markets = FleaMarket.admin_list.page(params[:page]).per(10)
@@ -51,5 +52,6 @@ class Admin::FleaMarketsController < Admin::ApplicationController
                                        :fleamarket_images_attributes => [:id, :image, :sort, :_destroy], \
                                        :fleamarket_tags_attributes => [:id, :tag_name, :_destroy])
   end
+
 
 end
