@@ -1,3 +1,3 @@
 #SKYLIGHT_AUTHENTICATION: ENV['skylight_key']
-authentication: ENV['skylight_key']
+authentication: <%= ENV['skylight_key'] %>
 
