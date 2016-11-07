@@ -55,6 +55,11 @@ ready = ->
   $("body").on "click", ".set-latlon", ->
     $("#flea_market_latitude").val $(this).data "lat"
     $("#flea_market_longitude").val $(this).data "lon"
+  $("body").on "click", ".set-registred-location", ->
+    $("#flea_market_latitude").val $("#registerd_location").data "lat"
+    $("#flea_market_longitude").val $("#registerd_location").data "lon"
+
+
 
   moment.locale('ko')
   #moment.locale('en')
@@ -144,6 +149,16 @@ ready = ->
           str += "</span>"
           $(".latlon-lists .controls").append str
     return false
+
+
+   $("body").on "keyup", "#registerd_location", ->
+     $(this).autocomplete
+       source: "/api/flea_markets/find_registered_location"
+       focus: (event, ui) ->
+         event.preventDefault()
+       select: (event, ui) ->
+         $("#registerd_location").data "lat", ui.item.lat
+         $("#registerd_location").data "lon", ui.item.lon
 
 
   $(document).on "submit", "form[method=get]", (e) ->

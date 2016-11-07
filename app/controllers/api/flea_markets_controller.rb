@@ -1,6 +1,6 @@
 class Api::FleaMarketsController < Api::ApplicationController
 
-  before_filter :latlon_check
+  before_filter :latlon_check, only: :get_latlon
 
   def index
 
@@ -42,6 +42,13 @@ class Api::FleaMarketsController < Api::ApplicationController
     res = res["channel"]["item"]
     render json: res
 
+  end
+
+  def find_registered_location
+
+    fleas = FleaMarket.where("location like ?","%#{params[:term]}%")
+
+    render json: fleas.map {|x| {id: x.id, value: "#{x.location}", lat: x.latitude, lon: x.longitude}}
 
   end
 

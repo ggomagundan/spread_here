@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   namespace(:api){
     resources :flea_markets do
       get :get_latlon, on: :collection
+      get :find_registered_location, on: :collection
     end
     post 'uploads' => 'content_images#create'
     delete 'removes' => 'content_images#destroy'

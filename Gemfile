@@ -104,3 +104,4 @@ gem 'skylight', group: :production
 
 gem 'rails-controller-testing', group: :test
 
+gem 'jquery-ui-rails'
