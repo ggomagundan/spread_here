@@ -61,7 +61,7 @@ class Admin::ParsingsController < Admin::ApplicationController
 
   def set_params
 
-    @per = params[:per].present?? params[:per] :5 
+    @per = params[:per].present?? params[:per] : 40
     @page = params[:page].present?? params[:page] :1
 
   end

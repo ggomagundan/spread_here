@@ -95,15 +95,7 @@ namespace :deploy do
   end
 
  after :published, 'actionjob:restart' do
-   invoke 'delayed_job:restart'
-=begin
-   within release_path do
-     with rails_env: fetch(:rails_env) do
-       excute :rake, "jobs:work"
-     end
-   end
-=end
-
+   Rake::Task["delayed_job:restart"].reenable
  end
 
  after :published, 'link_vector_monitoring' do
