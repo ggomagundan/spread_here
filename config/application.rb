@@ -30,6 +30,7 @@ module Fleamarket
 #    config.assets.precompile << /(^[^_\/]|\/[^_])[^\/]*$/
 #    config.assets.precompile += ["*css*","*js*", "*scss", "*coffee"]
 
+    config.active_job.queue_adapter = :delayed_job
 
 
     config.autoload_paths += %W(#{config.root}/lib)
