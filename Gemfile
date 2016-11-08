@@ -38,6 +38,9 @@ gem 'web-console', '~> 3.0', group: :development
 
  gem 'exception_notification'
  gem 'redis'
+ gem 'redis-rails'
+ gem 'redis-objects'
+ gem 'sidekiq'
  gem 'dragonfly'
 
  gem 'nifty-generators'

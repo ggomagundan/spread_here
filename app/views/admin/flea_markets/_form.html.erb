@@ -84,20 +84,19 @@
   <div class="form-group row">
     <label class="col-form-label col-sm-2">LatLon</label>
 
-      <div class="col-sm-6">
-        <div class="controls form-inline">
-          <div class="form-group">
-            <%= label_tag :registerd_location, "Registered" %>
-            <%= text_field_tag :registerd_location, "", class: "form-control", data: {lat: "", lon: ""} %>
-          </div>
-          <div class="form-group">
-            <span class="btn btn-primary set-registred-location">Set</span>
-          </div>
+    <div class="col-sm-6">
+      <div class="controls form-inline">
+        <div class="form-group">
+          <%= label_tag :registerd_location, "Registered" %>
+          <%= text_field_tag :registerd_location, "", class: "form-control", data: {lat: "", lon: ""} %>
         </div>
-
-        <%= f.text_field :latitude, class: "form-control" %>
-        <%= f.text_field :longitude, class: "form-control" %>
+        <div class="form-group">
+          <span class="btn btn-primary set-registred-location">Set</span>
+        </div>
       </div>
+
+      <%= f.text_field :latitude, class: "form-control" %>
+      <%= f.text_field :longitude, class: "form-control" %>
     </div>
   </div>
 

@@ -1,5 +1,9 @@
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
 
+
+  mount Sidekiq::Web => '/sidekiq'
   root 'flea_markets#index'
 
   resources :flea_markets

@@ -7,7 +7,8 @@ class FleaMarketsController < ApplicationController
 
   def show
     @flea_market = FleaMarket.find(params[:id])
-    @flea_market.delay.increment! :view_count
+    #@flea_market.delay.increment! :view_count
+    FleaMarketJob.perform_later(@flea_market)
     @recommend = @flea_market.pick_recommend(3)
   end
 
