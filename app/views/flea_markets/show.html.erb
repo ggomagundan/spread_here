@@ -36,11 +36,13 @@
           <% @flea_market.content_images.each do |img| %>
             <div class="img">
               <%= image_tag img.image_url, alt: "Test", class: "img responsive-img" if img.image.present? %>
+               <div class="end-overlay <%= "none" if @flea_market.is_visible? %>"><%= image_tag "end_up.png", class: "end-img" %> </div>
             </div>
           <% end %>
         <% else %>
           <div class="img">
             <%= image_tag "http://talkimg.imbc.com/TVianUpload//tvian/image/2015/10/10/IhjX4gdqTjQq635800827987838901.jpg", alt: "Test", class: "img responsive-img" %> 
+             <div class="end-overlay <%= "none" if @flea_market.is_visible? %>"><%= image_tag "end_up.png", class: "end-img" %> </div>
           </div>
         <% end %>
 
