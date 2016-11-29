@@ -100,7 +100,7 @@
       <td><%= flea_market.is_visible_str%></td>
       <td><%= flea_market.start_date.strftime("%Y-%m-%d %H:%M") if flea_market.start_date.present? %> ~ <%= flea_market.end_date.strftime("%Y-%m-%d %H:%M") if flea_market.end_date.present? %></td>
       <td><%= image_tag flea_market.top_image_url, size: '200x200' if flea_market.top_image.present?%></td>
-      <td><%= "[#{flea_market.city.try("name")}]" if flea_market.city.present? %> <%= flea_market.location %> 에서 열리는 <%= flea_market.market_name %><%= "http://www.spreadhere.com#{flea_market_path(flea_market)}" %></td>
+      <td><%= "[#{flea_market.city.try("name")}]" if flea_market.city.present? %> <%= flea_market.location %> 에서 열리는 <%= flea_market.market_name %>  #플리마켓 #spreadhere <%= "http://www.spreadhere.com#{flea_market_path(flea_market)}" %></td>
       <td><%= link_to "Edit", edit_admin_flea_market_path(flea_market), class: "btn btn-warning" %>
       <%= link_to "Destroy", [:admin, flea_market], data: {:confirm => 'Are you sure?'}, :method => :delete, class: "btn btn-danger" %></td>
     </tr>
