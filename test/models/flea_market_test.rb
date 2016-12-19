@@ -20,6 +20,12 @@ class FleaMarketTest < ActiveSupport::TestCase
 
   def test_is_show_flea_market
     flea_market = flea_market_item
-    assert_equal flea_market.is_visible, true
+    assert_equal flea_market.is_visible, 1
   end
+
+  test "should report error" do
+  #  some_undefined_variable is not defined elsewhere in the test case
+    assert true
+  end
+
 end
