@@ -13,6 +13,6 @@ Rails.application.config.assets.precompile += %w( flea_markets.css )
 Rails.application.config.assets.precompile += %w( sessions.css )
 Rails.application.config.assets.precompile += %w(moment.js bootstrap-datetimepicker.js bootstrap-datetimepicker.css )
 
-Rails.application.config.assets.precompile += %w( admin/flea_markets.js admin/parsings.js admin/parse_configs.js)
-Rails.application.config.assets.precompile += %w( admin/flea_markets.css admin/parsings.css admin/parse_configs.css)
+Rails.application.config.assets.precompile += %w( admin/flea_markets.js admin/parsings.js admin/parse_configs.js admin/parsing_filters.js)
+Rails.application.config.assets.precompile += %w( admin/flea_markets.css admin/parsings.css admin/parse_configs.css admin/parsing_filters.css)
 

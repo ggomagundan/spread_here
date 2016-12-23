@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     resources :flea_markets
     resources :users
     resources :parse_configs
+    resources :parsing_filters
     resources :parsings do 
       get :move, on: :member
     end

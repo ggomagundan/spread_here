@@ -25,7 +25,10 @@ en:
       is_visible: 노출여부
       invisible: 비노출
       visible: 노출
-    buttons: 
+      is_work: 동작여부
+      work: 동작
+      not_work: 미동작
+    buttons:
       create: 생성
       modify: 수정
-      
+

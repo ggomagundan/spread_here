@@ -5,6 +5,7 @@ namespace :websta do
 
     puts "Crawled Start"
 
+    pass_string = ParsingFilter.where(is_work: 1, keyword_type: 0).pluck(:keyword).join("|")
     if ParseConfig.where(content_type: 1).first.updated_at >= Time.now - 1.days
       cookie = ParseConfig.where(content_type: 1).first.cookie
       open_doc = open("https://websta.me/api/tags/%ED%94%8C%EB%A6%AC%EB%A7%88%EC%BC%93/", "Cookie" => cookie.to_s).read
@@ -26,7 +27,9 @@ namespace :websta do
             username= user["username"] if user.present?
           end
 
-          Parsing.new( content_type: 1, content_id: id, tags: tags.join(", "), image_url: image_url, content: text, link: link, user_name: username).save
+          if  /#{pass_string}/i.match("test").blank?
+            Parsing.new( content_type: 1, content_id: id, tags: tags.join(", "), image_url: image_url, content: text, link: link, user_name: username).save
+          end
 
         end
       end

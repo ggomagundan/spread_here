@@ -23,16 +23,18 @@
       <ul id="menu" class="sidebar-nav nav-stacked">
         <li>
           <%= link_to admin_parse_configs_path do %>
-            <span class="fa-stack fa-lg pull-left"><i class="fa fa-dashboard fa-stack-1x"></i></span>Dashboard
+            <span class="fa-stack fa-lg pull-left"><i class="fa fa-dashboard fa-stack-1x"></i></span>Parsing Config
           <% end %>
         </li>
         <li>
           <%= link_to admin_parsings_path do %>
-            <span class="fa-stack fa-lg pull-left"><i class="fa fa-server fa-stack-1x"></i></span> Servers
+            <span class="fa-stack fa-lg pull-left"><i class="fa fa-server fa-stack-1x"></i></span> Parsing
           <% end %>
         </li>
         <li>
-            <a href="https://www.rustmonitor.com/commits"><span class="fa-stack fa-lg pull-left"><i class="fa fa-code-fork fa-stack-1x"></i></span> Commits</a>
+          <%= link_to admin_parsing_filters_path do %>
+            <span class="fa-stack fa-lg pull-left"><i class="fa fa-code-fork fa-stack-1x"></i></span> Filter
+          <% end %>
         </li>
         <li>
             <a href="https://www.rustmonitor.com/about"><span class="fa-stack fa-lg pull-left"><i class="fa fa-info fa-stack-1x"></i></span> About</a>
