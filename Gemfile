@@ -112,3 +112,5 @@ gem 'jquery-ui-rails'
 gem 'rubocop', require: false,  group: :development
 
 gem 'searchkick'
+
+gem 'lograge'
