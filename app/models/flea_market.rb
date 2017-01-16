@@ -1,5 +1,6 @@
 class FleaMarket < ActiveRecord::Base
 
+  searchkick
 =begin
   include Mongoid::Document
   include Mongoid::Timestamps
