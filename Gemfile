@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '5.0.0'
+gem 'rails', '~> 5.0.0.1' # This change was made via Snyk to fix a vulnerability
 gem 'puma'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
@@ -36,7 +36,7 @@ gem 'web-console', '~> 3.0', group: :development
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
- gem 'exception_notification'
+ gem 'exception_notification', '~> 4.2.1' # This change was made via Snyk to fix a vulnerability
  gem 'redis'
  gem 'redis-rails'
  gem 'redis-objects'
@@ -64,7 +64,7 @@ gem 'web-console', '~> 3.0', group: :development
 
 gem "mocha"
 
-gem "devise"
+gem "devise", "~> 4.2.0" # This change was made via Snyk to fix a vulnerability
 
 #gem 'font-awesome-sass'
 
@@ -99,7 +99,7 @@ gem 'md-date-time-picker-rails'
 
 gem "instagram"
 
-gem 'rails_emoji'
+gem 'rails_emoji', '~> 1.7.1' # This change was made via Snyk to fix a vulnerability
 
 gem 'dotenv-rails'
 
@@ -113,4 +113,4 @@ gem 'rubocop', require: false,  group: :development
 
 gem 'searchkick'
 
-gem 'lograge'
+gem 'lograge', '~> 0.4.1' # This change was made via Snyk to fix a vulnerability
