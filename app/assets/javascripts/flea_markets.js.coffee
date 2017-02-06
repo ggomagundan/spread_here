@@ -2,6 +2,7 @@ list_refresh = ->
 
   width = $("#fleamarket_list .flea_market:first").width()
   $("#fleamarket_list .flea_market .card-image").css("height",width)
+  $("#fleamarket_list .flea_market .card-img-top").css("height",width)
 #  $(".flea_market").wookmark
 #    autoResize: true
 #    container: $("#fleamarket_list")

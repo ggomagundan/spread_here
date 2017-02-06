@@ -149,6 +149,9 @@
     transition: box-shadow 0.25s ease 0s;
 
     .card-image {
+
+      text-align:center;
+      /*
       position: relative;
       overflow:hidden;
 
@@ -162,6 +165,7 @@
         top: 0;
         width: 100%;
       }
+      */
     }
 
     .card-content {
@@ -345,10 +349,9 @@
 
 .flea_market_tag{
 
-  margin-top: 10px;
-   div.label{
+   div.badge{
      display:inline-block;
-     margin: 0 5px 3px 0;
+     margin: 0 0.3rem 0 0;
    }
 
 }

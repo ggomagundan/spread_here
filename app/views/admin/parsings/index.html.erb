@@ -11,7 +11,7 @@
   </tr>
   <% for parsing in @parsings %>
     <tr>
-      <td class="zoomin"><%= image_tag parsing.image_url, size: "100x100" %></td>
+      <td class="zoomin"><%= image_tag parsing.image_url, size: "100x100", alt: "img" %></td>
       <td><%= parsing.tags.to_s.truncate(50) %></td>
       <td><%= parsing.content.to_s.truncate(100) %></td>
       <td><%= parsing.link %></td>

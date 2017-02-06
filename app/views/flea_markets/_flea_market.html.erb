@@ -1,31 +1,33 @@
-<%= link_to flea_market_path(flea_market) do %>
-  <div class="col-md-4 col-sm-6 col-xs-12 flea_market">
-    <article class="card">
+<div class="col-md-4 col-sm-6 col-xs-12 flea_market">
+  <article class="card">
 
-      <div class="card-image">
-        <%= image_tag flea_market.top_image_url, alt: "test", class: "img-responsive" if flea_market.top_image.present? %>
+    <div class="card-image ">
+      <%= link_to flea_market_path(flea_market) do %>
+        <%= image_tag flea_market.top_image_url, alt: "test", class: "card-img-top" if flea_market.top_image.present? %>
         <% i = rand(100) % 2 %>
-        <%= image_tag "http://img.tenasia.hankyung.com/webwp_kr/wp-content/uploads/2014/05/2014051515474617545.jpg", alt: "test", class: "img-responsive" if i == 0 && flea_market.top_image.blank? %>
-        <%= image_tag "http://img.yaplog.jp/img/17/pc/y/a/m/yamu98/26/26332.jpg", alt: "Test", class: "img-responsive" if  i == 1 && flea_market.top_image.blank? %> 
-      </div>
-      <div class="card-content">
+        <%= image_tag "http://img.tenasia.hankyung.com/webwp_kr/wp-content/uploads/2014/05/2014051515474617545.jpg", alt: "test", class: "card-img-top" if i == 0 && flea_market.top_image.blank? %>
+        <%= image_tag "http://img.yaplog.jp/img/17/pc/y/a/m/yamu98/26/26332.jpg", alt: "Test", class: "card-img-top" if  i == 1 && flea_market.top_image.blank? %> 
+      <% end %>
+    </div>
+    <div class="card-block">
+
+      <%= link_to flea_market_path(flea_market) do %>
         <span class="market-name"><%= flea_market.market_name %></span>
-        <div> <%= flea_market.location %></div>
+      <% end %>
+      <div> <%= flea_market.location %></div>
 
-        <i class="fa fa-fw fa-star"></i>
-        <%= flea_market.start_date.strftime("%F %H:%M") %> ~ <%= flea_market.end_date.strftime("%F %H:%M ") %>
+      <i class="fa fa-fw fa-star"></i>
+      <%= flea_market.start_date.strftime("%F %H:%M") %> ~ <%= flea_market.end_date.strftime("%F %H:%M ") %>
 
+    </div>
+
+    <div class="card-content-tag card-footer">
+      <div class="flea_market_tag">
+        <% flea_market.fleamarket_tags.first(3).each do |tag| %>
+          <div class="badge badge-primary"><%= tag.tag_name %> </div>
+        <% end %>
       </div>
-
-      <div class="card-content-tag">
-        <div class="flea_market_tag">
-          <% flea_market.fleamarket_tags.first(3).each do |tag| %>
-            <div class="tag tag-primary"><%= tag.tag_name %> </div>
-          <% end %>
-        </div>
-      </div>
-    </article>
-  </div>
-
-<% end %>
+    </div>
+  </article>
+</div>
 
