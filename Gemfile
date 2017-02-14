@@ -122,3 +122,4 @@ gem 'rubocop', require: false,  group: :development
 gem 'searchkick'
 
 gem 'lograge'
+gem 'active_record_query_trace'
