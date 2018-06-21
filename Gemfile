@@ -17,7 +17,7 @@ gem 'puma', '~> 3.0'
 #gem 'sprockets-rails', '~> 2.1.4'
 #gem 'font-awesome-sass', '~> 4.5.0'
 
-gem 'sass-rails',  '~> 5.0'
+gem 'sass-rails', '~> 5.0', '>= 5.0.6'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
@@ -107,7 +107,7 @@ gem 'md-date-time-picker-rails'
 
 gem "instagram"
 
-gem 'rails_emoji'
+gem 'rails_emoji', '>= 1.7.1'
 
 gem 'dotenv-rails'
 
