@@ -17,19 +17,19 @@ gem 'puma', '~> 3.0'
 #gem 'sprockets-rails', '~> 2.1.4'
 #gem 'font-awesome-sass', '~> 4.5.0'
 
-gem 'sass-rails',  '~> 5.0'
+gem 'sass-rails', '~> 5.0', '>= 5.0.6'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.2.0'
+gem 'coffee-rails', '~> 4.2.1'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails'
+gem 'jquery-rails', '>= 4.2.2'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks', '~> 5'
-gem 'jquery-turbolinks'
+gem 'jquery-turbolinks', '>= 2.1.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # bundle exec rake doc:rails generates the API under doc/api.
@@ -37,18 +37,18 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
-gem 'web-console', '~> 3.3', group: :development
+gem 'web-console', '~> 3.4', '>= 3.4.0', group: :development
 gem 'listen', '~> 3.0.5', group: :development
 gem 'spring-watcher-listen', '~> 2.0.0', group: :development
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
- gem 'exception_notification'
+ gem 'exception_notification', '>= 4.2.1'
  gem 'redis'
- gem 'redis-rails'
+ gem 'redis-rails', '>= 5.0.2'
  gem 'redis-objects'
- gem 'sidekiq'
+ gem 'sidekiq', '>= 4.2.9'
  gem 'dragonfly'
 
  gem 'nifty-generators'
@@ -61,7 +61,7 @@ gem 'spring-watcher-listen', '~> 2.0.0', group: :development
  gem 'carrierwave-ftp', :require => 'carrierwave/storage/sftp' # SFTP only
 #  gem 'mongoid-grid_fs', github: 'ahoward/mongoid-grid_fs'
  #gem 'fog-aws'
- gem 'fog'
+ gem 'fog', '>= 1.38.0'
 
  gem 'whenever'
 # gem 'bson_ext'
@@ -72,7 +72,7 @@ gem 'spring-watcher-listen', '~> 2.0.0', group: :development
 
 gem "mocha"
 
-gem "devise"
+gem "devise", ">= 4.2.0"
 
 #gem 'font-awesome-sass'
 
@@ -107,19 +107,19 @@ gem 'md-date-time-picker-rails'
 
 gem "instagram"
 
-gem 'rails_emoji'
+gem 'rails_emoji', '>= 1.7.1'
 
-gem 'dotenv-rails'
+gem 'dotenv-rails', '>= 2.2.0'
 
 gem 'skylight', group: :production
 
-gem 'rails-controller-testing', group: :test
+gem 'rails-controller-testing', '>= 1.0.1', group: :test
 
-gem 'jquery-ui-rails'
+gem 'jquery-ui-rails', '>= 6.0.1'
 
-gem 'rubocop', require: false,  group: :development
+gem 'rubocop', '>= 0.49.0', require: false, group: :development
 
 gem 'searchkick'
 
-gem 'lograge'
+gem 'lograge', '>= 0.4.1'
 gem 'active_record_query_trace'
