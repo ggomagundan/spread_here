@@ -17,7 +17,7 @@ gem 'puma', '~> 3.0'
 #gem 'sprockets-rails', '~> 2.1.4'
 #gem 'font-awesome-sass', '~> 4.5.0'
 
-gem 'sass-rails', '~> 5.0', '>= 5.0.6'
+gem 'sass-rails', '~> 5.0', '>= 5.0.7'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
@@ -38,8 +38,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 gem 'web-console', '~> 3.4', '>= 3.4.0', group: :development
-gem 'listen', '~> 3.0.5', group: :development
-gem 'spring-watcher-listen', '~> 2.0.0', group: :development
+gem 'listen', '~> 3.0.8', group: :development
+gem 'spring-watcher-listen', '~> 2.0.1', group: :development
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -95,7 +95,7 @@ gem 'daemons'
 
 
 #gem 'summernote-rails'
-gem 'bootstrap', '~> 4.0.0.alpha6'
+gem 'bootstrap', '~> 4.0.0.0'
 
 source 'https://rails-assets.org' do
     gem 'rails-assets-tether', '>= 1.3.3'
