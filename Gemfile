@@ -37,7 +37,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
-gem 'web-console', '~> 3.6', '>= 3.6.2', group: :development
+gem 'web-console', '~> 3.7', '>= 3.7.0', group: :development
 gem 'listen', '~> 3.0.5', group: :development
 gem 'spring-watcher-listen', '~> 2.0.0', group: :development
 
@@ -48,8 +48,8 @@ gem 'spring-watcher-listen', '~> 2.0.0', group: :development
  gem 'redis'
  gem 'redis-rails', '>= 5.0.2'
  gem 'redis-objects'
- gem 'sidekiq', '>= 4.2.9'
- gem 'dragonfly'
+ gem 'sidekiq', '>= 5.1.3'
+ gem 'dragonfly', '>= 1.1.1'
 
  gem 'nifty-generators'
  gem 'hirb'
@@ -72,7 +72,7 @@ gem 'spring-watcher-listen', '~> 2.0.0', group: :development
 
 gem "mocha"
 
-gem "devise", ">= 4.4.3"
+gem "devise", ">= 4.5.0"
 
 #gem 'font-awesome-sass'
 
@@ -109,7 +109,7 @@ gem "instagram"
 
 gem 'rails_emoji', '>= 1.7.1'
 
-gem 'dotenv-rails', '>= 2.4.0'
+gem 'dotenv-rails', '>= 2.5.0'
 
 gem 'skylight', group: :production
 
