@@ -53,7 +53,7 @@ gem 'spring-watcher-listen', '~> 2.0.0', group: :development
 
  gem 'nifty-generators'
  gem 'hirb'
- gem 'mini_magick'
+ gem 'mini_magick', '>= 4.9.4'
 # gem 'mongoid', '~> 5.0.0'
  gem 'mysql2'#, '~> 0.3.18'
  gem 'carrierwave'
