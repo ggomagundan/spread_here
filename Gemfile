@@ -55,7 +55,7 @@ gem 'spring-watcher-listen', '~> 2.0.0', group: :development
  gem 'hirb'
  gem 'mini_magick'
 # gem 'mongoid', '~> 5.0.0'
- gem 'mysql2'#, '~> 0.3.18'
+ gem 'mysql2', '~> 0.4.10'
  gem 'carrierwave'
 # gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
  gem 'carrierwave-ftp', :require => 'carrierwave/storage/sftp' # SFTP only
