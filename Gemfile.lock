@@ -546,7 +546,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2.2)
   daemons
   delayed_job_active_record
-  devise (>= 4.5.0)
+  devise (>= 4.7.1)
   dotenv-rails (>= 2.5.0)
   dragonfly
   exception_notification (>= 4.3.0)

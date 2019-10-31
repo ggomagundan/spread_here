@@ -72,7 +72,7 @@ gem 'spring-watcher-listen', '~> 2.0.0', group: :development
 
 gem "mocha"
 
-gem "devise", ">= 4.5.0"
+gem "devise", ">= 4.7.1"
 
 #gem 'font-awesome-sass'
 
