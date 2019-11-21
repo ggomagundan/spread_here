@@ -26,7 +26,7 @@ gem 'coffee-rails', '~> 4.2.2'
 # gem 'therubyracer',  platforms: :ruby
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails', '>= 4.3.3'
+gem 'jquery-rails', '>= 4.3.5'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks', '~> 5'
 gem 'jquery-turbolinks', '>= 2.1.0'
@@ -44,7 +44,7 @@ gem 'spring-watcher-listen', '~> 2.0.0', group: :development
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
- gem 'exception_notification', '>= 4.3.0'
+ gem 'exception_notification', '>= 4.4.0'
  gem 'redis'
  gem 'redis-rails', '>= 5.0.2'
  gem 'redis-objects'
@@ -109,11 +109,11 @@ gem "instagram"
 
 gem 'rails_emoji', '>= 1.7.1'
 
-gem 'dotenv-rails', '>= 2.5.0'
+gem 'dotenv-rails', '>= 2.7.5'
 
 gem 'skylight', group: :production
 
-gem 'rails-controller-testing', '>= 1.0.2', group: :test
+gem 'rails-controller-testing', '>= 1.0.4', group: :test
 
 gem 'jquery-ui-rails', '>= 6.0.1'
 
@@ -121,5 +121,5 @@ gem 'rubocop', '>= 0.49.0', require: false, group: :development
 
 gem 'searchkick'
 
-gem 'lograge', '>= 0.10.0'
+gem 'lograge', '>= 0.11.2'
 gem 'active_record_query_trace'
