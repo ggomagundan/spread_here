@@ -31,13 +31,13 @@ gem 'jquery-rails', '>= 4.3.5'
 gem 'turbolinks', '~> 5'
 gem 'jquery-turbolinks', '>= 2.1.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.5'
+gem 'jbuilder', '~> 2.10'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
-gem 'web-console', '~> 3.7', '>= 3.7.0', group: :development
+gem 'web-console', '~> 4.0.1', '>= 4.0.1', group: :development
 gem 'listen', '~> 3.0.5', group: :development
 gem 'spring-watcher-listen', '~> 2.0.0', group: :development
 
@@ -48,7 +48,7 @@ gem 'spring-watcher-listen', '~> 2.0.0', group: :development
  gem 'redis'
  gem 'redis-rails', '>= 5.0.2'
  gem 'redis-objects'
- gem 'sidekiq', '>= 4.2.9'
+ gem 'sidekiq', '>= 6.0.5'
  gem 'dragonfly'
 
  gem 'nifty-generators'
