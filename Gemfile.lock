@@ -113,9 +113,9 @@ GEM
       net-sftp (~> 2.1.2)
     chronic (0.10.2)
     coderay (1.1.2)
-    coffee-rails (4.2.2)
+    coffee-rails (5.0.0)
       coffee-script (>= 2.2.0)
-      railties (>= 4.0.0)
+      railties (>= 5.2.0)
     coffee-script (2.4.1)
       coffee-script-source
       execjs
@@ -544,11 +544,11 @@ GEM
     unicode-display_width (1.6.1)
     warden (1.2.8)
       rack (>= 2.0.6)
-    web-console (3.7.0)
-      actionview (>= 5.0)
-      activemodel (>= 5.0)
+    web-console (4.0.1)
+      actionview (>= 6.0.0)
+      activemodel (>= 6.0.0)
       bindex (>= 0.4.0)
-      railties (>= 5.0)
+      railties (>= 6.0.0)
     websocket-driver (0.7.1)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.4)
@@ -572,7 +572,7 @@ DEPENDENCIES
   capistrano3-puma
   carrierwave
   carrierwave-ftp
-  coffee-rails (~> 4.2.2)
+  coffee-rails (~> 5.0.0)
   daemons
   delayed_job_active_record
   devise (>= 4.7.1)
@@ -582,7 +582,7 @@ DEPENDENCIES
   fog (>= 1.41.0)
   hirb
   instagram
-  jbuilder (~> 2.5)
+  jbuilder (~> 2.10)
   jquery-rails (>= 4.3.5)
   jquery-turbolinks (>= 2.1.0)
   jquery-ui-rails (>= 6.0.1)
@@ -609,15 +609,15 @@ DEPENDENCIES
   sass-rails (~> 5.0, >= 5.0.7)
   sdoc (~> 0.4.0)
   searchkick
-  sidekiq (>= 4.2.9)
+  sidekiq (>= 6.0.5)
   skylight
   spring
   spring-watcher-listen (~> 2.0.0)
   squire-rails
   turbolinks (~> 5)
   uglifier (>= 1.3.0)
-  web-console (~> 3.7, >= 3.7.0)
+  web-console (~> 4.0.1, >= 4.0.1)
   whenever
 
 BUNDLED WITH
-   1.17.3
+   2.1.2
