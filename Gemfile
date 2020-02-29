@@ -9,7 +9,7 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '6.0.2.1'
-gem 'puma', '~> 3.12'
+gem 'puma', '>= 4.3.0'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
 # Use SCSS for stylesheets
@@ -17,9 +17,9 @@ gem 'puma', '~> 3.12'
 #gem 'sprockets-rails', '~> 2.1.4'
 #gem 'font-awesome-sass', '~> 4.5.0'
 
-gem 'sass-rails', '~> 5.0', '>= 5.0.7'
+gem 'sass-rails', '~> 6.0', '>= 6.0'
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
+gem 'uglifier', '>= 4.2.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 5.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -28,12 +28,12 @@ gem 'coffee-rails', '~> 5.0.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails', '>= 4.3.5'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks', '~> 5'
+gem 'turbolinks', '~> 5.2.1'
 gem 'jquery-turbolinks', '>= 2.1.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.10'
 # bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0',          group: :doc
+gem 'sdoc', '~> 1.0.0',          group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
@@ -44,31 +44,31 @@ gem 'spring-watcher-listen', '~> 2.0.0', group: :development
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
- gem 'exception_notification', '>= 4.4.0'
- gem 'redis'
- gem 'redis-rails', '>= 5.0.2'
- gem 'redis-objects'
- gem 'sidekiq', '>= 6.0.5'
- gem 'dragonfly'
+gem 'exception_notification', '>= 4.4.0'
+gem 'redis'
+gem 'redis-rails', '>= 5.0.2'
+gem 'redis-objects'
+gem 'sidekiq', '>= 6.0.5'
+gem 'dragonfly'
 
- gem 'nifty-generators'
- gem 'hirb'
- gem 'mini_magick'
+gem 'nifty-generators'
+gem 'hirb'
+gem 'mini_magick'
 # gem 'mongoid', '~> 5.0.0'
- gem 'mysql2', '~> 0.4.10'
- gem 'carrierwave'
+gem 'mysql2', '~> 0.5.3'
+gem 'carrierwave'
 # gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
- gem 'carrierwave-ftp', :require => 'carrierwave/storage/sftp' # SFTP only
+gem 'carrierwave-ftp', :require => 'carrierwave/storage/sftp' # SFTP only
 #  gem 'mongoid-grid_fs', github: 'ahoward/mongoid-grid_fs'
- #gem 'fog-aws'
- gem 'fog', '>= 1.41.0'
+#gem 'fog-aws'
+gem 'fog', '>= 2.2.0'
 
- gem 'whenever'
+gem 'whenever'
 # gem 'bson_ext'
- gem 'koala'
- #gem 'nokogiri'
- gem 'pry'
- gem 'kaminari',  github: "amatsuda/kaminari", branch: '0-17-stable'
+gem 'koala'
+#gem 'nokogiri'
+gem 'pry'
+gem 'kaminari',  '>= 1.2'
 
 gem "mocha"
 
@@ -95,10 +95,10 @@ gem 'daemons'
 
 
 #gem 'summernote-rails'
-gem 'bootstrap', '~> 4.3.1'
+gem 'bootstrap', '~> 4.4.1'
 
 source 'https://rails-assets.org' do
-    gem 'rails-assets-tether', '>= 1.3.3'
+  gem 'rails-assets-tether', '>= 1.3.3'
 end
 
 gem 'md-date-time-picker-rails'
