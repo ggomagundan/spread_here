@@ -8,7 +8,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '6.0.2.1'
+gem 'rails', '6.0.2.2'
 gem 'puma', '>= 4.3.0'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
@@ -17,7 +17,7 @@ gem 'puma', '>= 4.3.0'
 #gem 'sprockets-rails', '~> 2.1.4'
 #gem 'font-awesome-sass', '~> 4.5.0'
 
-gem 'sass-rails', '~> 6.0', '>= 6.0'
+gem 'sass-rails', '~> 6.0', '>= 6.0.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 4.2.0'
 # Use CoffeeScript for .js.coffee assets and views
@@ -37,7 +37,7 @@ gem 'sdoc', '~> 1.0.0',          group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
-gem 'web-console', '~> 4.0.1', '>= 4.0.1', group: :development
+gem 'web-console', '~> 4.0.1', group: :development
 gem 'listen', '~> 3.0.5', group: :development
 gem 'spring-watcher-listen', '~> 2.0.0', group: :development
 
@@ -68,7 +68,7 @@ gem 'whenever'
 gem 'koala'
 #gem 'nokogiri'
 gem 'pry'
-gem 'kaminari',  '>= 1.2'
+gem 'kaminari', '>= 1.2.0'
 
 gem "mocha"
 
