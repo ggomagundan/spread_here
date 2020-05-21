@@ -8,7 +8,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '6.0.2.2'
+gem 'rails', '6.0.3.1'
 gem 'puma', '>= 4.3.0'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
@@ -31,7 +31,7 @@ gem 'jquery-rails', '>= 4.3.5'
 gem 'turbolinks', '~> 5.2.1'
 gem 'jquery-turbolinks', '>= 2.1.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.10'
+gem 'jbuilder', '~> 2.10', '>= 2.10.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 1.0.0',          group: :doc
 
@@ -56,9 +56,9 @@ gem 'hirb'
 gem 'mini_magick'
 # gem 'mongoid', '~> 5.0.0'
 gem 'mysql2', '~> 0.5.3'
-gem 'carrierwave'
+gem 'carrierwave', '>= 2.1.0'
 # gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
-gem 'carrierwave-ftp', :require => 'carrierwave/storage/sftp' # SFTP only
+gem 'carrierwave-ftp', '>= 0.4.1', :require => 'carrierwave/storage/sftp' # SFTP only
 #  gem 'mongoid-grid_fs', github: 'ahoward/mongoid-grid_fs'
 #gem 'fog-aws'
 gem 'fog', '>= 2.2.0'
@@ -87,7 +87,7 @@ gem 'capistrano-rails', group: :development
 gem 'capistrano-bundler', group: :development
 gem 'capistrano3-puma', group: :development
 gem 'capistrano3-delayed-job', '~> 1.0'
-gem 'delayed_job_active_record'
+gem 'delayed_job_active_record', '>= 4.1.4'
 gem 'daemons'
 
 
@@ -111,7 +111,7 @@ gem 'rails_emoji', '>= 1.7.1'
 
 gem 'dotenv-rails', '>= 2.7.5'
 
-gem 'skylight', group: :production
+gem 'skylight', '>= 4.2.2', group: :production
 
 gem 'rails-controller-testing', '>= 1.0.4', group: :test
 
@@ -119,7 +119,7 @@ gem 'jquery-ui-rails', '>= 6.0.1'
 
 gem 'rubocop', '>= 0.49.0', require: false, group: :development
 
-gem 'searchkick'
+gem 'searchkick', '>= 4.3.0'
 
 gem 'lograge', '>= 0.11.2'
 gem 'active_record_query_trace'
