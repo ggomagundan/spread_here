@@ -8,7 +8,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '6.0.3.1'
+gem 'rails', '6.0.2.1'
 gem 'puma', '>= 4.3.0'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
@@ -68,7 +68,7 @@ gem 'whenever'
 gem 'koala'
 #gem 'nokogiri'
 gem 'pry'
-gem 'kaminari', '>= 1.2.0'
+gem 'kaminari', '>= 1.2.1'
 
 gem "mocha"
 
