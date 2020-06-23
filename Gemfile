@@ -26,7 +26,7 @@ gem 'coffee-rails', '~> 5.0.0'
 # gem 'therubyracer',  platforms: :ruby
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails', '>= 4.3.5'
+gem 'jquery-rails', '>= 4.4.0'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks', '~> 5.2.1'
 gem 'jquery-turbolinks', '>= 2.1.0'
@@ -49,7 +49,7 @@ gem 'redis'
 gem 'redis-rails', '>= 5.0.2'
 gem 'redis-objects'
 gem 'sidekiq', '>= 6.0.5'
-gem 'dragonfly'
+gem 'dragonfly', '>= 1.2.0'
 
 gem 'nifty-generators'
 gem 'hirb'
