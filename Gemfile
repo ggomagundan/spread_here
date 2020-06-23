@@ -60,8 +60,8 @@ gem 'carrierwave', '>= 2.1.0'
 # gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 gem 'carrierwave-ftp', '>= 0.4.1', :require => 'carrierwave/storage/sftp' # SFTP only
 #  gem 'mongoid-grid_fs', github: 'ahoward/mongoid-grid_fs'
-#gem 'fog-aws'
-gem 'fog', '>= 2.2.0'
+gem 'fog-aws'
+# gem 'fog', '>= 2.2.0'
 
 gem 'whenever'
 # gem 'bson_ext'
