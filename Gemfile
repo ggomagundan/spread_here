@@ -8,8 +8,8 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '6.0.2.1'
-gem 'puma', '>= 4.3.0'
+gem 'rails', '6.0.3.1'
+gem 'puma', '>= 4.3.5'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
 # Use SCSS for stylesheets
@@ -68,7 +68,7 @@ gem 'whenever'
 gem 'koala'
 #gem 'nokogiri'
 gem 'pry'
-gem 'kaminari', '>= 1.2.0'
+gem 'kaminari', '>= 1.2.1'
 
 gem "mocha"
 
@@ -85,7 +85,7 @@ gem 'brakeman' # For check Secitury
 gem 'capistrano', group: :development
 gem 'capistrano-rails', group: :development
 gem 'capistrano-bundler', group: :development
-gem 'capistrano3-puma', group: :development
+gem 'capistrano3-puma', '>= 4.0.0', group: :development
 gem 'capistrano3-delayed-job', '~> 1.0'
 gem 'delayed_job_active_record', '>= 4.1.4'
 gem 'daemons'
