@@ -68,7 +68,7 @@ gem 'whenever'
 gem 'koala'
 #gem 'nokogiri'
 gem 'pry'
-gem 'kaminari', '>= 1.2.0'
+gem 'kaminari', '>= 1.2.1'
 
 gem "mocha"
 
