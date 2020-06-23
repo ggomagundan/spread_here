@@ -1,4 +1,4 @@
-class CreateFleamarketTags < ActiveRecord::Migration
+class CreateFleamarketTags < ActiveRecord::Migration[6.0]
   def change
     create_table :fleamarket_tags do |t|
       t.integer :is_visible, default: 1

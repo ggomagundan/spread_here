@@ -1,4 +1,4 @@
-class CreateFleaMarkets < ActiveRecord::Migration
+class CreateFleaMarkets < ActiveRecord::Migration[6.0]
   def change
     create_table :flea_markets do |t|
 
