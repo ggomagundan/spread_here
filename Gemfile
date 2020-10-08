@@ -8,7 +8,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '6.0.3.1'
+gem 'rails', '6.0.3.3'
 gem 'puma', '>= 4.3.5'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
@@ -37,7 +37,7 @@ gem 'sdoc', '~> 1.0.0',          group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
-gem 'web-console', '~> 4.0.1', group: :development
+gem 'web-console', '~> 4.0.3', group: :development
 gem 'listen', '~> 3.0.5', group: :development
 gem 'spring-watcher-listen', '~> 2.0.0', group: :development
 
@@ -72,7 +72,7 @@ gem 'kaminari', '>= 1.2.1'
 
 gem "mocha"
 
-gem "devise", ">= 4.7.1"
+gem "devise", ">= 4.7.2"
 
 #gem 'font-awesome-sass'
 
