@@ -56,7 +56,7 @@ gem 'hirb'
 gem 'mini_magick'
 # gem 'mongoid', '~> 5.0.0'
 gem 'mysql2', '~> 0.5.3'
-gem 'carrierwave', '>= 2.1.0'
+gem 'carrierwave', '>= 2.1.1'
 # gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 gem 'carrierwave-ftp', '>= 0.4.1', :require => 'carrierwave/storage/sftp' # SFTP only
 #  gem 'mongoid-grid_fs', github: 'ahoward/mongoid-grid_fs'
