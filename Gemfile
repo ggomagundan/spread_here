@@ -117,7 +117,7 @@ gem 'rails-controller-testing', '>= 1.0.4', group: :test
 
 gem 'jquery-ui-rails', '>= 6.0.1'
 
-gem 'rubocop', '>= 0.49.0', require: false, group: :development
+gem 'rubocop', '>= 0.86.0', require: false, group: :development
 
 gem 'searchkick', '>= 4.3.0'
 
