@@ -8,7 +8,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '6.0.3.4'
+gem 'rails', '6.0.3.1'
 gem 'puma', '>= 4.3.5'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
@@ -60,7 +60,7 @@ gem 'carrierwave', '>= 2.1.0'
 # gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 gem 'carrierwave-ftp', '>= 0.4.1', :require => 'carrierwave/storage/sftp' # SFTP only
 #  gem 'mongoid-grid_fs', github: 'ahoward/mongoid-grid_fs'
-gem 'fog-aws'
+gem 'fog-aws', '>= 3.6.5'
 # gem 'fog', '>= 2.2.0'
 
 gem 'whenever'
