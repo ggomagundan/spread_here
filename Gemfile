@@ -49,7 +49,7 @@ gem 'redis'
 gem 'redis-rails', '>= 5.0.2'
 gem 'redis-objects'
 gem 'sidekiq', '>= 6.0.5'
-gem 'dragonfly', '>= 1.2.0'
+gem 'dragonfly', '>= 1.4.0'
 
 gem 'nifty-generators'
 gem 'hirb'
