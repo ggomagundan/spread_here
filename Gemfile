@@ -8,7 +8,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '6.0.3.4'
+gem 'rails', '6.0.4.2'
 gem 'puma', '>= 4.3.9'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
@@ -33,7 +33,7 @@ gem 'jquery-turbolinks', '>= 2.1.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.10', '>= 2.10.0'
 # bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 1.0.0',          group: :doc
+gem 'sdoc', '~> 1.0.0', group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
@@ -49,7 +49,7 @@ gem 'redis'
 gem 'redis-rails', '>= 5.0.2'
 gem 'redis-objects'
 gem 'sidekiq', '>= 6.2.1'
-gem 'dragonfly', '>= 1.2.0'
+gem 'dragonfly', '>= 1.4.0'
 
 gem 'nifty-generators'
 gem 'hirb'
