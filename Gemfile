@@ -8,9 +8,8 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-
 gem 'rails', '6.0.4.2'
-gem 'puma', '>= 4.3.8'
+gem 'puma', '>= 4.3.9'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
 # Use SCSS for stylesheets
@@ -49,7 +48,7 @@ gem 'exception_notification', '>= 4.4.0'
 gem 'redis'
 gem 'redis-rails', '>= 5.0.2'
 gem 'redis-objects'
-gem 'sidekiq', '>= 6.0.5'
+gem 'sidekiq', '>= 6.2.1'
 gem 'dragonfly', '>= 1.4.0'
 
 gem 'nifty-generators'
