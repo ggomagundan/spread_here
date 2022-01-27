@@ -48,7 +48,7 @@ gem 'exception_notification', '>= 4.4.0'
 gem 'redis'
 gem 'redis-rails', '>= 5.0.2'
 gem 'redis-objects'
-gem 'sidekiq', '>= 6.2.1'
+gem 'sidekiq', '>= 6.4.0'
 gem 'dragonfly', '>= 1.4.0'
 
 gem 'nifty-generators'
